@@ -1,0 +1,2567 @@
+
+
+<!doctype html>
+<html lang="en" class="theme-fs-md">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>SocialV | Responsive Bootstrap 5 Admin Dashboard Template</title>
+      <!-- Config Options -->
+      <meta name="setting_options" content='{&quot;saveLocal&quot;:&quot;sessionStorage&quot;,&quot;storeKey&quot;:&quot;socialV&quot;,&quot;setting&quot;:{&quot;theme_scheme_direction&quot;:{&quot;value&quot;:&quot;ltr&quot;},&quot;theme_scheme&quot;:{&quot;value&quot;:&quot;light&quot;},&quot;theme_color&quot;:{&quot;colors&quot;:{&quot;--{{prefix}}primary&quot;:&quot;#50b5ff&quot;,&quot;--{{prefix}}info&quot;:&quot;#d592ff&quot;},&quot;value&quot;:&quot;theme-color-default&quot;},&quot;sidebar_type&quot;:{&quot;value&quot;:[]},&quot;sidebar_menu_style&quot;:{&quot;value&quot;:&quot;navs-rounded-all&quot;},&quot;footer&quot;:{&quot;value&quot;:&quot;default&quot;}}}'>
+      <!-- End Config Options -->
+      <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+      <link rel="stylesheet" href="../assets/css/libs.min.css">
+      <link rel="stylesheet" href="../assets/css/socialv.css?v=5.2.0">
+      <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+      <!-- flatpickr css -->
+      <link rel="stylesheet" href="../assets/vendor/flatpickr/dist/flatpickr.min.css" />
+      <!-- Sweetlaert2 css -->
+      <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.min.css" />
+      
+      <!-- vanillajs css -->
+      <link rel="stylesheet" href="../assets/vendor/vanillajs-datepicker/dist/css/datepicker.min.css">
+      
+      <!-- zuck -->
+      
+      <!-- Custom Css -->
+      <link rel="stylesheet" href="../assets/css/custom.css?v=5.2.0" />
+      
+      <!-- Customizer Css -->
+      <link rel="stylesheet" href="../assets/css/customizer.css?v=5.2.0" />  </head>
+  <body class=" ">
+    <!-- loader Start -->
+    <div id="loading">
+          <div id="loading-center">
+          </div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+      <div class="iq-top-navbar border-bottom">
+        <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar p-lg-0">
+          <div class="container-fluid navbar-inner">
+            <div class="d-flex align-items-center pb-2 pb-lg-0 d-xl-none">
+              <a href="../index.html" class="d-flex align-items-center iq-header-logo navbar-brand d-block d-xl-none">
+                <svg width="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.67733 9.50001L7.88976 20.2602C9.81426 23.5936 14.6255 23.5936 16.55 20.2602L22.7624 9.5C24.6869 6.16666 22.2813 2 18.4323 2H6.00746C2.15845 2 -0.247164 6.16668 1.67733 9.50001ZM14.818 19.2602C13.6633 21.2602 10.7765 21.2602 9.62181 19.2602L9.46165 18.9828L9.46597 18.7275C9.48329 17.7026 9.76288 16.6993 10.2781 15.8131L12.0767 12.7195L14.1092 16.2155C14.4957 16.8803 14.7508 17.6132 14.8607 18.3743L14.9544 19.0239L14.818 19.2602ZM16.4299 16.4683L19.3673 11.3806C18.7773 11.5172 18.172 11.5868 17.5629 11.5868H13.7316L15.8382 15.2102C16.0721 15.6125 16.2699 16.0335 16.4299 16.4683ZM20.9542 8.63193L21.0304 8.5C22.1851 6.5 20.7417 4 18.4323 4H17.8353L17.1846 4.56727C16.6902 4.99824 16.2698 5.50736 15.9402 6.07437L13.8981 9.58676H17.5629C18.4271 9.58676 19.281 9.40011 20.0663 9.03957L20.9542 8.63193ZM14.9554 4C14.6791 4.33499 14.4301 4.69248 14.2111 5.06912L12.0767 8.74038L10.0324 5.22419C9.77912 4.78855 9.48582 4.37881 9.15689 4H14.9554ZM6.15405 4H6.00746C3.69806 4 2.25468 6.50001 3.40938 8.50001L3.4915 8.64223L4.37838 9.04644C5.15962 9.40251 6.00817 9.58676 6.86672 9.58676H10.2553L8.30338 6.22943C7.9234 5.57587 7.42333 5.00001 6.8295 4.53215L6.15405 4ZM5.07407 11.3833L7.88909 16.2591C8.05955 15.7565 8.28025 15.2702 8.54905 14.8079L10.4218 11.5868H6.86672C6.26169 11.5868 5.66037 11.5181 5.07407 11.3833Z" fill="currentColor" />
+                </svg>
+                <h3 class="logo-title d-none d-sm-block" data-setting="app_name">SocialV</h3>
+              </a>
+              <a class="sidebar-toggle" data-toggle="sidebar" data-active="true" href="javascript:void(0);">
+                <div class="icon material-symbols-outlined iq-burger-menu"> menu </div>
+              </a>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center justify-content-between product-offcanvas">
+                <div class="offcanvas offcanvas-end shadow-none iq-product-menu-responsive d-none d-xl-block" tabindex="-1" id="offcanvasBottomNav">
+                  <div class="offcanvas-body">
+                    <ul class="iq-nav-menu list-unstyled">
+                      <li class="nav-item">
+                        <a class="nav-link menu-arrow justify-content-start " href="../index.html">
+                          <span class="nav-text">Home</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link menu-arrow justify-content-start" data-bs-toggle="collapse" href="#blogData" role="button" aria-expanded="false" aria-controls="blogData">
+                          <span class="nav-text">Blog</span>
+                        </a>
+                        <ul class="iq-header-sub-menu list-unstyled collapse shadow" id="blogData">
+                          <li class="nav-item">
+                            <a class="nav-link " href="../dashboard/blog-grid.html">Blog Grid</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " href="../dashboard/blog-list.html">Blog List</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " href="../dashboard/blog-detail.html">Blog Detail</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link menu-arrow justify-content-start" data-bs-toggle="collapse" href="#storeData" role="button" aria-expanded="false" aria-controls="storeData">
+                          <span class="nav-text">Store</span>
+                        </a>
+                        <ul class="iq-header-sub-menu list-unstyled collapse shadow" id="storeData">
+                          <li class="nav-item">
+                            <a class="nav-link " href="../dashboard/store-category-grid.html">Category Grid</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " href="../dashboard/store-category-list.html">Category List</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-link " href="../dashboard/store-detail.html">Store Detail</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-link " href="../dashboard/product-detail.html">Product Detail</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " href="../dashboard/store-checkout.html">Checkout</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="iq-search-bar device-search position-relative d-none d-lg-block">
+                <form action="#" class="searchbox open-modal-search">
+                  <a class="search-link" href="javascript:void(0);">
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.82491" cy="7.82495" r="6.74142" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M12.5137 12.8638L15.1567 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <input type="text" class="text search-input form-control bg-light-subtle" placeholder="Search for people or groups...">
+                </form>
+                <div class="search-modal-custom">
+                  <div class="search-modal-content">
+                    <div class="py-2 px-3">
+                      <div class="d-flex align-items-center justify-content-between d-lg-none w-100">
+                        <form action="#" class="searchbox w-50" data-bs-toggle="modal" data-bs-target="#searchmodal">
+                          <a class="search-link" href="javascript:void(0);">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="7.82491" cy="7.82495" r="6.74142" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                              <path d="M12.5137 12.8638L15.1567 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg>
+                          </a>
+                          <input type="text" class="text search-input form-control bg-primary-subtle" placeholder="Search here...">
+                        </form>
+                        <a href="javascript:void(0);" class="material-symbols-outlined text-dark" data-bs-dismiss="modal">close</a>
+                      </div>
+                      <div class="d-none d-lg-flex align-items-center justify-content-between w-100">
+                        <h4 class="modal-title" id="exampleModalFullscreenLabel">Recent</h4>
+                        <a class="text-dark" href="javascript:void(0);">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-header-scroll">
+                    <div class="search-modal-body">
+                      <div class="d-flex d-lg-none align-items-center justify-content-between w-100 p-3 pb-0">
+                        <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Recent</h5>
+                        <a href="javascript:void(0);" class="text-dark">Clear All</a>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/page-img/19.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <div>
+                                <a href="javascript:void(0);" class="h6">Paige Turner</a>
+                                <span class="profile-status-online"></span>
+                              </div>
+                                <span class="mb-0">Paige001</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/page-img/18.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <div>
+                                <a href="javascript:void(0);" class="h6">Monty Carlo</a>
+                                <span class="profile-status-online"></span>
+                              </div>
+                                <span>Carlo.m</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/page-img/20.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <div>
+                                <a href="javascript:void(0);" class="h6">Paul Molive</a>
+                                <span class="profile-status-offline"></span>
+                              </div>
+                              <span>Paul.45</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="py-2 px-3">
+                        <h5 class="modal-title" id="exampleModalFullscreenLabel">Suggestion</h5>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/user/06.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <a href="javascript:void(0);" class="h6">Annette Black</a>
+                              <span>Followed by Jerome_bell + 2 more</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/user/08.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <a href="javascript:void(0);" class="h6">Ellyse Perry</a>
+                              <span>Followed by _@rina</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/user/15.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <a href="javascript:void(0);" class="h6">Pete Sariya</a>
+                              <span>Followed by chris_18 + 5 more</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/user/13.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <a href="javascript:void(0);" class="h6">Aman Verma</a>
+                              <span>Followed by Jerome_bell and _@rina </span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="navbar-nav navbar-list">
+              <li class="nav-item dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="material-symbols-outlined position-relative">shopping_bag
+                    <span class="bg-primary text-white shopping-badge">3</span>
+                  </span>
+                  <span class="mobile-text d-none ms-3">Shopping Cart</span>
+                </a>
+                <div class="sub-drop dropdown-menu header-notification" aria-labelledby="mail-drop">
+                  <div class="card shadow m-0">
+                    <div class="card-header d-flex justify-content-between px-0 pb-4 mx-5 border-bottom">
+                      <div class="header-title">
+                        <h5 class="fw-semibold">Shopping Cart</h5>
+                      </div>
+                    </div>
+                    <div class="card-body p-0 rounded-0">
+                      <div class="item-header-scroll">
+                        <a href="javascript:void(0);" class="text-body">
+                          <div class="thread d-flex justify-content-between rounded-0">
+                            <div>
+                              <img class="avatar-45 rounded align-top" src="../assets/images/store/06.jpg" alt="" loading="lazy">
+                              <div class="ms-3 d-inline-block">
+                                <h6 class="font-size-14">Casual Shoe</h6>
+                                <span class="font-size-14 fw-semibold">$75.00</span>
+                              </div>
+                            </div>
+                            <span class="material-symbols-outlined">close</span>
+                          </div>
+                        </a>
+                        <a href="javascript:void(0);" class="text-body">
+                          <div class="thread d-flex justify-content-between rounded-0">
+                            <div>
+                              <img class="avatar-45 rounded align-top" src="../assets/images/store/02.jpg" alt="" loading="lazy">
+                              <div class="ms-3 d-inline-block">
+                                <h6 class="font-size-14">Harsh Reality book</h6>
+                                <span class="font-size-14 fw-semibold">$25.00</span>
+                              </div>
+                            </div>
+                            <span class="material-symbols-outlined">close</span>
+                          </div>
+                        </a>
+                        <a href="javascript:void(0);" class="text-body">
+                          <div class="thread d-flex justify-content-between rounded-0">
+                            <div>
+                              <img class="avatar-45 rounded align-top" src="../assets/images/store/01.jpg" alt="" loading="lazy">
+                              <div class="ms-3 d-inline-block">
+                                <h6 class="font-size-14">The Raze night book</h6>
+                                <span class="font-size-14 fw-semibold">$15.00</span>
+                              </div>
+                            </div>
+                            <span class="material-symbols-outlined">close</span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="m-5 mt-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                          <h6 class="font-size-14 fw-bolder">Subtotal:</h6>
+                          <span class="font-size-14 fw-semibold text-primary">$115.00</span>
+                        </div>
+                        <button type="button" class="btn btn-primary fw-500 w-100">View All Products</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item d-lg-none">
+                <div class="iq-search-bar device-search">
+                  <form action="#" class="searchbox open-modal-search ">
+                  <a class="d-lg-none d-flex text-body" href="javascript:void(0);">
+                      <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7.82491" cy="7.82495" r="6.74142" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+                        <path d="M12.5137 12.8638L15.1567 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                </form>
+                <div class="search-modal-custom">
+                  <div class="search-modal-content">
+                    <div class="py-2 px-3">
+                      <div class="d-lg-none w-100">
+                        <form action="#" class="searchbox" data-bs-toggle="modal" data-bs-target="#searchmodal">
+                          <a class="search-link" href="javascript:void(0);">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="7.82491" cy="7.82495" r="6.74142" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                              <path d="M12.5137 12.8638L15.1567 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg>
+                          </a>
+                          <input type="text" class="text search-input form-control bg-primary-subtle" placeholder="Search here...">
+                        </form>
+                      </div>
+                      <div class="d-none d-lg-flex align-items-center justify-content-between w-100">
+                        <h4 class="modal-title" id="exampleModalFullscreenLabel">Recent</h4>
+                        <a class="text-dark" href="javascript:void(0);">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-header-scroll">
+                    <div class="search-modal-body">
+                      <div class="d-flex d-lg-none align-items-center justify-content-between w-100 p-3 pb-0">
+                        <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Recent</h5>
+                        <a href="javascript:void(0);" class="text-dark">Clear All</a>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/page-img/19.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <div>
+                                <a href="javascript:void(0);" class="h6">Paige Turner</a>
+                                <span class="profile-status-online"></span>
+                              </div>
+                                <span class="mb-0">Paige001</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/page-img/18.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <div>
+                                <a href="javascript:void(0);" class="h6">Monty Carlo</a>
+                                <span class="profile-status-online"></span>
+                              </div>
+                                <span>Carlo.m</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/page-img/20.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <div>
+                                <a href="javascript:void(0);" class="h6">Paul Molive</a>
+                                <span class="profile-status-offline"></span>
+                              </div>
+                              <span>Paul.45</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="py-2 px-3">
+                        <h5 class="modal-title" id="exampleModalFullscreenLabel">Suggestion</h5>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/user/06.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <a href="javascript:void(0);" class="h6">Annette Black</a>
+                              <span>Followed by Jerome_bell + 2 more</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/user/08.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <a href="javascript:void(0);" class="h6">Ellyse Perry</a>
+                              <span>Followed by _@rina</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/user/15.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <a href="javascript:void(0);" class="h6">Pete Sariya</a>
+                              <span>Followed by chris_18 + 5 more</span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center search-hover py-2 px-3">
+                        <div class="flex-shrink-0">
+                            <img src="../assets/images/user/13.jpg" class="align-self-center img-fluid avatar-50 rounded-pill" alt="#">
+                        </div>
+                        <div class="d-flex ms-3 w-100 justify-content-between">
+                            <div class="d-flex flex-column">
+                              <a href="javascript:void(0);" class="h6">Aman Verma</a>
+                              <span>Followed by Jerome_bell and _@rina </span>
+                            </div>
+                            <a href="javascript:void(0);" class="material-symbols-outlined text-dark font-size-16">close</a>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="group-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="material-symbols-outlined">group</span>
+                </a>
+                <div class="sub-drop sub-drop-large dropdown-menu " aria-labelledby="group-drop">
+                  <div class="card shadow m-0">
+                    <div class="card-header d-flex justify-content-between px-0 pb-4 mx-5 border-bottom">
+                      <div class="header-title">
+                        <h5 class="fw-semibold">Friend Request</h5>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="item-header-scroll">
+                        <div class="iq-friend-request">
+                          <div class="iq-sub-card-big d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex align-items-center">
+                              <img class="avatar-40 rounded-pill" src="../assets/images/user/01.jpg" alt="" loading="lazy">
+                              <div class="ms-3">
+                                <h6 class="mb-0 ">Jaques Amole</h6>
+                                <p class="mb-0">40 friends</p>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1">
+                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
+                                  add
+                                </span>
+                              </a>
+                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1">
+                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
+                                  close
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="iq-friend-request">
+                          <div class="iq-sub-card-big d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex align-items-center">
+                              <img class="avatar-40 rounded-pill" src="../assets/images/user/02.jpg" alt="" loading="lazy">
+                              <div class="ms-3">
+                                <h6 class="mb-0 ">Lucy Tania</h6>
+                                <p class="mb-0">12 friends</p>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1">
+                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
+                                  add
+                                </span>
+                              </a>
+                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1">
+                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
+                                  close
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="iq-friend-request">
+                          <div class="iq-sub-card-big d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex align-items-center">
+                              <img class="avatar-40 rounded-pill" src="../assets/images/user/03.jpg" alt="" loading="lazy">
+                              <div class=" ms-3">
+                                <h6 class="mb-0 ">Manny Petty</h6>
+                                <p class="mb-0">3 friends</p>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1">
+                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
+                                  add
+                                </span>
+                              </a>
+                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1">
+                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
+                                  close
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="iq-friend-request">
+                          <div class="iq-sub-card-big d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                              <img class="avatar-40 rounded-pill" src="../assets/images/user/04.jpg" alt="" loading="lazy">
+                              <div class="ms-3">
+                                <h6 class="mb-0 ">Marsha Mello</h6>
+                                <p class="mb-0">15 friends</p>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1">
+                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
+                                  add
+                                </span>
+                              </a>
+                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1">
+                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
+                                  close
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
+                      <div class="text-center">
+                        <button type="button" class="btn btn-primary fw-500 mt-4">View More Request</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-symbols-outlined">mail</i>
+                  <span class="mobile-text d-none ms-3">Message</span>
+                </a>
+                <div class="sub-drop dropdown-menu header-notification" aria-labelledby="mail-drop">
+                  <div class="card shadow m-0">
+                    <div class="card-header d-flex justify-content-between px-0 pb-4 mx-5 border-bottom">
+                      <div class="header-title">
+                        <h5 class="fw-semibold">All Message</h5>
+                      </div>
+                    </div>
+                    <div class="card-body p-0">
+                      <div class="item-header-scroll">
+                        <a href="javascript:void(0);">
+                          <div class="thread d-flex align-items-center justify-content-between rounded-0">
+                            <div>
+                              <img class="avatar-40 rounded-pill align-top" src="../assets/images/user/01.jpg" alt="" loading="lazy">
+                              <div class="ms-3 d-inline-block">
+                                <h6>Bni Emma Watson</h6>
+                                <small class="fw-500 text-body">Hello how are you?</small>
+                              </div>
+                            </div>
+                            <small class="text-body">1 hr. ago</small>
+                          </div>
+                        </a>
+                        <a href="javascript:void(0);">
+                          <div class="thread d-flex align-items-center justify-content-between rounded-0">
+                            <div>
+                              <img class="avatar-40 rounded-pill align-top" src="../assets/images/user/02.jpg" alt="" loading="lazy">
+                              <div class="ms-3 d-inline-block">
+                                <h6>John Travolta</h6>
+                                <small class="fw-500 text-body">Yes, same here. Bye.</small>
+                              </div>
+                            </div>
+                            <small class="text-body">4 hr. ago</small>
+                          </div>
+                        </a>
+                        <a href="javascript:void(0);">
+                          <div class="thread d-flex align-items-center justify-content-between rounded-0">
+                            <div>
+                              <img class="avatar-40 rounded-pill align-top" src="../assets/images/user/03.jpg" alt="" loading="lazy">
+                              <div class="ms-3 d-inline-block">
+                                <h6>Maya Didas</h6>
+                                <small class="fw-500 text-body">that’s great, see you soon</small>
+                              </div>
+                            </div>
+                            <small class="text-body">9 hr. ago</small>
+                          </div>
+                        </a>
+                        <a href="javascript:void(0);">
+                          <div class="thread d-flex align-items-center justify-content-between rounded-0">
+                            <div>
+                              <img class="avatar-40 rounded-pill align-top" src="../assets/images/user/07.jpg" alt="" loading="lazy">
+                              <div class="ms-3 d-inline-block">
+                                <h6>Paige Turner</h6>
+                                <small class="fw-500 text-body">Yes, let’s go.</small>
+                              </div>
+                            </div>
+                            <small class="text-body">1 yr. ago</small>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="m-5 mt-4">
+                        <button type="button" class="btn btn-primary fw-500 w-100">View All Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="javascript:void(0);" class="search-toggle dropdown-toggle d-flex align-items-center" id="notification-drop" data-bs-toggle="dropdown">
+                  <span class="material-symbols-outlined position-relative">notifications
+                    <span class="bg-primary text-white notification-badge"></span>
+                  </span>
+                </a>
+                <div class="sub-drop dropdown-menu header-notification" aria-labelledby="notification-drop">
+                  <div class="card m-0 shadow">
+                    <div class="card-header d-flex justify-content-between px-0 pb-4 mx-5 border-bottom">
+                      <div class="header-title">
+                        <h5 class="fw-semibold">Notifications</h5>
+                      </div>
+                      <h6 class="material-symbols-outlined">settings</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="item-header-scroll">
+                        <a href="javascript:void(0);">
+                          <div class="d-flex gap-3 mb-4">
+                            <img class="avatar-32 rounded-pill" src="../assets/images/user/01.jpg" alt="">
+                            <div>
+                              <h6 class="font-size-14">Pete Sariya <span class="text-body fw-normal">voted for</span> combination of colors from your brand palette </h6>
+                              <small class="text-body fw-500">1 month ago</small>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="javascript:void(0);">
+                          <div class="d-flex gap-3 mb-4">
+                            <img class="avatar-32 rounded-pill" src="../assets/images/user/02.jpg" alt="" loading="lazy">
+                            <div>
+                              <h6 class="font-size-14">Dima Davydov <span class="text-body fw-normal">replied to your</span>
+                                <span class="text-primary fw-semibold">comment</span>
+                              </h6>
+                              <small class="text-body fw-500">1 month ago</small>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="javascript:void(0);">
+                          <div class="d-flex gap-3 mb-4">
+                            <img class="avatar-32 rounded-pill" src="../assets/images/user/03.jpg" alt="" loading="lazy">
+                            <div>
+                              <h6 class="font-size-14">Esther Howard <span class="text-body fw-normal">reacted comment in to your </span>
+                                <span class="text-primary fw-semibold">post</span>.
+                              </h6>
+                              <small class="text-body fw-500">19 min ago</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>  
+                      <button type="button" class="btn btn-primary fw-500 w-100">View All Notifications</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item d-none d-lg-none">
+                <a href="../app/chat.html" class="dropdown-toggle d-flex align-items-center" id="mail-drop-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-symbols-outlined">mail</i>
+                  <span class="mobile-text  ms-3">Message</span>
+                </a>
+              </li>
+              <li class="nav-item dropdown user-dropdown">
+                <a href="javascript:void(0);" class="d-flex align-items-center dropdown-toggle" id="drop-down-arrow" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="../assets/images/user/1.jpg" class="img-fluid rounded-circle avatar-48 border border-2 me-3" alt="user" loading="lazy">
+                </a>
+                <div class="sub-drop dropdown-menu caption-menu" aria-labelledby="drop-down-arrow">
+                  <div class="card shadow-none m-0">
+                    <div class="card-header ">
+                      <div class="header-title">
+                        <h5 class="mb-0 ">Hello Bni Cyst</h5>
+                      </div>
+                    </div>
+                    <div class="card-body p-0 ">
+                      <div class="d-flex align-items-center iq-sub-card border-0">
+                        <span class="material-symbols-outlined"> line_style </span>
+                        <div class="ms-3">
+                          <a href="../app/profile.html" class="mb-0 h6"> My Profile </a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center iq-sub-card border-0">
+                        <span class="material-symbols-outlined"> edit_note </span>
+                        <div class="ms-3">
+                          <a href="../app/profile-edit.html" class="mb-0 h6"> Edit Profile </a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center iq-sub-card border-0">
+                        <span class="material-symbols-outlined"> manage_accounts </span>
+                        <div class="ms-3">
+                          <a href="../app/account-setting.html" class="mb-0 h6"> Account settings </a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center iq-sub-card border-0">
+                        <span class="material-symbols-outlined"> lock </span>
+                        <div class="ms-3">
+                          <a href="../app/privacy-setting.html" class="mb-0 h6"> Privacy Settings </a>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center iq-sub-card">
+                        <span class="material-symbols-outlined"> login </span>
+                        <div class="ms-3">
+                          <a href="../dashboard/sign-in.html" class="mb-0 h6"> Sign out </a>
+                        </div>
+                      </div>
+                      <div class=" iq-sub-card">
+                        <h5>Chat Settings</h5>
+                      </div>
+                      <div class="d-flex align-items-center iq-sub-card border-0">
+                        <i class="material-symbols-outlined text-success md-14"> circle </i>
+                        <div class="ms-3"> Online </div>
+                      </div>
+                      <div class="d-flex align-items-center iq-sub-card border-0">
+                        <i class="material-symbols-outlined text-warning md-14"> circle </i>
+                        <div class="ms-3"> Away </div>
+                      </div>
+                      <div class="d-flex align-items-center iq-sub-card border-0">
+                        <i class="material-symbols-outlined text-danger md-14"> circle </i>
+                        <div class="ms-3"> Disconnected </div>
+                      </div>
+                      <div class="d-flex align-items-center iq-sub-card border-0">
+                        <i class="material-symbols-outlined text-gray md-14"> circle </i>
+                        <div class="ms-3"> Invisible </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>       <div class="right-sidebar-mini right-sidebar">
+          <div class="right-sidebar-panel p-0">
+             <div class="card shadow-none m-0 h-100">
+                <div class="card-body px-0 pt-0">
+                   <div class="p-4">
+                      <h6 class="fw-semibold m-0">Chats</h6>
+                      <div class="mt-4 iq-search-bar device-search ">
+                         <form action="#" class="searchbox position-relative">
+                            <a class="search-link" href="javascript:void(0);">
+                               <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <circle cx="7.82491" cy="7.82495" r="6.74142" stroke="currentColor" stroke-width="1.5"
+                                     stroke-linecap="round" stroke-linejoin="round" />
+                                  <path d="M12.5137 12.8638L15.1567 15.5" stroke="currentColor" stroke-width="1.5"
+                                     stroke-linecap="round" stroke-linejoin="round" />
+                               </svg>
+                            </a>
+                            <input type="text" class="text search-input form-control bg-light-subtle"
+                               placeholder="Search for people or groups...">
+                         </form>
+                      </div>
+                   </div>
+                   <div class="tabs">
+                      <div class="nav nav-tabs right-sidebar-tabs" id="right-sidebar-tabs" role="tablist">
+                         <button class="nav-link active" id="nav-friends-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-friends" type="button" role="tab" aria-controls="nav-friends"
+                            aria-selected="true">
+                            <span class="text-body icon">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                  <path
+                                     d="M9 9C8.175 9 7.46875 8.70625 6.88125 8.11875C6.29375 7.53125 6 6.825 6 6C6 5.175 6.29375 4.46875 6.88125 3.88125C7.46875 3.29375 8.175 3 9 3C9.825 3 10.5313 3.29375 11.1188 3.88125C11.7063 4.46875 12 5.175 12 6C12 6.825 11.7063 7.53125 11.1188 8.11875C10.5313 8.70625 9.825 9 9 9ZM3 15V12.9C3 12.475 3.10938 12.0844 3.32812 11.7281C3.54688 11.3719 3.8375 11.1 4.2 10.9125C4.975 10.525 5.7625 10.2344 6.5625 10.0406C7.3625 9.84688 8.175 9.75 9 9.75C9.825 9.75 10.6375 9.84688 11.4375 10.0406C12.2375 10.2344 13.025 10.525 13.8 10.9125C14.1625 11.1 14.4531 11.3719 14.6719 11.7281C14.8906 12.0844 15 12.475 15 12.9V15H3ZM4.5 13.5H13.5V12.9C13.5 12.7625 13.4656 12.6375 13.3969 12.525C13.3281 12.4125 13.2375 12.325 13.125 12.2625C12.45 11.925 11.7688 11.6719 11.0813 11.5031C10.3938 11.3344 9.7 11.25 9 11.25C8.3 11.25 7.60625 11.3344 6.91875 11.5031C6.23125 11.6719 5.55 11.925 4.875 12.2625C4.7625 12.325 4.67188 12.4125 4.60313 12.525C4.53438 12.6375 4.5 12.7625 4.5 12.9V13.5ZM9 7.5C9.4125 7.5 9.76563 7.35313 10.0594 7.05938C10.3531 6.76563 10.5 6.4125 10.5 6C10.5 5.5875 10.3531 5.23438 10.0594 4.94063C9.76563 4.64688 9.4125 4.5 9 4.5C8.5875 4.5 8.23438 4.64688 7.94063 4.94063C7.64688 5.23438 7.5 5.5875 7.5 6C7.5 6.4125 7.64688 6.76563 7.94063 7.05938C8.23438 7.35313 8.5875 7.5 9 7.5Z"
+                                     fill="currentColor" />
+                               </svg>
+                            </span>
+                            <span class="h6 font-size-14">Friends</span>
+                         </button>
+                         <button class="nav-link" id="nav-groups-tab" data-bs-toggle="tab" data-bs-target="#nav-groups"
+                            type="button" role="tab" aria-controls="nav-groups" aria-selected="false">
+                            <span class="text-body icon">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                  <path
+                                     d="M0.75 15V12.9C0.75 12.475 0.859375 12.0844 1.07812 11.7281C1.29688 11.3719 1.5875 11.1 1.95 10.9125C2.725 10.525 3.5125 10.2344 4.3125 10.0406C5.1125 9.84688 5.925 9.75 6.75 9.75C7.575 9.75 8.3875 9.84688 9.1875 10.0406C9.9875 10.2344 10.775 10.525 11.55 10.9125C11.9125 11.1 12.2031 11.3719 12.4219 11.7281C12.6406 12.0844 12.75 12.475 12.75 12.9V15H0.75ZM14.25 15V12.75C14.25 12.2 14.0969 11.6719 13.7906 11.1656C13.4844 10.6594 13.05 10.225 12.4875 9.8625C13.125 9.9375 13.725 10.0656 14.2875 10.2469C14.85 10.4281 15.375 10.65 15.8625 10.9125C16.3125 11.1625 16.6563 11.4406 16.8938 11.7469C17.1313 12.0531 17.25 12.3875 17.25 12.75V15H14.25ZM6.75 9C5.925 9 5.21875 8.70625 4.63125 8.11875C4.04375 7.53125 3.75 6.825 3.75 6C3.75 5.175 4.04375 4.46875 4.63125 3.88125C5.21875 3.29375 5.925 3 6.75 3C7.575 3 8.28125 3.29375 8.86875 3.88125C9.45625 4.46875 9.75 5.175 9.75 6C9.75 6.825 9.45625 7.53125 8.86875 8.11875C8.28125 8.70625 7.575 9 6.75 9ZM14.25 6C14.25 6.825 13.9563 7.53125 13.3688 8.11875C12.7812 8.70625 12.075 9 11.25 9C11.1125 9 10.9375 8.98438 10.725 8.95312C10.5125 8.92188 10.3375 8.8875 10.2 8.85C10.5375 8.45 10.7969 8.00625 10.9781 7.51875C11.1594 7.03125 11.25 6.525 11.25 6C11.25 5.475 11.1594 4.96875 10.9781 4.48125C10.7969 3.99375 10.5375 3.55 10.2 3.15C10.375 3.0875 10.55 3.04688 10.725 3.02813C10.9 3.00938 11.075 3 11.25 3C12.075 3 12.7812 3.29375 13.3688 3.88125C13.9563 4.46875 14.25 5.175 14.25 6ZM2.25 13.5H11.25V12.9C11.25 12.7625 11.2156 12.6375 11.1469 12.525C11.0781 12.4125 10.9875 12.325 10.875 12.2625C10.2 11.925 9.51875 11.6719 8.83125 11.5031C8.14375 11.3344 7.45 11.25 6.75 11.25C6.05 11.25 5.35625 11.3344 4.66875 11.5031C3.98125 11.6719 3.3 11.925 2.625 12.2625C2.5125 12.325 2.42188 12.4125 2.35313 12.525C2.28438 12.6375 2.25 12.7625 2.25 12.9V13.5ZM6.75 7.5C7.1625 7.5 7.51563 7.35313 7.80938 7.05938C8.10313 6.76563 8.25 6.4125 8.25 6C8.25 5.5875 8.10313 5.23438 7.80938 4.94063C7.51563 4.64688 7.1625 4.5 6.75 4.5C6.3375 4.5 5.98438 4.64688 5.69063 4.94063C5.39688 5.23438 5.25 5.5875 5.25 6C5.25 6.4125 5.39688 6.76563 5.69063 7.05938C5.98438 7.35313 6.3375 7.5 6.75 7.5Z"
+                                     fill="currentColor" />
+                               </svg>
+                            </span>
+                            <span class="h6 font-size-14">Groups</span>
+                         </button>
+                      </div>
+                   </div>
+                   <div class="media-height" data-scrollbar="init">
+                      <div class="tab-content right-sidebar-tabs-content" id="right-sidebar-tabs">
+                         <div class="tab-pane fade show active" id="nav-friends" role="tabpanel"
+                            aria-labelledby="nav-friends-tab" tabindex="0">
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/01.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Anna Sthesia</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">2min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/02.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Paul Molive</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">1Day</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/03.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Anna Mull</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">01 Nov</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/04.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Paige Turner</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">33min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/11.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Bob Frapples</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">33min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/12.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Barb Ackue</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">33min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/13.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Greta Life</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">33min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/14.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Ira Membrit</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">33min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/15.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Pete Sariya</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">33min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="iq-profile-avatar status-online">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/16.jpg"
+                                        alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Monty Carlo</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">33min</span>
+                            </div>
+                         </div>
+                         <div class="tab-pane fade" id="nav-groups" role="tabpanel" aria-labelledby="nav-groups-tab"
+                            tabindex="0">
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="flex-shrink-0">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/12.jpg" alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">Thunder Bolts</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">2min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="flex-shrink-0">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/04.jpg" alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">The Developer</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">2min</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between chat-tabs-content border-bottom" data-target="chat-popup-modal">
+                               <div class="d-flex align-items-center gap-3">
+                                  <div class="flex-shrink-0">
+                                     <img class="rounded-circle avatar-50" src="../assets/images/user/11.jpg" alt="user-img" loading="lazy">
+                                  </div>
+                                  <div>
+                                     <h6 class="font-size-14 mb-0 fw-semibold">The Guardians</h6>
+                                     <p class="mb-0 font-size-12 fw-medium">hey! how are you?</p>
+                                  </div>
+                               </div>
+                               <span class="font-size-12 fw-medium">2min</span>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="conversion-button">
+                      <a href="../app/chat.html" class="btn btn-primary w-100 py-3 d-block rounded-0">View All Conversion</a>
+                   </div>
+                   <div class="right-sidebar-toggle bg-primary text-white mt-3 d-flex">
+                      <span class="material-symbols-outlined">chat</span>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       
+       <div class="chat-popup-modal" id="chat-popup-modal">
+          <div class="bg-primary p-3 d-flex align-items-center justify-content-between gap-3">
+             <div class="d-flex align-items-center gap-3">
+                <div class="image flex-shrink-0">
+                   <img src="../assets/images/user/13.jpg" alt="img" class="img-fluid avatar-45 rounded-circle object-cover">
+                </div>
+                <div class="content">
+                   <h6 class="mb-0 font-size-14 text-white">Bob Frapples</h6>
+                   <span class="d-inline-block lh-1 font-size-12 text-white"><span class="d-inline-block rounded-circle bg-success border-5 p-1 align-baseline me-1"></span>Avaliable</span>
+                </div>
+             </div>
+             <div class="chat-popup-modal-close lh-1" type="button">
+                <span class="material-symbols-outlined font-size-18 text-white">
+                   close
+                </span>
+             </div>
+          </div>
+          <div class="chat-popup-body p-3 border-bottom">
+             <ul class="list-inline p-0 mb-0 chat">
+                <li>
+                   <div class="text-center">
+                      <span class="time font-size-12 text-primary">Today</span>
+                   </div>
+                </li>
+                <li class="mt-2">
+                   <div class="text-start">
+                      <div class="d-inline-block py-2 px-3 bg-gray-subtle chat-popup-message font-size-12 fw-medium">
+                         Hello, How Are you Doing Today?
+                      </div>
+                      <span class="mt-1 d-block time font-size-10 fst-italic">03:41 PM</span>
+                   </div>
+                </li>
+                <li class="mt-3">
+                   <div class="text-end">
+                      <div class="d-inline-block py-2 px-3 bg-primary-subtle chat-popup-message message-right font-size-12 fw-medium">
+                         Hello, I'm Doing Well.
+                      </div>
+                      <span class="mt-1 d-block time font-size-10 fst-italic">03:42 PM</span>
+                   </div>
+                </li>
+             </ul>
+          </div>
+          <div class="chat-popup-footer p-3">
+             <div class="chat-popup-form">
+                <form>
+                   <input type="text" class="form-control" placeholder="Start Typing...">
+                   <button type="submit" class="chat-popup-form-button btn btn-primary">
+                      <span class="material-symbols-outlined font-size-18 icon-rtl">
+                         send
+                      </span>
+                   </button>
+                </form>
+             </div>
+          </div>
+       </div>       <div id="content-page" class="content-page">
+<div class="container">
+   <div class="row">
+      <div class="col-lg-8 row m-0 p-0">
+         <div class="col-sm-12">
+            <div id="post-modal-data" class="card card-block card-stretch card-height">
+               <div class="card-header d-flex justify-content-between">
+                  <div class="header-title">
+                     <h4 class="card-title">Create Post</h4>
+                  </div>
+               </div>
+               <div class="card-body">
+                  <div class="d-flex align-items-center">
+                     <div class="user-img">
+                        <img src="../assets/images/user/1.jpg" alt="userimg" class="avatar-60 rounded-circle" loading="lazy">
+                     </div>
+                     <form class="post-text ms-3 w-100 "  data-bs-toggle="modal" data-bs-target="#post-modal" action="javascript:void();">
+                        <input type="text" class="form-control rounded" placeholder="Write something here..." style="border:none;">
+                     </form>
+                  </div>
+                  <hr>
+                  <ul class=" post-opt-block d-flex list-inline m-0 p-0 flex-wrap">
+                     <li class="me-3 mb-md-0 mb-2">
+                        <a href="#" class="btn btn-primary-subtle">
+                        <img src="../assets/images/small/07.png" alt="icon" class="img-fluid me-2" loading="lazy"> Photo/Video
+                        </a>
+                     </li>
+                     <li class="me-3 mb-md-0 mb-2">
+                        <a href="#" class="btn btn-primary-subtle">
+                        <img src="../assets/images/small/08.png" alt="icon" class="img-fluid me-2" loading="lazy"> Tag Friend
+                        </a>
+                     </li>
+                     <li class="me-3">
+                        <a href="#" class="btn btn-primary-subtle">
+                        <img src="../assets/images/small/09.png" alt="icon" class="img-fluid me-2" loading="lazy"> Feeling/Activity
+                        </a>
+                     </li>
+                     <li>
+                        <div class="btn btn-primary-subtle">
+                           <div class="card-header-toolbar d-flex align-items-center">
+                              <div class="dropdown">
+                                 <div class="dropdown-toggle lh-1" id="post-option"   data-bs-toggle="dropdown">
+                                    <span class="material-symbols-outlined">
+                                    more_horiz
+                                    </span>
+                                 </div>
+                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="post-option" style="">
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#post-modal">Check in</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#post-modal">Live Video</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#post-modal">GIF</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#post-modal">Watch Party</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#post-modal">Play with Friend</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="modal fade" id="post-modal" tabindex="-1"  aria-labelledby="post-modalLabel" aria-hidden="true" >
+                  <div class="modal-dialog   modal-fullscreen-sm-down">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <h5 class="modal-title" id="post-modalLabel">Create Post</h5>
+                           <a href="javascript:void(0);" class="lh-1" data-bs-dismiss="modal">
+                              <span class="material-symbols-outlined">close</span>
+                           </a>
+                        </div>
+                        <div class="modal-body">
+                           <div class="d-flex align-items-center">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/1.jpg" alt="userimg" class="avatar-60 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <form class="post-text ms-3 w-100" action="javascript:void();">
+                                 <input type="text" class="form-control rounded" placeholder="Write something here..." style="border:none;">
+                              </form>
+                           </div>
+                           <hr>
+                           <ul class="d-flex flex-wrap align-items-center list-inline m-0 p-0">
+                              <li class="col-md-6 mb-3">
+                                 <div class="bg-primary-subtle rounded p-2 pointer me-3"><a href="#"></a><img src="../assets/images/small/07.png" alt="icon" class="img-fluid" loading="lazy"> Photo/Video</div>
+                              </li>
+                              <li class="col-md-6 mb-3">
+                                 <div class="bg-primary-subtle rounded p-2 pointer me-3"><a href="#"></a><img src="../assets/images/small/08.png" alt="icon" class="img-fluid" loading="lazy"> Tag Friend</div>
+                              </li>
+                              <li class="col-md-6 mb-3">
+                                 <div class="bg-primary-subtle rounded p-2 pointer me-3"><a href="#"></a><img src="../assets/images/small/09.png" alt="icon" class="img-fluid" loading="lazy"> Feeling/Activity</div>
+                              </li>
+                              <li class="col-md-6 mb-3">
+                                 <div class="bg-primary-subtle rounded p-2 pointer me-3"><a href="#"></a><img src="../assets/images/small/10.png" alt="icon" class="img-fluid" loading="lazy"> Check in</div>
+                              </li>
+                              <li class="col-md-6 mb-3">
+                                 <div class="bg-primary-subtle rounded p-2 pointer me-3"><a href="#"></a><img src="../assets/images/small/11.png" alt="icon" class="img-fluid" loading="lazy"> Live Video</div>
+                              </li>
+                              <li class="col-md-6 mb-3">
+                                 <div class="bg-primary-subtle rounded p-2 pointer me-3"><a href="#"></a><img src="../assets/images/small/12.png" alt="icon" class="img-fluid" loading="lazy"> GIF</div>
+                              </li>
+                              <li class="col-md-6 mb-3">
+                                 <div class="bg-primary-subtle rounded p-2 pointer me-3"><a href="#"></a><img src="../assets/images/small/13.png" alt="icon" class="img-fluid" loading="lazy"> Watch Party</div>
+                              </li>
+                              <li class="col-md-6 mb-3">
+                                 <div class="bg-primary-subtle rounded p-2 pointer me-3"><a href="#"></a><img src="../assets/images/small/14.png" alt="icon" class="img-fluid" loading="lazy"> Play with Friends</div>
+                              </li>
+                           </ul>
+                           <hr>
+                           <div class="other-option">
+                              <div class="d-flex align-items-center justify-content-between">
+                                 <div class="d-flex align-items-center">
+                                    <div class="user-img me-3">
+                                       <img src="../assets/images/user/1.jpg" alt="userimg" class="avatar-60 rounded-circle img-fluid">
+                                    </div>
+                                    <h6>Your Story</h6>
+                                 </div>
+                                 <div class="card-post-toolbar">
+                                    <div class="dropdown">
+                                       <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                       <span class="btn btn-primary">Friend</span>
+                                       </span>
+                                       <div class="dropdown-menu m-0 p-0">
+                                          <a class="dropdown-item p-3" href="#">
+                                             <div class="d-flex align-items-top">
+                                                <span class="material-symbols-outlined">
+                                                   save
+                                                </span>
+                                                <div class="data ms-2">
+                                                   <h6>Public</h6>
+                                                   <p class="mb-0">Anyone on or off Facebook</p>
+                                                </div>
+                                             </div>
+                                          </a>
+                                          <a class="dropdown-item p-3" href="#">
+                                             <div class="d-flex align-items-top">
+                                                <span class="material-symbols-outlined">
+                                                   cancel
+                                                </span>
+                                                <div class="data ms-2">
+                                                   <h6>Friends</h6>
+                                                   <p class="mb-0">Your Friend on facebook</p>
+                                                </div>
+                                             </div>
+                                          </a>
+                                          <a class="dropdown-item p-3" href="#">
+                                             <div class="d-flex align-items-top">
+                                               <span class="material-symbols-outlined">
+                                                person_remove
+                                                </span>
+                                                <div class="data ms-2">
+                                                   <h6>Friends except</h6>
+                                                   <p class="mb-0">Don't show to some friends</p>
+                                                </div>
+                                             </div>
+                                          </a>
+                                          <a class="dropdown-item p-3" href="#">
+                                             <div class="d-flex align-items-top">
+                                                <span class="material-symbols-outlined">
+                                                   notifications
+                                                </span>
+                                                <div class="data ms-2">
+                                                   <h6>Only Me</h6>
+                                                   <p class="mb-0">Only me</p>
+                                                </div>
+                                             </div>
+                                          </a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="card card-block card-stretch card-height">
+               <div class="card-body">
+                  <div class="user-post-data">
+                     <div class="d-flex justify-content-between">
+                        <div class="me-3">
+                           <img class="rounded-circle img-fluid" src="../assets/images/user/01.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="w-100">
+                           <div class="d-flex justify-content-between">
+                              <div class="">
+                                 <h5 class="mb-0 d-inline-block">Anna Sthesia</h5>
+                                 <span class="mb-0 d-inline-block">Add New Post</span>
+                                 <p class="mb-0 text-primary">Just Now</p>
+                              </div>
+                              <div class="card-post-toolbar">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle material-symbols-outlined" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                       more_horiz
+                                    </span>
+                                    <div class="dropdown-menu m-0 p-0">
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             save
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Save Post</h6>
+                                                <p class="mb-0">Add this to your saved items</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             cancel
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Hide Post</h6>
+                                                <p class="mb-0">See fewer posts like this.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                                   person_remove
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Unfollow User</h6>
+                                                <p class="mb-0">Stop seeing posts but stay friends.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             notifications
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Notifications</h6>
+                                                <p class="mb-0">Turn on notifications for this post</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mt-3">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus</p>
+                  </div>
+                  <div class="user-post">
+                     <div class=" d-grid grid-rows-2 grid-flow-col gap-3">
+                        <div class="row-span-2 row-span-md-1">
+                           <img src="../assets/images/page-img/p2.jpg" alt="post-image" class="img-fluid rounded w-100" loading="lazy">
+                        </div>
+                        <div class="row-span-1">
+                           <img src="../assets/images/page-img/p1.jpg" alt="post-image" class="img-fluid rounded w-100" loading="lazy">
+                        </div>
+                        <div class="row-span-1 ">
+                           <img src="../assets/images/page-img/p3.jpg" alt="post-image" class="img-fluid rounded w-100" loading="lazy">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="comment-area mt-3">
+                     <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="like-block position-relative d-flex align-items-center">
+                           <div class="d-flex align-items-center">
+                              <div class="like-data">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    <img src="../assets/images/icon/01.png" class="img-fluid" alt="">
+                                    </span>
+                                    <div class="dropdown-menu py-2">
+                                       <a class="ms-2 me-2" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Like"><img src="../assets/images/icon/01.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Love"><img src="../assets/images/icon/02.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Happy"><img src="../assets/images/icon/03.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="HaHa"><img src="../assets/images/icon/04.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Think"><img src="../assets/images/icon/05.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Sade" ><img src="../assets/images/icon/06.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Lovely"><img src="../assets/images/icon/07.png" class="img-fluid" alt="" loading="lazy"></a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="total-like-block ms-2 me-3">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    140 Likes
+                                    </span>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="#">Max Emum</a>
+                                       <a class="dropdown-item" href="#">Bill Yerds</a>
+                                       <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                       <a class="dropdown-item" href="#">Tara Misu</a>
+                                       <a class="dropdown-item" href="#">Midge Itz</a>
+                                       <a class="dropdown-item" href="#">Sal Vidge</a>
+                                       <a class="dropdown-item" href="#">Other</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="total-comment-block">
+                              <div class="dropdown">
+                                 <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                 20 Comment
+                                 </span>
+                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Max Emum</a>
+                                    <a class="dropdown-item" href="#">Bill Yerds</a>
+                                    <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                    <a class="dropdown-item" href="#">Tara Misu</a>
+                                    <a class="dropdown-item" href="#">Midge Itz</a>
+                                    <a class="dropdown-item" href="#">Sal Vidge</a>
+                                    <a class="dropdown-item" href="#">Other</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="share-block d-flex align-items-center feather-icon mt-2 mt-md-0">
+                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#share-btn" aria-controls="share-btn" class="d-flex align-items-center">
+                           <span class="material-symbols-outlined md-18">
+                           share
+                           </span>
+                           <span class="ms-1">99 Share</span></a>                           
+                        </div>
+                     </div>
+                     <hr>
+                     <ul class="post-comments list-inline p-0 m-0">
+                        <li class="mb-2">
+                           <div class="d-flex">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/02.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Monty Carlo</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="d-flex">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/03.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Paul Molive</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                     <form class="comment-text d-flex align-items-center mt-3" action="javascript:void(0);">
+                        <input type="text" class="form-control rounded" placeholder="Enter Your Comment">
+                        <div class="comment-attagement d-flex">
+                           <a href="javascript:void(0);" class="material-symbols-outlined me-3 link">
+                           insert_link
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           sentiment_satisfied
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           photo_camera
+                           </a>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="card card-block card-stretch card-height">
+               <div class="card-body">
+                  <div class="user-post-data">
+                     <div class="d-flex justify-content-between">
+                        <div class="me-3">
+                           <img class="rounded-circle img-fluid" src="../assets/images/user/03.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="w-100">
+                           <div class="d-flex  justify-content-between">
+                              <div class="">
+                                 <h5 class="mb-0 d-inline-block">Barb Ackue</h5>
+                                 <span class="mb-0 d-inline-block">Added New Image in a Post</span>
+                                 <p class="mb-0 text-primary">1 hour ago</p>
+                              </div>
+                              <div class="card-post-toolbar">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle material-symbols-outlined" id="postdata-5" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                          more_horiz
+                                    </span>
+                                    <div class="dropdown-menu m-0 p-0" aria-labelledby="postdata-5">
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             save
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Save Post</h6>
+                                                <p class="mb-0">Add this to your saved items</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             cancel
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Hide Post</h6>
+                                                <p class="mb-0">See fewer posts like this.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             person_remove
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Unfollow User</h6>
+                                                <p class="mb-0">Stop seeing posts but stay friends.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             notifications
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Notifications</h6>
+                                                <p class="mb-0">Turn on notifications for this post</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mt-3">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus</p>
+                  </div>
+                  <div class="user-post">
+                     <a href="javascript:void(0);"><img src="../assets/images/page-img/p4.jpg" alt="post-image" class="img-fluid rounded w-100" loading="lazy"></a>
+                  </div>
+                  <div class="comment-area mt-3">
+                     <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="like-block position-relative d-flex align-items-center">
+                           <div class="d-flex align-items-center">
+                              <div class="like-data">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    <img src="../assets/images/icon/01.png" class="img-fluid" alt="">
+                                    </span>
+                                    <div class="dropdown-menu py-2">
+                                       <a class="ms-2 me-2" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Like"><img src="../assets/images/icon/01.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Love"><img src="../assets/images/icon/02.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Happy"><img src="../assets/images/icon/03.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="HaHa"><img src="../assets/images/icon/04.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Think"><img src="../assets/images/icon/05.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Sade" ><img src="../assets/images/icon/06.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Lovely"><img src="../assets/images/icon/07.png" class="img-fluid" alt="" loading="lazy"></a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="total-like-block ms-2 me-3">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    140 Likes
+                                    </span>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="#">Max Emum</a>
+                                       <a class="dropdown-item" href="#">Bill Yerds</a>
+                                       <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                       <a class="dropdown-item" href="#">Tara Misu</a>
+                                       <a class="dropdown-item" href="#">Midge Itz</a>
+                                       <a class="dropdown-item" href="#">Sal Vidge</a>
+                                       <a class="dropdown-item" href="#">Other</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="total-comment-block">
+                              <div class="dropdown">
+                                 <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                 20 Comment
+                                 </span>
+                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Max Emum</a>
+                                    <a class="dropdown-item" href="#">Bill Yerds</a>
+                                    <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                    <a class="dropdown-item" href="#">Tara Misu</a>
+                                    <a class="dropdown-item" href="#">Midge Itz</a>
+                                    <a class="dropdown-item" href="#">Sal Vidge</a>
+                                    <a class="dropdown-item" href="#">Other</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="share-block d-flex align-items-center feather-icon mt-2 mt-md-0">
+                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#share-btn" aria-controls="share-btn" class="d-flex align-items-center"><span class="material-symbols-outlined md-18">
+                           share
+                           </span>
+                           <span class="ms-1">99 Share</span></a>
+                        </div>
+                     </div>
+                     <hr>
+                     <ul class="post-comments list-inline p-0 m-0">
+                        <li class="mb-2">
+                           <div class="d-flex ">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/02.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Monty Carlo</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="d-flex ">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/03.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Paul Molive</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                     <form class="comment-text d-flex align-items-center mt-3" action="javascript:void(0);">
+                        <input type="text" class="form-control rounded" placeholder="Enter Your Comment">
+                        <div class="comment-attagement d-flex align-items-center">
+                           <a href="javascript:void(0);" class="material-symbols-outlined me-3 link">
+                           insert_link
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           sentiment_satisfied
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           photo_camera
+                           </a>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="card card-block card-stretch card-height">
+               <div class="card-body">
+                  <div class="user-post-data">
+                     <div class="d-flex justify-content-between">
+                        <div class="me-3">
+                           <img class="rounded-circle img-fluid" src="../assets/images/user/04.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="w-100">
+                           <div class=" d-flex  justify-content-between">
+                              <div class="">
+                                 <h5 class="mb-0 d-inline-block">Ira Membrit</h5>
+                                 <p class="mb-0 d-inline-block">Update her Status</p>
+                                 <p class="mb-0 text-primary">6 hour ago</p>
+                              </div>
+                              <div class="card-post-toolbar">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle material-symbols-outlined" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                          more_horiz
+                                    </span>
+                                    <div class="dropdown-menu m-0 p-0">
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             save
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Save Post</h6>
+                                                <p class="mb-0">Add this to your saved items</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             cancel
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Hide Post</h6>
+                                                <p class="mb-0">See fewer posts like this.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             person_remove
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Unfollow User</h6>
+                                                <p class="mb-0">Stop seeing posts but stay friends.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             notifications
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Notifications</h6>
+                                                <p class="mb-0">Turn on notifications for this post</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mt-3">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus</p>
+                  </div>
+                  <div class="comment-area mt-3">
+                     <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="like-block position-relative d-flex align-items-center">
+                           <div class="d-flex align-items-center">
+                              <div class="like-data">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    <img src="../assets/images/icon/01.png" class="img-fluid" alt="">
+                                    </span>
+                                    <div class="dropdown-menu py-2">
+                                       <a class="ms-2 me-2" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Like"><img src="../assets/images/icon/01.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Love"><img src="../assets/images/icon/02.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Happy"><img src="../assets/images/icon/03.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="HaHa"><img src="../assets/images/icon/04.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Think"><img src="../assets/images/icon/05.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Sade" ><img src="../assets/images/icon/06.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Lovely"><img src="../assets/images/icon/07.png" class="img-fluid" alt="" loading="lazy"></a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="total-like-block ms-2 me-3">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    140 Likes
+                                    </span>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="#">Max Emum</a>
+                                       <a class="dropdown-item" href="#">Bill Yerds</a>
+                                       <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                       <a class="dropdown-item" href="#">Tara Misu</a>
+                                       <a class="dropdown-item" href="#">Midge Itz</a>
+                                       <a class="dropdown-item" href="#">Sal Vidge</a>
+                                       <a class="dropdown-item" href="#">Other</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="total-comment-block">
+                              <div class="dropdown">
+                                 <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                 20 Comment
+                                 </span>
+                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Max Emum</a>
+                                    <a class="dropdown-item" href="#">Bill Yerds</a>
+                                    <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                    <a class="dropdown-item" href="#">Tara Misu</a>
+                                    <a class="dropdown-item" href="#">Midge Itz</a>
+                                    <a class="dropdown-item" href="#">Sal Vidge</a>
+                                    <a class="dropdown-item" href="#">Other</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="share-block d-flex align-items-center feather-icon mt-2 mt-md-0">
+                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#share-btn" aria-controls="share-btn" class="d-flex align-items-center">
+                           <span class="material-symbols-outlined md-18">
+                           share
+                           </span>
+                           <span class="ms-1">99 Share</span></a>
+                        </div>
+                     </div>
+                     <hr>
+                     <ul class="post-comments list-inline p-0 m-0">
+                        <li class="mb-2">
+                           <div class="d-flex">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/02.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Monty Carlo</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="d-flex ">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/03.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Paul Molive</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                     <form class="comment-text d-flex align-items-center mt-3" action="javascript:void(0);">
+                        <input type="text" class="form-control rounded" placeholder="Enter Your Comment">
+                        <div class="comment-attagement d-flex">
+                           <a href="javascript:void(0);" class="material-symbols-outlined me-3 link">
+                           insert_link
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           sentiment_satisfied
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           photo_camera
+                           </a>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="card card-block card-stretch card-height">
+               <div class="card-body">
+                  <div class="post-item">
+                     <div class="d-flex justify-content-between">
+                        <div class="me-3">
+                           <img class="rounded-circle img-fluid avatar-60" src="../assets/images/user/1.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="w-100">
+                           <div class="d-flex justify-content-between">
+                              <div class="">
+                                 <h5 class="mb-0 d-inline-block">Bni Cyst</h5>
+                                 <p class="ms-1 mb-0 d-inline-block">Changed Profile Picture</p>
+                                 <p class="mb-0">3 day ago</p>
+                              </div>
+                              <div class="card-post-toolbar">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle material-symbols-outlined" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                       more_horiz
+                                    </span>
+                                    <div class="dropdown-menu m-0 p-0">
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             save
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Save Post</h6>
+                                                <p class="mb-0">Add this to your saved items</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             cancel
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Hide Post</h6>
+                                                <p class="mb-0">See fewer posts like this.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             person_remove
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Unfollow User</h6>
+                                                <p class="mb-0">Stop seeing posts but stay friends.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             notifications
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Notifications</h6>
+                                                <p class="mb-0">Turn on notifications for this post</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="user-post text-center">
+                     <a href="javascript:void(0);"><img src="../assets/images/page-img/p5.jpg" alt="post-image" class="img-fluid rounded w-100 mt-3" loading="lazy"></a>
+                  </div>
+                  <div class="comment-area mt-3">
+                     <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="like-block position-relative d-flex align-items-center">
+                           <div class="d-flex align-items-center">
+                              <div class="like-data">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    <img src="../assets/images/icon/01.png" class="img-fluid" alt="">
+                                    </span>
+                                    <div class="dropdown-menu py-2">
+                                       <a class="ms-2 me-2" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Like"><img src="../assets/images/icon/01.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Love"><img src="../assets/images/icon/02.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Happy"><img src="../assets/images/icon/03.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="HaHa"><img src="../assets/images/icon/04.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Think"><img src="../assets/images/icon/05.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Sade" ><img src="../assets/images/icon/06.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Lovely"><img src="../assets/images/icon/07.png" class="img-fluid" alt="" loading="lazy"></a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="total-like-block ms-2 me-3">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    140 Likes
+                                    </span>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="#">Max Emum</a>
+                                       <a class="dropdown-item" href="#">Bill Yerds</a>
+                                       <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                       <a class="dropdown-item" href="#">Tara Misu</a>
+                                       <a class="dropdown-item" href="#">Midge Itz</a>
+                                       <a class="dropdown-item" href="#">Sal Vidge</a>
+                                       <a class="dropdown-item" href="#">Other</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="total-comment-block">
+                              <div class="dropdown">
+                                 <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                 20 Comment
+                                 </span>
+                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Max Emum</a>
+                                    <a class="dropdown-item" href="#">Bill Yerds</a>
+                                    <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                    <a class="dropdown-item" href="#">Tara Misu</a>
+                                    <a class="dropdown-item" href="#">Midge Itz</a>
+                                    <a class="dropdown-item" href="#">Sal Vidge</a>
+                                    <a class="dropdown-item" href="#">Other</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="share-block d-flex align-items-center feather-icon mt-2 mt-md-0">
+                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#share-btn" aria-controls="share-btn" class="d-flex align-items-center"><span class="material-symbols-outlined md-18">
+                           share
+                           </span>
+                           <span class="ms-1">99 Share</span></a>
+                        </div>
+                     </div>
+                     <hr>
+                     <ul class="post-comments list-inline p-0 m-0">
+                        <li class="mb-2">
+                           <div class="d-flex">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/02.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Monty Carlo</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="d-flex">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/03.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Paul Molive</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                     <form class="comment-text d-flex align-items-center mt-3" action="javascript:void(0);">
+                        <input type="text" class="form-control rounded" placeholder="Enter Your Comment">
+                        <div class="comment-attagement d-flex align-items-center">
+                           <a href="javascript:void(0);" class="material-symbols-outlined me-3 link">
+                           insert_link
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           sentiment_satisfied
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           photo_camera
+                           </a>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="card card-block card-stretch card-height">
+               <div class="card-body">
+                  <div class="user-post-data">
+                     <div class="d-flex justify-content-between">
+                        <div class="me-3">
+                           <img class="rounded-circle img-fluid" src="../assets/images/user/02.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="w-100">
+                           <div class="d-flex justify-content-between">
+                              <div class="">
+                                 <h5 class="mb-0 d-inline-block">Paige Turner</h5>
+                                 <p class="mb-0 d-inline-block">Added New Video in his Timeline</p>
+                                 <p class="mb-0 text-primary">1 day ago</p>
+                              </div>
+                              <div class="card-post-toolbar">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle material-symbols-outlined" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                          more_horiz
+                                    </span>
+                                    <div class="dropdown-menu m-0 p-0">
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             save
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Save Post</h6>
+                                                <p class="mb-0">Add this to your saved items</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             cancel
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Hide Post</h6>
+                                                <p class="mb-0">See fewer posts like this.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             person_remove
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Unfollow User</h6>
+                                                <p class="mb-0">Stop seeing posts but stay friends.</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a class="dropdown-item p-3" href="#">
+                                          <div class="d-flex align-items-top">
+                                             <span class="material-symbols-outlined">
+                                             notifications
+                                             </span>
+                                             <div class="data ms-2">
+                                                <h6>Notifications</h6>
+                                                <p class="mb-0">Turn on notifications for this post</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mt-3">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus</p>
+                  </div>
+                  <div class="user-post">
+                     <div class="ratio ratio-16x9">
+                        <iframe  src="https://www.youtube.com/embed/j_GsIanLxZk?rel=0" allowfullscreen></iframe>
+                     </div>
+                  </div>
+                  <div class="comment-area mt-3">
+                     <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="like-block position-relative d-flex align-items-center">
+                           <div class="d-flex align-items-center">
+                              <div class="like-data">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    <img src="../assets/images/icon/01.png" class="img-fluid" alt="">
+                                    </span>
+                                    <div class="dropdown-menu py-2">
+                                       <a class="ms-2 me-2" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Like"><img src="../assets/images/icon/01.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Love"><img src="../assets/images/icon/02.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Happy"><img src="../assets/images/icon/03.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="HaHa"><img src="../assets/images/icon/04.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Think"><img src="../assets/images/icon/05.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Sade" ><img src="../assets/images/icon/06.png" class="img-fluid" alt="" loading="lazy"></a>
+                                       <a class="me-2" href="#"  data-bs-toggle="tooltip" data-bs-placement="top" title="Lovely"><img src="../assets/images/icon/07.png" class="img-fluid" alt="" loading="lazy"></a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="total-like-block ms-2 me-3">
+                                 <div class="dropdown">
+                                    <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                    140 Likes
+                                    </span>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="#">Max Emum</a>
+                                       <a class="dropdown-item" href="#">Bill Yerds</a>
+                                       <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                       <a class="dropdown-item" href="#">Tara Misu</a>
+                                       <a class="dropdown-item" href="#">Midge Itz</a>
+                                       <a class="dropdown-item" href="#">Sal Vidge</a>
+                                       <a class="dropdown-item" href="#">Other</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="total-comment-block">
+                              <div class="dropdown">
+                                 <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                 20 Comment
+                                 </span>
+                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Max Emum</a>
+                                    <a class="dropdown-item" href="#">Bill Yerds</a>
+                                    <a class="dropdown-item" href="#">Hap E. Birthday</a>
+                                    <a class="dropdown-item" href="#">Tara Misu</a>
+                                    <a class="dropdown-item" href="#">Midge Itz</a>
+                                    <a class="dropdown-item" href="#">Sal Vidge</a>
+                                    <a class="dropdown-item" href="#">Other</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="share-block d-flex align-items-center feather-icon mt-2 mt-md-0">
+                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#share-btn" aria-controls="share-btn" class="d-flex align-items-center"><span class="material-symbols-outlined md-18">
+                           share
+                           </span>
+                           <span class="ms-1">99 Share</span></a>
+                        </div>
+                     </div>
+                     <hr>
+                     <ul class="post-comments list-inline p-0 m-0">
+                        <li class="mb-2">
+                           <div class="d-flex flex-wrap">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/02.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Monty Carlo</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="d-flex flex-wrap">
+                              <div class="user-img">
+                                 <img src="../assets/images/user/03.jpg" alt="userimg" class="avatar-35 rounded-circle img-fluid" loading="lazy">
+                              </div>
+                              <div class="comment-data-block ms-3">
+                                 <h6>Paul Molive</h6>
+                                 <p class="mb-0">Lorem ipsum dolor sit amet</p>
+                                 <div class="d-flex flex-wrap align-items-center comment-activity">
+                                    <a href="javascript:void(0);">like</a>
+                                    <a href="javascript:void(0);">reply</a>
+                                    <a href="javascript:void(0);">translate</a>
+                                    <span> 5 min </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                     <form class="comment-text d-flex align-items-center mt-3" action="javascript:void(0);">
+                        <input type="text" class="form-control rounded" placeholder="Enter Your Comment">
+                        <div class="comment-attagement d-flex align-items-center">
+                           <a href="javascript:void(0);" class="material-symbols-outlined me-3 link">
+                           insert_link
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           sentiment_satisfied
+                           </a>
+                           <a href="javascript:void(0);" class="material-symbols-outlined  me-3">
+                           photo_camera
+                           </a>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-4">
+         <div class="card">
+            <div class="card-header d-flex justify-content-between">
+               <div class="header-title">
+                  <h4 class="card-title">Stories</h4>
+               </div>
+            </div>
+            <div class="card-body">
+               <ul class="media-story list-inline m-0 p-0">
+                  <li class="d-flex mb-3 align-items-center">
+                     <i class="material-symbols-outlined">
+                     add
+                     </i>
+                     <div class="stories-data ms-3">
+                        <h5>Creat Your Story</h5>
+                        <p class="mb-0">time to story</p>
+                     </div>
+                  </li>
+                  <li class="d-flex mb-3 align-items-center active">
+                     <img src="../assets/images/page-img/s2.jpg" alt="story-img" class="rounded-circle img-fluid">
+                     <div class="stories-data ms-3">
+                        <h5>Anna Mull</h5>
+                        <p class="mb-0">1 hour ago</p>
+                     </div>
+                  </li>
+                  <li class="d-flex mb-3 align-items-center">
+                     <img src="../assets/images/page-img/s3.jpg" alt="story-img" class="rounded-circle img-fluid">
+                     <div class="stories-data ms-3">
+                        <h5>Ira Membrit</h5>
+                        <p class="mb-0">4 hour ago</p>
+                     </div>
+                  </li>
+                  <li class="d-flex align-items-center">
+                     <img src="../assets/images/page-img/s1.jpg" alt="story-img" class="rounded-circle img-fluid">
+                     <div class="stories-data ms-3">
+                        <h5>Bob Frapples</h5>
+                        <p class="mb-0">9 hour ago</p>
+                     </div>
+                  </li>
+               </ul>
+               <a href="#" class="btn btn-primary d-block mt-3">See All</a>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header d-flex justify-content-between">
+               <div class="header-title">
+                  <h4 class="card-title">Events</h4>
+               </div>
+               <div class="card-header-toolbar d-flex align-items-center">
+                  <div class="dropdown">
+                     <div class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+                        <span class="material-symbols-outlined">
+                        more_horiz
+                        </span>
+                     </div>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" style="">
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        visibility
+                        </span>View</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        delete
+                        </span>Delete</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        edit
+                        </span>Edit</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        print
+                        </span>Print</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        file_download
+                        </span>Download</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="card-body">
+               <ul class="media-story list-inline m-0 p-0">
+                  <li class="d-flex mb-4 align-items-center ">
+                     <img src="../assets/images/page-img/s4.jpg" alt="story-img" class="rounded-circle img-fluid" loading="lazy">
+                     <div class="stories-data ms-3">
+                        <h5>Web Workshop</h5>
+                        <p class="mb-0">1 hour ago</p>
+                     </div>
+                  </li>
+                  <li class="d-flex align-items-center">
+                     <img src="../assets/images/page-img/s5.jpg" alt="story-img" class="rounded-circle img-fluid" loading="lazy">
+                     <div class="stories-data ms-3">
+                        <h5>Fun Events and Festivals</h5>
+                        <p class="mb-0">1 hour ago</p>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header d-flex justify-content-between">
+               <div class="header-title">
+                  <h4 class="card-title">Upcoming Birthday</h4>
+               </div>
+            </div>
+            <div class="card-body">
+               <ul class="media-story list-inline m-0 p-0">
+                  <li class="d-flex mb-4 align-items-center">
+                     <img src="../assets/images/user/01.jpg" alt="story-img" class="rounded-circle img-fluid" loading="lazy">
+                     <div class="stories-data ms-3">
+                        <h5>Anna Sthesia</h5>
+                        <p class="mb-0">Today</p>
+                     </div>
+                  </li>
+                  <li class="d-flex align-items-center">
+                     <img src="../assets/images/user/02.jpg" alt="story-img" class="rounded-circle img-fluid" loading="lazy">
+                     <div class="stories-data ms-3">
+                        <h5>Paul Molive</h5>
+                        <p class="mb-0">Tomorrow</p>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header d-flex justify-content-between">
+               <div class="header-title">
+                  <h4 class="card-title">Suggested Pages</h4>
+               </div>
+               <div class="card-header-toolbar d-flex align-items-center">
+                  <div class="dropdown">
+                     <div class="dropdown-toggle" id="dropdownMenuButton01" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+                        <span class="material-symbols-outlined">
+                        more_horiz
+                        </span>
+                     </div>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton01">
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        visibility
+                        </span>View</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        delete
+                        </span>Delete</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        edit
+                        </span>Edit</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        print
+                        </span>Print</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#"><span class="material-symbols-outlined me-2 md-18">
+                        file_download
+                        </span>Download</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="card-body">
+               <ul class="suggested-page-story m-0 p-0 list-inline">
+                  <li class="mb-3">
+                     <div class="d-flex align-items-center mb-3">
+                        <img src="../assets/images/page-img/42.png" alt="story-img" class="rounded-circle img-fluid avatar-50" loading="lazy">
+                        <div class="stories-data ms-3">
+                           <h5>Iqonic Studio</h5>
+                           <p class="mb-0">Lorem Ipsum</p>
+                        </div>
+                     </div>
+                     <img src="../assets/images/small/img-1.jpg" class="img-fluid rounded" alt="Responsive image" loading="lazy">
+                     <div class="mt-3"><a href="#" class=" d-flex align-items-center justify-content-center"><span class="material-symbols-outlined me-2 md-18">
+                        thumb_up
+                        </span> Like Page</a>
+                     </div>
+                  </li>
+                  <li class="">
+                     <div class="d-flex align-items-center mb-3">
+                        <img src="../assets/images/page-img/42.png" alt="story-img" class="rounded-circle img-fluid avatar-50" loading="lazy">
+                        <div class="stories-data ms-3">
+                           <h5>Cakes & Bakes </h5>
+                           <p class="mb-0">Lorem Ipsum</p>
+                        </div>
+                     </div>
+                     <img src="../assets/images/small/img-2.jpg" class="img-fluid rounded" alt="Responsive image">
+                     <div class="mt-3"><a href="#" class=" d-flex align-items-center justify-content-center"><span class="material-symbols-outlined me-2 md-18">
+                        thumb_up
+                        </span> Like Page</a>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12 text-center">
+         <img src="../assets/images/page-img/page-load-loader.gif" alt="loader" style="height: 100px;" loading="lazy">
+      </div>
+   </div>
+</div>
+      </div>
+    </div>
+    <!-- Wrapper End-->
+    
+    <footer class="iq-footer">
+       <div class="container-fluid">
+          <div class="row">
+             <div class="col-lg-6">
+                <ul class="list-inline mb-0">
+                   <li class="list-inline-item"><a href="../dashboard/privacy-policy.html">Privacy Policy</a></li>
+                   <li class="list-inline-item ms-3 ms-md-5"><a href="../dashboard/terms-of-service.html">Terms of Use</a></li>
+                </ul>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-end">
+                Copyright <script>document.write(new Date().getFullYear())</script>
+                <a href="../index.html" class="mx-1">SocialV</a>
+                All Rights Reserved.
+           </div>
+           </div>
+          </div>
+       </footer>    <!-- Backend Bundle JavaScript -->
+    <script src="../assets/js/libs.min.js"></script>
+    <!-- Lodash Utility -->
+    <script src="../assets/vendor/lodash/lodash.min.js"></script>
+    <!-- Utilities Functions -->
+    <script src="../assets/js/setting/utility.js"></script>
+    <!-- Settings Script -->
+    <script src="../assets/js/setting/setting.js"></script>
+    <!-- Settings Init Script -->
+    <script src="../assets/js/setting/setting-init.js" defer></script>
+    <!-- slider JavaScript -->
+    <script src="../assets/js/slider.js"></script>
+    <!-- masonry JavaScript --> 
+    <script src="../assets/js/masonry.pkgd.min.js"></script>
+    <!-- SweetAlert JavaScript -->
+    <script src="../assets/js/enchanter.js"></script>
+    <!-- Sweet-alert Script -->
+    <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js" async></script>
+    <script src="../assets/js/sweet-alert.js" defer></script>
+    <!-- Chart Custom JavaScript -->
+    <!-- app JavaScript -->
+    <script src="../assets/js/charts/weather-chart.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <!-- Flatpickr Script -->
+    <script src="../assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
+    <!-- fslightbox Script -->
+    <script src="../assets/js/fslightbox.js" defer></script> 
+    <!-- vanilla Script -->
+    <script src="../assets/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+    <!--lottie Script -->
+    <script src="../assets/js/lottie.js"></script>
+    <!--select2 Script -->
+    <script src="../assets/js/select2.js"></script>
+    <!--ecommerce Script -->
+    <script src="../assets/js/ecommerce.js"></script>
+    
+
+    <!-- offcanvas start -->
+ 
+    <!-- Share Modal -->
+    <div class="modal fade sharemodal" id="share-btn" tabindex="-1" aria-labelledby="share-btnLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+             <div class="modal-header">
+                <h3 class="modal-title" id="share-btnLabel">Share</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body mt-4">
+                <div class="row gy-3">
+                   <div class="col-lg-2 col-sm-4 col-6 text-center">
+                      <a href="javascript:void(0);" class="d-inline-block">
+                         <span class="image">
+                            <img src="../assets/images/icon/embed.png" class="img-fluid">
+                         </span>
+                         <h6 class="mt-2 mb-0 font-size-14 fw-semibold">Embed</h6>
+                      </a>
+                   </div>
+                   <div class="col-lg-2 col-sm-4 col-6 text-center">
+                      <a href="javascript:void(0);" class="d-inline-block">
+                         <span class="image">
+                            <img src="../assets/images/icon/whatsapp.png" class="img-fluid">
+                         </span>
+                         <h6 class="mt-2 mb-0 font-size-14 fw-semibold">WhatsApp</h6>
+                      </a>
+                   </div>
+                   <div class="col-lg-2 col-sm-4 col-6 text-center">
+                      <a href="javascript:void(0);" class="d-inline-block">
+                         <span class="image">
+                            <img src="../assets/images/icon/facebook.png" class="img-fluid">
+                         </span>
+                         <h6 class="mt-2 mb-0 font-size-14 fw-semibold">Facebook</h6>
+                      </a>
+                   </div>
+                   <div class="col-lg-2 col-sm-4 col-6 text-center">
+                      <a href="javascript:void(0);" class="d-inline-block">
+                         <span class="image">
+                            <img src="../assets/images/icon/twitter.png" class="img-fluid">
+                         </span>
+                         <h6 class="mt-2 mb-0 font-size-14 fw-semibold">Twitter</h6>
+                      </a>
+                   </div>
+                   <div class="col-lg-2 col-sm-4 col-6 text-center">
+                      <a href="javascript:void(0);" class="d-inline-block">
+                         <span class="image">
+                            <img src="../assets/images/icon/pinterest.png" class="img-fluid">
+                         </span>
+                         <h6 class="mt-2 mb-0 font-size-14 fw-semibold">Pinterest</h6>
+                      </a>
+                   </div>
+                   <div class="col-lg-2 col-sm-4 col-6 text-center">
+                      <a href="javascript:void(0);" class="d-inline-block">
+                         <span class="image">
+                            <img src="../assets/images/icon/linkedin.png" class="img-fluid">
+                         </span>
+                         <h6 class="mt-2 mb-0 font-size-14 fw-semibold">LinkedIn</h6>
+                      </a>
+                   </div>
+                </div>
+                <div class="mt-4">
+                   <div class="share-form">
+                      <input type="text" class="form-control" value="https://iqonic.design/">
+                      <button class="btn btn-link share-link-btn h6 m-0 fw-semibold">Copy</button>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    
+    
+    
+    
+    
+    <div class="offcanvas offcanvas-bottom share-offcanvas" tabindex="-1" id="share-btn2" aria-labelledby="share-BottomLabel">
+       <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="share-BottomLabel">Share</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+       </div>
+       <div class="offcanvas-body small">
+          <div class="d-flex flex-wrap align-items-center">
+             <div class="text-center me-3 mb-3">
+                <img src="../assets/images/icon/08.png" class="img-fluid rounded mb-2" alt="" loading="lazy">
+                <h6>Facebook</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../assets/images/icon/09.png" class="img-fluid rounded mb-2" alt="" loading="lazy">
+                <h6>Twitter</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../assets/images/icon/10.png" class="img-fluid rounded mb-2" alt="" loading="lazy">
+                <h6>Instagram</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../assets/images/icon/11.png" class="img-fluid rounded mb-2" alt="" loading="lazy">
+                <h6>Google Plus</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../assets/images/icon/13.png" class="img-fluid rounded mb-2" alt="" loading="lazy">
+                <h6>In</h6>
+             </div>
+             <div class="text-center me-3 mb-3">
+                <img src="../assets/images/icon/12.png" class="img-fluid rounded mb-2" alt="" loading="lazy">
+                <h6>YouTube</h6>
+             </div>
+          </div>
+       </div>
+    </div>
+
+  </body>
+</html>        
