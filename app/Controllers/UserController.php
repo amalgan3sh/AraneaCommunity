@@ -21,7 +21,16 @@ class UserController extends Controller
         $data['suggestedUsers'] = $userModel->findAll(3);
 
         $postModel = new PostModel();
-        $data['posts'] = $postModel->orderBy('created_at', 'DESC')->findAll();
+        // Fetch posts with the username
+        $db = \Config\Database::connect();
+        $builder = $db->table('post');
+        $builder->select('post.*, users.username');
+        $builder->join('users', 'users.id = post.user_id');
+        $builder->orderBy('post.created_at', 'DESC');
+        $query = $builder->get();
+        
+        $data['posts'] = $query->getResultArray();
+        
         // Load the user dashboard view
         return view('user/user_dashboard',$data);
     }

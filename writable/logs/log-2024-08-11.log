@@ -1,0 +1,23 @@
+INFO - 2024-08-11 05:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-11 05:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-11 05:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-11 06:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-11 06:04:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-11 06:04:29 --> ErrorException: Undefined variable $posts
+[Method: GET, Route: user_dashboard]
+in APPPATH/Views/user/user_dashboard.php on line 2126.
+ 1 APPPATH/Views/user/user_dashboard.php(2126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $posts', '/Users/amalganesh/Documents/SpyderHub/AraneaCommunity/app/Views/user/user_dashboard.php', 2126)
+ 2 SYSTEMPATH/View/View.php(234): include('/Users/amalganesh/Documents/SpyderHub/AraneaCommunity/app/Views/user/user_dashboard.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 5 APPPATH/Controllers/UserController.php(26): view('user/user_dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/amalganesh/Documents/SpyderHub/AraneaCommunity/public/index.php')
+INFO - 2024-08-11 06:04:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-11 06:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-11 06:14:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
