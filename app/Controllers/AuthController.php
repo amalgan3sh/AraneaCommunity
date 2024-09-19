@@ -93,4 +93,15 @@ class AuthController extends Controller
             return redirect()->back()->withInput();
         }
     }
+
+    public function Logout(){
+        // Get the session instance
+        $session = session();
+
+        // Remove all session data
+        $session->destroy();
+
+        // Redirect to the login or home page
+        return redirect()->to('/');
+    }
 }
