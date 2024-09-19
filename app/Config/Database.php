@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => '@Ma!.Jul2022',
+        'password'     =>  '' ,//'@Ma!.Jul2022',
         'database'     => 'aranea_community',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
