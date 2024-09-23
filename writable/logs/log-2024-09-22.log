@@ -1,0 +1,211 @@
+INFO - 2024-09-22 06:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-22 06:04:26 --> TypeError: log(): Argument #1 ($num) must be of type float, string given
+[Method: POST, Route: Profile_update]
+in APPPATH\Controllers\AccountController.php on line 61.
+ 1 APPPATH\Controllers\AccountController.php(61): log('error', 'dss')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile_update()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+ERROR - 2024-09-22 06:05:58 --> dss
+INFO - 2024-09-22 06:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-22 06:06:59 --> dss
+ERROR - 2024-09-22 06:06:59 --> <!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>The first_name field is required.</li>
+					<li>The last_name field is required.</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+
+INFO - 2024-09-22 06:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-22 06:08:37 --> dss
+ERROR - 2024-09-22 06:08:37 --> <!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>The fname field is required.</li>
+					<li>The lname field is required.</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+
+INFO - 2024-09-22 06:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-22 06:09:26 --> CodeIgniter\Log\Exceptions\LogException: "Error" is an invalid log level.
+[Method: POST, Route: Profile_update]
+in SYSTEMPATH\Log\Logger.php on line 262.
+ 1 SYSTEMPATH\Log\Logger.php(262): CodeIgniter\Log\Exceptions\LogException::forInvalidLogLevel('Error')
+ 2 SYSTEMPATH\Common.php(783): CodeIgniter\Log\Logger->log('Error', 'sdasdasd', [])
+ 3 APPPATH\Controllers\AccountController.php(70): log_message('Error', 'sdasdasd')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile_update()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-09-22 06:09:44 --> CodeIgniter\Log\Exceptions\LogException: "rrror" is an invalid log level.
+[Method: POST, Route: Profile_update]
+in SYSTEMPATH\Log\Logger.php on line 262.
+ 1 SYSTEMPATH\Log\Logger.php(262): CodeIgniter\Log\Exceptions\LogException::forInvalidLogLevel('rrror')
+ 2 SYSTEMPATH\Common.php(783): CodeIgniter\Log\Logger->log('rrror', 'sdasdasd', [])
+ 3 APPPATH\Controllers\AccountController.php(70): log_message('rrror', 'sdasdasd')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile_update()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+ERROR - 2024-09-22 06:09:56 --> sdasdasd
+INFO - 2024-09-22 06:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-22 06:10:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\user\user_dashboard.php on line 341.
+ 1 APPPATH\Views\user\user_dashboard.php(341): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\user\\user_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 5 APPPATH\Controllers\UserController.php(35): view('user/user_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+WARNING - 2024-09-22 06:10:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\user\user_dashboard.php on line 341.
+ 1 APPPATH\Views\user\user_dashboard.php(341): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\user\\user_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 5 APPPATH\Controllers\UserController.php(35): view('user/user_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+WARNING - 2024-09-22 06:10:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\user\user_dashboard.php on line 341.
+ 1 APPPATH\Views\user\user_dashboard.php(341): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\user\\user_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 5 APPPATH\Controllers\UserController.php(35): view('user/user_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+WARNING - 2024-09-22 06:10:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\user\user_dashboard.php on line 341.
+ 1 APPPATH\Views\user\user_dashboard.php(341): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\user\\user_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 5 APPPATH\Controllers\UserController.php(35): view('user/user_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+WARNING - 2024-09-22 06:10:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\user\user_dashboard.php on line 341.
+ 1 APPPATH\Views\user\user_dashboard.php(341): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\user\\user_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 5 APPPATH\Controllers\UserController.php(35): view('user/user_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-22 06:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-22 06:11:26 --> sdasdasd
+INFO - 2024-09-22 06:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-22 06:12:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-22 06:12:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\account\profile.php on line 587.
+ 1 APPPATH\Views\account\profile.php(587): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('account/profile', [], true)
+ 5 APPPATH\Controllers\AccountController.php(27): view('account/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+WARNING - 2024-09-22 06:12:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\account\profile.php on line 587.
+ 1 APPPATH\Views\account\profile.php(587): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('account/profile', [], true)
+ 5 APPPATH\Controllers\AccountController.php(27): view('account/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+WARNING - 2024-09-22 06:12:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\account\profile.php on line 587.
+ 1 APPPATH\Views\account\profile.php(587): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('account/profile', [], true)
+ 5 APPPATH\Controllers\AccountController.php(27): view('account/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+WARNING - 2024-09-22 06:12:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\account\profile.php on line 587.
+ 1 APPPATH\Views\account\profile.php(587): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('account/profile', [], true)
+ 5 APPPATH\Controllers\AccountController.php(27): view('account/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+WARNING - 2024-09-22 06:12:13 --> [DEPRECATED] pathinfo(): Passing null to parameter #1 ($path) of type string is deprecated in APPPATH\Views\account\profile.php on line 587.
+ 1 APPPATH\Views\account\profile.php(587): pathinfo(null, 4)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('account/profile', [], true)
+ 5 APPPATH\Controllers\AccountController.php(27): view('account/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-22 06:12:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -29,6 +29,52 @@ class AccountController extends Controller
 
     }
 
+    public function Profile_edit(){
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to('/');
+        }
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $builder->select('users.*');
+        $builder->where('id',   $session->get('id'));
+        $query = $builder->get();
+        
+        $data['users'] = $query->getResultArray();
+        return view('account/profile_edit',$data);
+
+    }
+
+    public function Profile_delete(): void{}
+    public function Profile_update(){
+        helper(['form', 'url']);
+
+        $validation = \Config\Services::validation();
+
+        $input = $this->validate([
+            'fname' => 'required',
+            'lname'  => 'required',
+            'dob'  => 'required',
+
+           
+        ]);
+
+        if (!$input) {
+            log_message('error' , "dss");
+            log_message('error' , $validation->listErrors());
+
+            session()->setFlashdata('error', $validation->listErrors());
+            return redirect()->back()->withInput();
+        }else{
+
+            log_message("error", "sdasdasd" );
+
+            session()->setFlashdata('success', 'Registration successful. Please login.');
+            return redirect()->to('/profile');
+        }
+
+    }
+
     public function login_user()
     {
         $session = session();

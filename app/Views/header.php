@@ -1776,7 +1776,7 @@
                       <div class="d-flex align-items-center iq-sub-card border-0">
                         <span class="material-symbols-outlined"> edit_note </span>
                         <div class="ms-3">
-                          <a href="./app/profile-edit.html" class="mb-0 h6"> Edit Profile </a>
+                          <a href="/profile-edit" class="mb-0 h6"> Edit Profile </a>
                         </div>
                       </div>
                       <div class="d-flex align-items-center iq-sub-card border-0">
