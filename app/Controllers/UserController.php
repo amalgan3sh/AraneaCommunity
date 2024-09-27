@@ -5,6 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\UserModel;
 use App\Models\PostModel;
+use App\Models\FollowersModel;
 
 class UserController extends Controller
 {
@@ -44,5 +45,43 @@ class UserController extends Controller
 
         // Pass the active users to the view
         return view('users/active_users', ['activeUsers' => $activeUsers]);
+    }
+
+    public function follow($followerId, $followedId)
+    {
+        $followersModel = new FollowersModel();
+        
+        if ($followersModel->followUser($followerId, $followedId)) {
+            return json_encode(['message' => 'Successfully followed the user.']);
+        }
+        
+        return json_encode(['message' => 'Failed to follow the user.']);
+    }
+
+    public function unfollow($followerId, $followedId)
+    {
+        $followersModel = new FollowersModel();
+        
+        if ($followersModel->unfollowUser($followerId, $followedId)) {
+            return json_encode(['message' => 'Successfully unfollowed the user.']);
+        }
+        
+        return json_encode(['message' => 'Failed to unfollow the user.']);
+    }
+
+    public function getFollowers($userId)
+    {
+        $followersModel = new FollowersModel();
+        $followers = $followersModel->getFollowers($userId);
+        
+        return json_encode($followers);
+    }
+
+    public function getFollowing($userId)
+    {
+        $followersModel = new FollowersModel();
+        $following = $followersModel->getFollowing($userId);
+        
+        return json_encode($following);
     }
 }

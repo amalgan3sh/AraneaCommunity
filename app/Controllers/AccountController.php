@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\UserProfilesModel;
+
 use CodeIgniter\Controller;
 
 class AccountController extends Controller
@@ -48,6 +50,10 @@ class AccountController extends Controller
     public function Profile_delete(): void{}
     public function Profile_update(){
         helper(['form', 'url']);
+        $session = session();
+        $userId = $session->get('id');
+
+        $UserProfilesModel = new UserProfilesModel();
 
         $validation = \Config\Services::validation();
 
@@ -55,8 +61,6 @@ class AccountController extends Controller
             'fname' => 'required',
             'lname'  => 'required',
             'dob'  => 'required',
-
-           
         ]);
 
         if (!$input) {
@@ -68,9 +72,29 @@ class AccountController extends Controller
         }else{
 
             log_message("error", "sdasdasd" );
+            $updateData = [
+                'dob'   => $this->request->getPost('dob'),
+                
+            ];
+            // Check if the record exists
+            $user = $UserProfilesModel->where('user_id', $userId)->first();
+            if (!$user) {
+                session()->setFlashdata('error', 'User not found.');
+                log_message("error", "User not found.".$userId );
 
-            session()->setFlashdata('success', 'Registration successful. Please login.');
-            return redirect()->to('/profile');
+                return redirect()->back()->withInput();
+            }else{
+                if (// Update the record where user_id matches
+                    $UserProfilesModel->where('user_id', $userId)->set($updateData)->update()) {
+                        log_message("error", "User information updated successfully." );
+                        session()->setFlashdata('success', 'User information updated successfully.');
+                        return redirect()->to('/profile'); // Redirect to the profile page or wherever appropriate
+                    } else {
+                        session()->setFlashdata('error', 'Failed to update user information. Please try again.');
+                        return redirect()->back()->withInput(); // Redirect back with input to correct any issues
+                    }
+            }
+            
         }
 
     }

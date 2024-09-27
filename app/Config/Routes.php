@@ -24,4 +24,8 @@ $routes->get('/users/active_users', 'UserController::active_users');
 
 $routes->post('post/create_post', 'PostController::create_post');
 $routes->get('posts', 'PostController::view_posts');
-
+// follow users 
+$routes->post('follow/(:num)/(:num)', 'UserController::follow/$1/$2');
+$routes->delete('unfollow/(:num)/(:num)', 'UserController::unfollow/$1/$2');
+$routes->get('followers/(:num)', 'UserController::getFollowers/$1');
+$routes->get('following/(:num)', 'UserController::getFollowing/$1');

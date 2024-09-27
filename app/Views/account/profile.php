@@ -398,9 +398,23 @@
                                                    <img src="../assets/images/user/1.jpg" alt="userimg"
                                                       class="avatar-60 rounded-circle img-fluid" loading="lazy">
                                                 </div>
-                                                <form class="post-text ms-3 w-100" action="javascript:void();">
-                                                   <input type="text" class="form-control rounded" placeholder="Write something here..."
-                                                      style="border:none;">
+                                                <form class="post-text ms-3 w-100" method="post" action="<?= base_url('post/create_post') ?>"  enctype="multipart/form-data">
+                                                   <ul class="d-flex flex-wrap align-items-center list-inline m-0 p-0">
+                                                      <li class="col-md-6 mb-3">
+                                                         <div class="bg-primary-subtle rounded p-2 pointer me-3">
+                                                            <a href="javascript:void(0);" class="d-inline-block fw-medium text-body">
+                                                               <span class="material-symbols-outlined align-middle font-size-20 me-1">
+                                                                  add_a_photo
+                                                               </span>
+                                                               Photo/Video
+
+                                                            </a>
+                                                            <input type="file" name="media" accept="image/*,video/*">
+                                                         </div>
+                                                      </li> 
+                                                   </ul>
+                                                   <input type="text" name="content" class="form-control rounded" placeholder="Write something here..." style="border:none;" >
+                                                   <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button>
                                                 </form>
                                              </div>
                                              <hr>
@@ -552,7 +566,7 @@
                                                    </div>
                                                 </div>
                                              </div> -->
-                                             <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button>
+                                             <!-- <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button> -->
                                           </div>
                                        </div>
                                     </div>

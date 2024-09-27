@@ -91,7 +91,7 @@ class Logger extends BaseConfig
                 'error',
                 'info',
                 'notice',
-                'warning',
+               // 'warning',
             ],
 
             /*
