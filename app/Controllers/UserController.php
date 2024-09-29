@@ -6,6 +6,8 @@ use CodeIgniter\Controller;
 use App\Models\UserModel;
 use App\Models\PostModel;
 use App\Models\FollowersModel;
+use App\Models\UserProfilesModel;
+
 
 class UserController extends Controller
 {
@@ -14,7 +16,7 @@ class UserController extends Controller
         $session = session();
         $FollowersModel = new FollowersModel();
         $userModel = new UserModel();
-
+        $UserProfilesModel = new UserProfilesModel();
 
 
         if (!$session->get('logged_in')) {
@@ -50,6 +52,7 @@ class UserController extends Controller
         $query = $builder->get();
         
         $data['posts'] = $query->getResultArray();
+        $data['user'] =                $user = $UserProfilesModel->where('user_id',  $data['userid'])->first();
         
         // Load the user dashboard view
         return view('user/user_dashboard',$data);

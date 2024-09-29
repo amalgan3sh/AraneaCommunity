@@ -58,7 +58,7 @@
                            <div class="form-group row align-items-center">
                               <div class="col-md-12">
                                  <div class="profile-img-edit">
-                                    <img class="profile-pic" src="../assets/images/user/11.png" alt="profile-pic" loading="lazy">
+                                    <img class="profile-pic" src="<?= base_url('uploads/' . $user['profile_picture']) ?>"  style="width:-webkit-fill-available" alt="profile-pic" loading="lazy">
                                     <div class="p-image d-flex align-items-center justify-content-center">
                                        <span class="material-symbols-outlined">edit</span>
                                        <input class="file-upload" type="file" accept="image/*"/>
@@ -96,7 +96,7 @@
                               </div>
                               <div class="form-group col-sm-6">
                                  <label for="dob" class="form-label">Date Of Birth:</label>
-                                 <input  class="form-control" id="dob" name="dob" placeholder="1984-01-24" type="date" required>
+                                 <input  class="form-control" id="dob" name="dob" placeholder="1984-01-24" type="date" value="<?= $user['dob'] ?>" required>
                               </div>
                               <div class="form-group col-sm-6">
                                  <label class="form-label">Marital Status:</label>

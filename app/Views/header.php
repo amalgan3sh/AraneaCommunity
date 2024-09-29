@@ -1757,7 +1757,7 @@
               </li>
               <li class="nav-item dropdown user-dropdown">
                 <a href="javascript:void(0);" class="d-flex align-items-center dropdown-toggle" id="drop-down-arrow" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="./assets/images/user/1.jpg" class="img-fluid rounded-circle avatar-48 border border-2 me-3" alt="user" loading="lazy">
+                  <img src="<?= base_url('uploads/' . $user['profile_picture']) ?>"  style="width:-webkit-fill-available" class="img-fluid rounded-circle avatar-48 border border-2 me-3" alt="user" loading="lazy">
                 </a>
                 <div class="sub-drop dropdown-menu caption-menu" aria-labelledby="drop-down-arrow">
                   <div class="card shadow-none m-0">

@@ -4,8 +4,8 @@
         <div class="position-relative">
         </div>
         <div class="content-inner " id="page_layout">
-<div class="container position-relative p-0">
-   <div class="header-cover-img" style="background-image: url('../assets/images/page-img/profile-bg1.jpg'); background-size: cover; background-repeat: no-repeat;"></div> 
+<div class="container position-relative p-0"  data-bs-toggle="modal" data-bs-target="#cover-picture-modal">
+   <div class="header-cover-img" style="background-image: url(<?= base_url('uploads/' . $user['cover_photo']) ?>); background-size: cover; background-repeat: no-repeat;"></div> 
 </div>
 <div class="container">
    <div class="row">
@@ -52,11 +52,11 @@
                         </div>
                   </div>
                   <div class="col-lg-4 text-center profile-center">
-                     <div class="header-avatar position-relative d-inline-block">
+                     <div class="header-avatar position-relative d-inline-block"  data-bs-toggle="modal" data-bs-target="#profile-picture-modal">
                         <span class="change-profile-image bg-primary rounded-pill">
                            <span class="material-symbols-outlined text-white font-size-16">photo_camera</span>
                         </span>
-                        <img src="../assets/images/user/1.jpg" alt="user" class="avatar-150 border border-4 border-white rounded-3">
+                        <img src="<?= base_url('uploads/' . $user['profile_picture']) ?>" alt="Media" style="width:-webkit-fill-available" class="avatar-150 border border-4 border-white rounded-3">
                         <span class="badge bg-success fw-500 letter-spacing-1 chat-status">online</span>                    
                      </div>
                      <h5 class="d-flex align-items-center justify-content-center gap-1 mb-2">Marvin McKinney <span class="badge  bg-primary rounded-pill material-symbols-outlined font-size-14 p-0">done</span></h5>
@@ -571,6 +571,121 @@
                                        </div>
                                     </div>
                                  </div>
+
+                                 <!-- ============= modal to update profile picture -->
+                                 <div class="modal fade" id="profile-picture-modal" tabindex="-1" aria-labelledby="post-modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-fullscreen-sm-down">
+                                       <div class="modal-content">
+                                          <div class="modal-header">
+                                             <h5 class="modal-title" id="post-modalLabel">Update Profile Picture</h5>
+                                             <a href="javascript:void(0);" class="lh-1" data-bs-dismiss="modal">
+                                                <span class="material-symbols-outlined">close</span>
+                                             </a>
+                                          </div>
+                                          <div class="modal-body">
+                                             <div class="d-flex align-items-center">
+                                                <div class="user-img">
+                                                   <img src="../assets/images/user/1.jpg" alt="userimg"
+                                                      class="avatar-60 rounded-circle img-fluid" loading="lazy">
+                                                </div>
+                                                <form class="post-text ms-3 w-100" method="post" action="<?= base_url('/update_profile_pic') ?>"  enctype="multipart/form-data">
+                                                   <ul class="d-flex flex-wrap align-items-center list-inline m-0 p-0">
+                                                      <li class="col-md-6 mb-3">
+                                                         <div class="bg-primary-subtle rounded p-2 pointer me-3">
+                                                            <a href="javascript:void(0);" class="d-inline-block fw-medium text-body">
+                                                               <span class="material-symbols-outlined align-middle font-size-20 me-1">
+                                                                  add_a_photo
+                                                               </span>
+                                                               Photo/Video
+
+                                                            </a>
+                                                            <input type="file" name="profile_pic" accept="image/*,video/*">
+                                                         </div>
+                                                      </li> 
+                                                   </ul>
+                                                   <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button>
+                                                </form>
+                                             </div>
+                                             <hr>
+                                             <ul class="d-flex flex-wrap align-items-center list-inline m-0 p-0">
+                                                <li class="col-md-6 mb-3">
+                                                   <div class="bg-primary-subtle rounded p-2 pointer me-3">
+                                                      <a href="javascript:void(0);" class="d-inline-block fw-medium text-body">
+                                                         <span class="material-symbols-outlined align-middle font-size-20 me-1">
+                                                            add_a_photo
+                                                         </span>
+                                                         Photo/Video
+                                                      </a>
+                                                   </div>
+                                                </li>
+                                             
+                                             </ul>
+                                             <hr>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- modal to update profile picture end -->
+
+                                 
+                                 <!-- ============= modal to update cover picture -->
+                                 <div class="modal fade" id="cover-picture-modal" tabindex="-1" aria-labelledby="post-modalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-fullscreen-sm-down">
+                                       <div class="modal-content">
+                                          <div class="modal-header">
+                                             <h5 class="modal-title" id="post-modalLabel">Update Cover Picture</h5>
+                                             <a href="javascript:void(0);" class="lh-1" data-bs-dismiss="modal">
+                                                <span class="material-symbols-outlined">close</span>
+                                             </a>
+                                          </div>
+                                          <div class="modal-body">
+                                             <div class="d-flex align-items-center">
+                                                <div class="user-img">
+                                                   <img src="../assets/images/user/1.jpg" alt="userimg"
+                                                      class="avatar-60 rounded-circle img-fluid" loading="lazy">
+                                                </div>
+                                                <form class="post-text ms-3 w-100" method="post" action="<?= base_url('/update_cover_pic') ?>"  enctype="multipart/form-data">
+                                                   <ul class="d-flex flex-wrap align-items-center list-inline m-0 p-0">
+                                                      <li class="col-md-6 mb-3">
+                                                         <div class="bg-primary-subtle rounded p-2 pointer me-3">
+                                                            <a href="javascript:void(0);" class="d-inline-block fw-medium text-body">
+                                                               <span class="material-symbols-outlined align-middle font-size-20 me-1">
+                                                                  add_a_photo
+                                                               </span>
+                                                               Photo/Video
+
+                                                            </a>
+                                                            <input type="file" name="profile_pic" accept="image/*,video/*">
+                                                         </div>
+                                                      </li> 
+                                                   </ul>
+                                                   <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button>
+                                                </form>
+                                             </div>
+                                             <hr>
+                                             <ul class="d-flex flex-wrap align-items-center list-inline m-0 p-0">
+                                                <li class="col-md-6 mb-3">
+                                                   <div class="bg-primary-subtle rounded p-2 pointer me-3">
+                                                      <a href="javascript:void(0);" class="d-inline-block fw-medium text-body">
+                                                         <span class="material-symbols-outlined align-middle font-size-20 me-1">
+                                                            add_a_photo
+                                                         </span>
+                                                         Photo/Video
+                                                      </a>
+                                                   </div>
+                                                </li>
+                                             
+                                             </ul>
+                                             <hr>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- modal to update cover picture end -->
+
+
                               </div>
                            </div>
                            <?php foreach ($posts as $post): ?>

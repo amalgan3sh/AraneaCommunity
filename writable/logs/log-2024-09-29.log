@@ -1,99 +1,132 @@
-ERROR - 2024-09-29 14:04:30 --> bbbb
-INFO - 2024-09-29 14:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 14:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 14:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-09-29 14:22:20 --> mysqli_sql_exception: Unknown column 'users.name' in 'field list' in D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php:312
-Stack trace:
-#0 D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `users`....', 0)
-#1 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`....')
-#2 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`....')
-#3 D:\Majid01\CI4\amal-social\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`....', Array, false)
-#4 D:\Majid01\CI4\amal-social\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
-#5 D:\Majid01\CI4\amal-social\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
-#6 D:\Majid01\CI4\amal-social\app\Controllers\UserController.php(61): CodeIgniter\BaseModel->findAll()
-#7 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
-#8 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
-#9 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#10 D:\Majid01\CI4\amal-social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
-#11 D:\Majid01\CI4\amal-social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#12 D:\Majid01\CI4\amal-social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-#13 D:\Majid01\CI4\amal-social\system\rewrite.php(44): require_once('D:\\Majid01\\CI4\\...')
-#14 {main}
-CRITICAL - 2024-09-29 14:22:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.name' in 'field list'
-[Method: GET, Route: followers-list]
-in SYSTEMPATH\Database\BaseConnection.php on line 688.
- 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
-FROM `followers`
-JOIN `users` ON `followers`.`followedId` = `users`.`id`
-WHERE `followers`.`followerId` = :followers.followerId:', [...], false)
- 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
- 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
- 4 APPPATH\Controllers\UserController.php(61): CodeIgniter\BaseModel->findAll()
- 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
- 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
- 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
-CRITICAL - 2024-09-29 14:22:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.name' in 'field list'
-in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
- 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
-FROM `followers`
-JOIN `users` ON `followers`.`followedId` = `users`.`id`
-WHERE `followers`.`followerId` = \'4\'')
- 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
-FROM `followers`
-JOIN `users` ON `followers`.`followedId` = `users`.`id`
-WHERE `followers`.`followerId` = \'4\'')
- 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
-FROM `followers`
-JOIN `users` ON `followers`.`followedId` = `users`.`id`
-WHERE `followers`.`followerId` = :followers.followerId:', [...], false)
- 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
- 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
- 6 APPPATH\Controllers\UserController.php(61): CodeIgniter\BaseModel->findAll()
- 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
- 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
- 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
-10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
-CRITICAL - 2024-09-29 14:22:20 --> [Caused by] mysqli_sql_exception: Unknown column 'users.name' in 'field list'
-in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
- 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
-FROM `followers`
-JOIN `users` ON `followers`.`followedId` = `users`.`id`
-WHERE `followers`.`followerId` = \'4\'', 0)
- 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
-FROM `followers`
-JOIN `users` ON `followers`.`followedId` = `users`.`id`
-WHERE `followers`.`followerId` = \'4\'')
- 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
-FROM `followers`
-JOIN `users` ON `followers`.`followedId` = `users`.`id`
-WHERE `followers`.`followerId` = \'4\'')
- 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
-FROM `followers`
-JOIN `users` ON `followers`.`followedId` = `users`.`id`
-WHERE `followers`.`followerId` = :followers.followerId:', [...], false)
- 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
- 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
- 7 APPPATH\Controllers\UserController.php(61): CodeIgniter\BaseModel->findAll()
- 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
- 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
-10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
-11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
-INFO - 2024-09-29 14:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 14:32:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 14:39:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 14:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 14:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 15:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 15:02:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 15:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-29 15:10:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 16:11:16 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: update_profile_pic]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Controllers\AccountController.php(183): CodeIgniter\Model->update()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->update_profile_pic()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-29 16:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 16:17:26 --> User information updated successfully.
+INFO - 2024-09-29 16:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 16:21:48 --> ErrorException: Undefined variable $post
+[Method: GET, Route: profile]
+in APPPATH\Views\account\profile.php on line 59.
+ 1 APPPATH\Views\account\profile.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php', 59)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('account/profile', [], true)
+ 5 APPPATH\Controllers\AccountController.php(33): view('account/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-29 16:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 16:30:58 --> ErrorException: Undefined variable $user
+[Method: GET, Route: user_dashboard]
+in APPPATH\Views\header.php on line 1760.
+ 1 APPPATH\Views\header.php(1760): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'D:\\Majid01\\CI4\\amal-social\\app\\Views\\header.php', 1760)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\header.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(487): CodeIgniter\View\View->render('header', null, true)
+ 5 APPPATH\Views\user\user_dashboard.php(1): CodeIgniter\View\View->include('header')
+ 6 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\user\\user_dashboard.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 9 APPPATH\Controllers\UserController.php(55): view('user/user_dashboard', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-29 16:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 16:32:01 --> Error: Class "App\Controllers\UserProfilesModel" not found
+[Method: GET, Route: user_dashboard]
+in APPPATH\Controllers\UserController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-29 16:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 16:33:24 --> ErrorException: Undefined variable $user
+[Method: GET, Route: profile-edit]
+in APPPATH\Views\header.php on line 1760.
+ 1 APPPATH\Views\header.php(1760): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'D:\\Majid01\\CI4\\amal-social\\app\\Views\\header.php', 1760)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\header.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(487): CodeIgniter\View\View->render('header', null, true)
+ 5 APPPATH\Views\account\profile_edit.php(3): CodeIgniter\View\View->include('header')
+ 6 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile_edit.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('account/profile_edit', [], true)
+ 9 APPPATH\Controllers\AccountController.php(54): view('account/profile_edit', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile_edit()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-29 16:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 16:34:38 --> ErrorException: Undefined array key "userid"
+[Method: GET, Route: profile-edit]
+in APPPATH\Controllers\AccountController.php on line 55.
+ 1 APPPATH\Controllers\AccountController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userid"', 'D:\\Majid01\\CI4\\amal-social\\app\\Controllers\\AccountController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile_edit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-29 16:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:36:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:37:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 16:54:34 --> User information updated successfully.
+INFO - 2024-09-29 16:54:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 16:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-29 16:57:15 --> ErrorException: Undefined array key "cover"
+[Method: GET, Route: profile]
+in APPPATH\Views\account\profile.php on line 8.
+ 1 APPPATH\Views\account\profile.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cover"', 'D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php', 8)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid01\\CI4\\amal-social\\app\\Views\\account\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('account/profile', [], true)
+ 5 APPPATH\Controllers\AccountController.php(37): view('account/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountController->Profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-29 16:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 17:01:12 --> User information updated successfully.
+INFO - 2024-09-29 17:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 17:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

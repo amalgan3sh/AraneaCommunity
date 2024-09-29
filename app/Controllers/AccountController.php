@@ -12,7 +12,9 @@ class AccountController extends Controller
     public function Profile(){
         $session = session();
         $userModel = new UserModel();
+        $UserProfilesModel = new UserProfilesModel();
         $currentUserId = $session->get("id");
+
         if (!$session->get('logged_in')) {
             return redirect()->to('/');
         }
@@ -28,6 +30,8 @@ class AccountController extends Controller
         $query = $builder->get();
         
         $data['posts'] = $query->getResultArray();
+        $data['user'] =                $user = $UserProfilesModel->where('user_id', $currentUserId)->first();
+
         
         // Load the user dashboard view
         return view('account/profile',$data);
@@ -37,6 +41,8 @@ class AccountController extends Controller
 
     public function Profile_edit(){
         $session = session();
+        $UserProfilesModel = new UserProfilesModel();
+        $data['userid'] = $session->get('id');
         if (!$session->get('logged_in')) {
             return redirect()->to('/');
         }
@@ -47,6 +53,8 @@ class AccountController extends Controller
         $query = $builder->get();
         
         $data['users'] = $query->getResultArray();
+        $data['user'] =                $user = $UserProfilesModel->where('user_id',  $data['userid'])->first();
+
         return view('account/profile_edit',$data);
 
     }
@@ -145,5 +153,106 @@ class AccountController extends Controller
         }
     }
 
+    public function update_profile_pic(){
+        $session = session();
+        $UserProfilesModel = new UserProfilesModel();
+        $userModel = new UserModel();
+        $userid= $session->get('id');
+
+        $validation = $this->validate([
+            'profile_pic' => [
+                'uploaded[profile_pic]',
+                'mime_in[profile_pic,image/jpg,image/jpeg,image/png,image/PNG]',
+                'max_size[profile_pic,10240]',  // Max 10 MB
+            ]
+        ]);
+        if($validation){
+                // Get the uploaded file
+                $mediaFile = $this->request->getFile('profile_pic');
+                // Initialize $mediaPath as null
+                $mediaPath = null;
+                // Move the file to the uploads directory if it's valid
+                if ($mediaFile->isValid() && !$mediaFile->hasMoved()) {
+                    $mediaFile->move(ROOTPATH  . 'public/uploads');
+                    $mediaPath = $mediaFile->getName();  // Save file path to the database
+                }
+                $data = [
+                    'profile_picture' => $mediaPath,
+                ];
+
+               
+                $user = $UserProfilesModel->where('user_id', $userid)->first();
+                if (!$user) {
+                    session()->setFlashdata('error', 'User not found.');
+                    log_message("error", "User not found.".$userid );
     
+                    return redirect()->back()->withInput();
+                }else{
+                    if (// Update the record where user_id matches
+                        $UserProfilesModel->where('user_id', $userid)->set($data)->update()) {
+                            log_message("error", "User information updated successfully." );
+                            session()->setFlashdata('success', 'User information updated successfully.');
+                            return redirect()->to('/profile'); // Redirect to the profile page or wherever appropriate
+                        } else {
+                            session()->setFlashdata('error', 'Failed to update user information. Please try again.');
+                            return redirect()->back()->withInput(); // Redirect back with input to correct any issues
+                        }
+                }
+        }else{
+            log_message("error", message: "Validation failed" );
+
+        }
+
+    }
+    
+    public function update_cover_pic(){
+        $session = session();
+        $UserProfilesModel = new UserProfilesModel();
+        $userModel = new UserModel();
+        $userid= $session->get('id');
+
+        $validation = $this->validate([
+            'profile_pic' => [
+                'uploaded[profile_pic]',
+                'mime_in[profile_pic,image/jpg,image/jpeg,image/png,image/PNG]',
+                'max_size[profile_pic,10240]',  // Max 10 MB
+            ]
+        ]);
+        if($validation){
+                // Get the uploaded file
+                $mediaFile = $this->request->getFile('profile_pic');
+                // Initialize $mediaPath as null
+                $mediaPath = null;
+                // Move the file to the uploads directory if it's valid
+                if ($mediaFile->isValid() && !$mediaFile->hasMoved()) {
+                    $mediaFile->move(ROOTPATH  . 'public/uploads');
+                    $mediaPath = $mediaFile->getName();  // Save file path to the database
+                }
+                $data = [
+                    'cover_photo' => $mediaPath,
+                ];
+
+               
+                $user = $UserProfilesModel->where('user_id', $userid)->first();
+                if (!$user) {
+                    session()->setFlashdata('error', 'User not found.');
+                    log_message("error", "User not found.".$userid );
+    
+                    return redirect()->back()->withInput();
+                }else{
+                    if (// Update the record where user_id matches
+                        $UserProfilesModel->where('user_id', $userid)->set($data)->update()) {
+                            log_message("error", "User information updated successfully." );
+                            session()->setFlashdata('success', 'User information updated successfully.');
+                            return redirect()->to('/profile'); // Redirect to the profile page or wherever appropriate
+                        } else {
+                            session()->setFlashdata('error', 'Failed to update user information. Please try again.');
+                            return redirect()->back()->withInput(); // Redirect back with input to correct any issues
+                        }
+                }
+        }else{
+            log_message("error", message: "Validation failed" );
+
+        }
+    }
 }

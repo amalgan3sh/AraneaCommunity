@@ -32,3 +32,8 @@ $routes->get('following/(:num)', 'UserController::getFollowing/$1');
 
 $routes->get('followers-list', 'UserController::view_followers');
 
+
+$routes->post('/update_profile_pic', 'AccountController::update_profile_pic');
+$routes->post('/update_cover_pic', 'AccountController::update_cover_pic');
+
+
