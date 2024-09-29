@@ -15,13 +15,28 @@ class FollowersModel extends Model
     // Method to follow a user
     public function followUser($followerId, $followedId)
     {
-        return $this->insert([
-            'followerId' => $followerId,
-            'followedId' => $followedId,
-            'followedAt' => date('Y-m-d H:i:s')
-        ]);
+        // Check if the follower relationship already exists
+        $exists = $this->where('followerId', $followerId)
+                       ->where('followedId', $followedId)
+                       ->first();
+    
+        // If the relationship doesn't exist, insert it
+        if (!$exists) {
+            // Use insert() and check if it's successful
+            $success = $this->insert([
+                'followerId' => $followerId,
+                'followedId' => $followedId,
+                'followedAt' => date('Y-m-d H:i:s')
+            ]);
+    
+            // Return true if insert was successful, false otherwise
+            return $success !== false;
+        }
+    
+        // Return false if the relationship already exists
+        return false;
     }
-
+    
     // Method to unfollow a user
     public function unfollowUser($followerId, $followedId)
     {

@@ -29,3 +29,6 @@ $routes->post('follow/(:num)/(:num)', 'UserController::follow/$1/$2');
 $routes->delete('unfollow/(:num)/(:num)', 'UserController::unfollow/$1/$2');
 $routes->get('followers/(:num)', 'UserController::getFollowers/$1');
 $routes->get('following/(:num)', 'UserController::getFollowing/$1');
+
+$routes->get('followers-list', 'UserController::view_followers');
+

@@ -12,15 +12,19 @@ class AccountController extends Controller
     public function Profile(){
         $session = session();
         $userModel = new UserModel();
-
+        $currentUserId = $session->get("id");
         if (!$session->get('logged_in')) {
             return redirect()->to('/');
         }
         $db = \Config\Database::connect();
         $builder = $db->table('post');
-        $builder->select('post.*, users.username');
-        $builder->join('users', 'users.id = post.user_id');
-        $builder->orderBy('post.created_at', 'DESC');
+        // Query to get posts of followed users, excluding the current user's posts
+    
+        // Query to get posts of the current user
+        $builder->select('post.*, users.username')
+                ->join('users', 'users.id = post.user_id')
+                ->where('post.user_id', $currentUserId)  // Only get posts of the current user
+                ->orderBy('post.created_at', 'DESC');
         $query = $builder->get();
         
         $data['posts'] = $query->getResultArray();

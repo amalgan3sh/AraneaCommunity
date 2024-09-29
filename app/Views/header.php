@@ -196,7 +196,7 @@
                       <ul class="sub-nav collapse" id="friend-list" data-bs-parent="#sidebar-menu">
                           <li class="nav-item">
                               <a class="nav-link "
-                                  href="./dashboard/friend-list.html">
+                                  href="<?= base_url('followers-list') ?>">
                                   <i class="icon material-symbols-outlined filled">
                                       fiber_manual_record
                                   </i>

@@ -2319,7 +2319,7 @@
                                     <small class="text-capitalize">Followed by <?= esc($user['follower_count'] ?? '0') ?> more</small>
                                 </div>
                                 <div class="d-flex align-items-center flex-shrink-0 gap-2">
-                                    <button class="btn btn-primary-subtle p-1 lh-1">
+                                    <button class="btn btn-primary-subtle p-1 lh-1" onclick="followUser(<?= $userid ?>, <?= $user['id'] ?>)">
                                         <i class="material-symbols-outlined font-size-14">add</i>
                                     </button>
                                     <button class="btn btn-danger-subtle p-1 lh-1">
@@ -3539,6 +3539,22 @@
   <script src="./assets/vendor/zuck.js-master/demo/script.js"></script>
   <script src="./assets/js/zuck.js"></script>
 
+  <script>
+    function followUser(followerId, followedId) {
+    $.ajax({
+        url: '/follow/' + followerId + '/' + followedId,  // Adjust if there's a base URL
+        type: 'POST',
+        success: function(response) {
+            var result = JSON.parse(response);
+            alert(result.message);  // Show the success or failure message
+        },
+        error: function(xhr, status, error) {
+            alert('Error: Unable to follow the user.');
+            console.log('Error Details:', status, error);
+        }
+    });
+}
+</script>
 </body>
 
 </html>

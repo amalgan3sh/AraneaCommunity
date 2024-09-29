@@ -1,0 +1,99 @@
+ERROR - 2024-09-29 14:04:30 --> bbbb
+INFO - 2024-09-29 14:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 14:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 14:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-29 14:22:20 --> mysqli_sql_exception: Unknown column 'users.name' in 'field list' in D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `users`....', 0)
+#1 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`....')
+#2 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`....')
+#3 D:\Majid01\CI4\amal-social\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`....', Array, false)
+#4 D:\Majid01\CI4\amal-social\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Majid01\CI4\amal-social\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Majid01\CI4\amal-social\app\Controllers\UserController.php(61): CodeIgniter\BaseModel->findAll()
+#7 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
+#8 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Majid01\CI4\amal-social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 D:\Majid01\CI4\amal-social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\Majid01\CI4\amal-social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\Majid01\CI4\amal-social\system\rewrite.php(44): require_once('D:\\Majid01\\CI4\\...')
+#14 {main}
+CRITICAL - 2024-09-29 14:22:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.name' in 'field list'
+[Method: GET, Route: followers-list]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
+FROM `followers`
+JOIN `users` ON `followers`.`followedId` = `users`.`id`
+WHERE `followers`.`followerId` = :followers.followerId:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\UserController.php(61): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-09-29 14:22:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
+FROM `followers`
+JOIN `users` ON `followers`.`followedId` = `users`.`id`
+WHERE `followers`.`followerId` = \'4\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
+FROM `followers`
+JOIN `users` ON `followers`.`followedId` = `users`.`id`
+WHERE `followers`.`followerId` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
+FROM `followers`
+JOIN `users` ON `followers`.`followedId` = `users`.`id`
+WHERE `followers`.`followerId` = :followers.followerId:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\UserController.php(61): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-09-29 14:22:20 --> [Caused by] mysqli_sql_exception: Unknown column 'users.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
+FROM `followers`
+JOIN `users` ON `followers`.`followedId` = `users`.`id`
+WHERE `followers`.`followerId` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
+FROM `followers`
+JOIN `users` ON `followers`.`followedId` = `users`.`id`
+WHERE `followers`.`followerId` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
+FROM `followers`
+JOIN `users` ON `followers`.`followedId` = `users`.`id`
+WHERE `followers`.`followerId` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` AS `followedId`, `users`.`name` AS `followedName`
+FROM `followers`
+JOIN `users` ON `followers`.`followedId` = `users`.`id`
+WHERE `followers`.`followerId` = :followers.followerId:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\UserController.php(61): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-09-29 14:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 14:32:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 14:39:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 14:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 14:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:02:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-29 15:10:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
