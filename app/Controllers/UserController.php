@@ -29,8 +29,12 @@ class UserController extends Controller
     $allUsers = $userModel->findAll();
 
     // Step 2: Get follower IDs
+    
     $followerIds = $FollowersModel->where('followerId',   $data['userid'])
                                    ->findColumn('followedId');
+        if(!$followerIds){
+            $followerIds = array($data['userid']);
+        }
         array_push($followerIds, $data['userid']);
 
     // Step 3: Filter out already followed users

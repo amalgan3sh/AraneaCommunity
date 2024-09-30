@@ -1,0 +1,203 @@
+INFO - 2024-09-30 05:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-30 05:31:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-30 05:32:02 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in D:\Majid\CI4\social\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 D:\Majid\CI4\social\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'aranea_communit...', 3306, '', 0)
+#1 D:\Majid\CI4\social\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Majid\CI4\social\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Majid\CI4\social\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Majid\CI4\social\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Majid\CI4\social\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\Majid\CI4\social\app\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+#7 D:\Majid\CI4\social\system\CodeIgniter.php(933): App\Controllers\AuthController->login_user()
+#8 D:\Majid\CI4\social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 D:\Majid\CI4\social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Majid\CI4\social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 D:\Majid\CI4\social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\Majid\CI4\social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\Majid\CI4\social\system\rewrite.php(44): require_once('D:\\Majid\\CI4\\so...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in D:\Majid\CI4\social\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 D:\Majid\CI4\social\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Majid\CI4\social\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Majid\CI4\social\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Majid\CI4\social\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Majid\CI4\social\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 D:\Majid\CI4\social\app\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+#6 D:\Majid\CI4\social\system\CodeIgniter.php(933): App\Controllers\AuthController->login_user()
+#7 D:\Majid\CI4\social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 D:\Majid\CI4\social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Majid\CI4\social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\Majid\CI4\social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\Majid\CI4\social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\Majid\CI4\social\system\rewrite.php(44): require_once('D:\\Majid\\CI4\\so...')
+#13 {main}
+CRITICAL - 2024-09-30 05:32:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login_user]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+OR `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login_user()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-09-30 05:32:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-30 05:32:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-30 05:32:26 --> TypeError: array_push(): Argument #1 ($array) must be of type array, null given
+[Method: GET, Route: user_dashboard]
+in APPPATH\Controllers\UserController.php on line 34.
+ 1 APPPATH\Controllers\UserController.php(34): array_push(null, '4')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-09-30 05:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-30 05:32:29 --> TypeError: array_push(): Argument #1 ($array) must be of type array, null given
+[Method: GET, Route: user_dashboard]
+in APPPATH\Controllers\UserController.php on line 34.
+ 1 APPPATH\Controllers\UserController.php(34): array_push(null, '4')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-09-30 05:32:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-30 05:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-30 05:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-30 05:32:44 --> TypeError: array_push(): Argument #1 ($array) must be of type array, null given
+[Method: GET, Route: user_dashboard]
+in APPPATH\Controllers\UserController.php on line 34.
+ 1 APPPATH\Controllers\UserController.php(34): array_push(null, '4')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-09-30 05:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-30 05:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-30 05:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-30 05:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-30 05:35:25 --> TypeError: array_push(): Argument #1 ($array) must be of type array, null given
+[Method: GET, Route: user_dashboard]
+in APPPATH\Controllers\UserController.php on line 36.
+ 1 APPPATH\Controllers\UserController.php(36): array_push(null, '4')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-09-30 05:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-30 05:36:49 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: user_dashboard]
+in APPPATH\Views\header.php on line 1760.
+ 1 APPPATH\Views\header.php(1760): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'D:\\Majid\\CI4\\social\\app\\Views\\header.php', 1760)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid\\CI4\\social\\app\\Views\\header.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(487): CodeIgniter\View\View->render('header', null, true)
+ 5 APPPATH\Views\user\user_dashboard.php(1): CodeIgniter\View\View->include('header')
+ 6 SYSTEMPATH\View\View.php(234): include('D:\\Majid\\CI4\\social\\app\\Views\\user\\user_dashboard.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('user/user_dashboard', [], true)
+ 9 APPPATH\Controllers\UserController.php(62): view('user/user_dashboard', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-09-30 06:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-30 06:29:05 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in D:\Majid\CI4\social\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Majid\CI4\social\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `fo...', 0)
+#1 D:\Majid\CI4\social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `fo...')
+#2 D:\Majid\CI4\social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `fo...')
+#3 D:\Majid\CI4\social\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `fo...', Array, false)
+#4 D:\Majid\CI4\social\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Majid\CI4\social\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Majid\CI4\social\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\Majid\CI4\social\app\Models\FollowersModel.php(26): CodeIgniter\Model->insert(Array)
+#8 D:\Majid\CI4\social\app\Controllers\UserController.php(96): App\Models\FollowersModel->followUser('4', '1')
+#9 D:\Majid\CI4\social\system\CodeIgniter.php(933): App\Controllers\UserController->follow('4', '1')
+#10 D:\Majid\CI4\social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 D:\Majid\CI4\social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Majid\CI4\social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Majid\CI4\social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Majid\CI4\social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Majid\CI4\social\system\rewrite.php(44): require_once('D:\\Majid\\CI4\\so...')
+#16 {main}
+CRITICAL - 2024-09-30 06:29:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+[Method: POST, Route: follow/4/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `followers` (`followerId`, `followedId`, `followedAt`, `updated_at`) VALUES (:followerId:, :followedId:, :followedAt:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\FollowersModel.php(26): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\UserController.php(96): App\Models\FollowersModel->followUser('4', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->follow('4', '1')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+CRITICAL - 2024-09-30 06:29:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `followers` (`followerId`, `followedId`, `followedAt`, `updated_at`) VALUES (\'4\', \'1\', \'2024-09-30 06:29:05\', \'2024-09-30 06:29:05\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `followers` (`followerId`, `followedId`, `followedAt`, `updated_at`) VALUES (\'4\', \'1\', \'2024-09-30 06:29:05\', \'2024-09-30 06:29:05\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `followers` (`followerId`, `followedId`, `followedAt`, `updated_at`) VALUES (:followerId:, :followedId:, :followedAt:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\FollowersModel.php(26): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\UserController.php(96): App\Models\FollowersModel->followUser('4', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->follow('4', '1')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+CRITICAL - 2024-09-30 06:29:05 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `followers` (`followerId`, `followedId`, `followedAt`, `updated_at`) VALUES (\'4\', \'1\', \'2024-09-30 06:29:05\', \'2024-09-30 06:29:05\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `followers` (`followerId`, `followedId`, `followedAt`, `updated_at`) VALUES (\'4\', \'1\', \'2024-09-30 06:29:05\', \'2024-09-30 06:29:05\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `followers` (`followerId`, `followedId`, `followedAt`, `updated_at`) VALUES (\'4\', \'1\', \'2024-09-30 06:29:05\', \'2024-09-30 06:29:05\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `followers` (`followerId`, `followedId`, `followedAt`, `updated_at`) VALUES (:followerId:, :followedId:, :followedAt:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\FollowersModel.php(26): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\UserController.php(96): App\Models\FollowersModel->followUser('4', '1')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->follow('4', '1')
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-09-30 06:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-30 06:31:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
