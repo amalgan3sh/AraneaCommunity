@@ -11,6 +11,7 @@ class PostController extends Controller
     {
         $session = session();
         $userId = $session->get('id');  // Get the logged-in user's ID
+        $postModel = new PostModel();
 
         // Get the content from the form input
         $content = $this->request->getPost('content');
@@ -23,7 +24,6 @@ class PostController extends Controller
         ]);
         if($validation){
             if ($content) {
-                $postModel = new PostModel();
                 // Get the uploaded file
                 $mediaFile = $this->request->getFile('media');
                 // Initialize $mediaPath as null
@@ -51,6 +51,21 @@ class PostController extends Controller
                 return redirect()->back()->with('error', 'Post content cannot be empty.');
             }
         }else{
+            if($content){
+                $data = [
+                    'user_id' => $userId,
+                    'content' => $content,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ];
+    
+                $postModel->save($data);
+    
+                return redirect()->to('/user_dashboard'); // Redirect to the posts page after submitting
+            }
+            
+
+
             log_message('error', 'Validation error.');
             return redirect()->back()->with('error', 'Post content cannot be empty (media).');
 

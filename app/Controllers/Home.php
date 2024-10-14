@@ -6,7 +6,9 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('public/sign_in');
+        //return view('public/test');
+         return view('public/sign_in');
+
     }
     public function SignUp(): string
     {

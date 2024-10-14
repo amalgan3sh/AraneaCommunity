@@ -93,7 +93,6 @@ class AccountController extends Controller
             if (!$user) {
                 session()->setFlashdata('error', 'User not found.');
                 log_message("error", "User not found.".$userId );
-
                 return redirect()->back()->withInput();
             }else{
                 if (// Update the record where user_id matches

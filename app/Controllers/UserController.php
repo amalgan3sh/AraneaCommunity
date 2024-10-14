@@ -46,17 +46,22 @@ class UserController extends Controller
         // Fetch posts with the username
         $db = \Config\Database::connect();
         $builder = $db->table('post');
-       // Query to get posts of followed users, excluding the current user's posts
+       // Query to get posts of followed users and the current user
         $builder->select('post.*, users.username')
-        ->join('users', 'users.id = post.user_id')
-        ->join('followers', 'followers.followedId = post.user_id')
-        ->where('followers.followerId', $data['userid'])  // Only get posts of followed users
-        ->where('post.user_id !=', $data['userid'])       // Exclude posts of the current user
-        ->orderBy('post.created_at', 'DESC');
+        ->join('users', 'users.id = post.user_id')                // Join with 'users' table to get the username
+        ->join('followers', 'followers.followedId = post.user_id', 'left') // Left join to include current user's posts
+        ->groupStart()                                            // Grouping conditions for followed users and current user
+            ->where('followers.followerId', $data['userid'])      // Posts from followed users
+            ->orWhere('post.user_id', $data['userid'])            // Include posts by the current user
+        ->groupEnd()
+        ->orderBy('post.created_at', 'DESC');                     // Order by creation date (newest first)
+
         $query = $builder->get();
         
         $data['posts'] = $query->getResultArray();
-        $data['user'] =                $user = $UserProfilesModel->where('user_id',  $data['userid'])->first();
+        // print_r($data['posts']);
+        // die();
+        $data['user'] =     $user = $UserProfilesModel->where('user_id',  $data['userid'])->first();
         
         // Load the user dashboard view
         return view('user/user_dashboard',$data);

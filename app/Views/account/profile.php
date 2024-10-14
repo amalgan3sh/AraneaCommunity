@@ -717,7 +717,7 @@
 
                   // List of common video file extensions
                   $videoExtensions = ['mp4', 'avi', 'mov', 'mkv', 'webm', 'flv'];
-
+                  if($post['media_path']){
                   // Check if the file extension is in the list of video extensions
                   if (in_array(strtolower($fileExtension), $videoExtensions)) {
                      // It's a video
@@ -732,7 +732,7 @@
                      ?>
                      <img src="<?= base_url('uploads/' . $post['media_path']) ?>" alt="Media" style="width:-webkit-fill-available">
                      <?php
-                  }
+                  }  }
                   ?>
 
                 <div class="mt-4">
