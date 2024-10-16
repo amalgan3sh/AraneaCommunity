@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\UserProfilesModel;
+
 use CodeIgniter\Controller;
 
 class AuthController extends Controller
@@ -20,7 +22,8 @@ class AuthController extends Controller
             'email'      => 'required|valid_email|is_unique[users.email]',
             'phone_number' => 'required|numeric',
             'password'   => 'required|min_length[6]',
-            'terms'      => 'required'
+            'terms'      => 'required',
+            'dob'   =>  'required'
         ]);
 
         if (!$input) {
@@ -28,6 +31,8 @@ class AuthController extends Controller
             return redirect()->back()->withInput();
         } else {
             $userModel = new UserModel();
+            $UserProfilesModel = new UserProfilesModel();
+
             $userData = [
                 'username'   => $this->request->getPost('username'),
                 'first_name' => $this->request->getPost('first_name'),
@@ -43,8 +48,16 @@ class AuthController extends Controller
             // die();
 
             if ($userModel->save($userData)) {
-                session()->setFlashdata('success', 'Registration successful. Please login.');
-                return redirect()->to('/');
+                $insertID = $userModel->getInsertID();
+                $userprofile = [
+                    'dob'   =>  $this->request->getPost('dob'),
+                    'user_id'   =>  $insertID
+                ];
+                if($UserProfilesModel->save($userprofile)){
+                    session()->setFlashdata('success', 'Registration successful. Please login.');
+                    return redirect()->to('/');
+                }
+                
             } else {
                 session()->setFlashdata('error', 'An error occurred while registering. Please try again.');
                 return redirect()->back()->withInput();

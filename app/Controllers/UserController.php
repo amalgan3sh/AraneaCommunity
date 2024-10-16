@@ -26,30 +26,32 @@ class UserController extends Controller
         $data['userid'] = $session->get('id');
 
         // Step 1: Get all users (you can adjust the limit as needed)
-    $allUsers = $userModel->findAll();
+        $allUsers = $userModel->findAll();
 
-    // Step 2: Get follower IDs
-    
-    $followerIds = $FollowersModel->where('followerId',   $data['userid'])
-                                   ->findColumn('followedId');
-        if(!$followerIds){
-            $followerIds = array($data['userid']);
-        }
-        array_push($followerIds, $data['userid']);
+        // Step 2: Get follower IDs
+        
+        $followerIds = $FollowersModel->where('followerId',   $data['userid'])
+                                    ->findColumn('followedId');
+            if(!$followerIds){
+                $followerIds = array($data['userid']);
+            }
+            array_push($followerIds, $data['userid']);
 
-    // Step 3: Filter out already followed users
-    $data['suggestedUsers'] = array_filter($allUsers, function($user) use ($followerIds) {
-        return !in_array($user['id'], $followerIds);
-    });
+        // Step 3: Filter out already followed users
+        $data['suggestedUsers'] = array_filter($allUsers, function($user) use ($followerIds) {
+            return !in_array($user['id'], $followerIds);
+        });
 
         $postModel = new PostModel();
+        
         // Fetch posts with the username
         $db = \Config\Database::connect();
         $builder = $db->table('post');
        // Query to get posts of followed users and the current user
-        $builder->select('post.*, users.username')
+        $builder->select('post.*, users.username, users.first_name, user_profiles.profile_picture')
         ->join('users', 'users.id = post.user_id')                // Join with 'users' table to get the username
         ->join('followers', 'followers.followedId = post.user_id', 'left') // Left join to include current user's posts
+        ->join('user_profiles', 'users.id = user_profiles.user_id')
         ->groupStart()                                            // Grouping conditions for followed users and current user
             ->where('followers.followerId', $data['userid'])      // Posts from followed users
             ->orWhere('post.user_id', $data['userid'])            // Include posts by the current user
@@ -82,16 +84,19 @@ class UserController extends Controller
     {
         $session = session();
         $FollowersModel = new FollowersModel();
+        $UserProfilesModel = new UserProfilesModel();
+
         $userid = $session->get('id');
         // Joining the followers table with the users table to get follower names
-        $followers = $FollowersModel
+        $data['followers'] = $FollowersModel
         ->select('*')
         ->join('users', 'followers.followedId = users.id')
         ->where('followers.followerId', $userid)
         ->findAll();
+        $data['user'] =     $user = $UserProfilesModel->where('user_id',  $userid)->first();
 
         // Pass the active users to the view
-        return view('user/friends_list', ['followers' => $followers]);
+        return view('user/friends_list',    $data);
     }
 
     public function follow($followerId, $followedId)

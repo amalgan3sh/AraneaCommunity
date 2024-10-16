@@ -30,8 +30,16 @@ class AccountController extends Controller
         $query = $builder->get();
         
         $data['posts'] = $query->getResultArray();
-        $data['user'] =                $user = $UserProfilesModel->where('user_id', $currentUserId)->first();
+        // Get the current user ID
 
+        // Join the user table with the user_profiles table based on the user ID
+        $data['user'] = $userModel->select('users.*, user_profiles.profile_picture')
+                                ->join('user_profiles', 'user_profiles.user_id = users.id')
+                                ->where('users.id', $currentUserId)
+                                ->first();
+        $data['userid'] = $currentUserId;
+        // print_r($data);
+        // die();
         
         // Load the user dashboard view
         return view('account/profile',$data);

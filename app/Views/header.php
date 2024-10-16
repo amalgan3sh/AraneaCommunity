@@ -1755,9 +1755,13 @@
                   <span class="mobile-text  ms-3">Message</span>
                 </a>
               </li>
+              <?php
+                // Set the profile picture path. If 'profile_picture' is not set or is 'none', use the default image.
+                $profilePic = (!empty($user['profile_picture']) && $user['profile_picture'] != 'none') ? $user['profile_picture'] : 'default_dp.jpg'; 
+              ?>
               <li class="nav-item dropdown user-dropdown">
                 <a href="javascript:void(0);" class="d-flex align-items-center dropdown-toggle" id="drop-down-arrow" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="<?= base_url('uploads/' . $user['profile_picture']) ?>"  style="width:-webkit-fill-available" class="img-fluid rounded-circle avatar-48 border border-2 me-3" alt="user" loading="lazy">
+                  <img src="<?= base_url('uploads/' . $profilePic) ?>"  style="width:-webkit-fill-available" class="img-fluid rounded-circle avatar-48 border border-2 me-3" alt="user" loading="lazy">
                 </a>
                 <div class="sub-drop dropdown-menu caption-menu" aria-labelledby="drop-down-arrow">
                   <div class="card shadow-none m-0">

@@ -11,11 +11,6 @@ $routes->get('/profile', 'AccountController::Profile');
 $routes->get('/profile-edit', 'AccountController::Profile_edit');
 $routes->post('/Profile_update', 'AccountController::Profile_update');
 
-
-
-
-
-
 $routes->get('/sign_up', 'Home::SignUp');
 $routes->post('/register_user', 'AuthController::RegisterUser');
 $routes->post('/login_user', 'AuthController::login_user');

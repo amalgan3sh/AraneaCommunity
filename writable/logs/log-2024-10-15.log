@@ -1,0 +1,61 @@
+INFO - 2024-10-15 04:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:23:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-15 04:23:19 --> ErrorException: Undefined variable $user
+[Method: GET, Route: followers-list]
+in APPPATH\Views\header.php on line 1760.
+ 1 APPPATH\Views\header.php(1760): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'D:\\Majid\\CI4\\social\\app\\Views\\header.php', 1760)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Majid\\CI4\\social\\app\\Views\\header.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(487): CodeIgniter\View\View->render('header', null, true)
+ 5 APPPATH\Views\user\friends_list.php(1): CodeIgniter\View\View->include('header')
+ 6 SYSTEMPATH\View\View.php(234): include('D:\\Majid\\CI4\\social\\app\\Views\\user\\friends_list.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('user/friends_list', [], true)
+ 9 APPPATH\Controllers\UserController.php(94): view('user/friends_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-10-15 04:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-15 04:26:36 --> ErrorException: Undefined variable $UserProfilesModel
+[Method: GET, Route: followers-list]
+in APPPATH\Controllers\UserController.php on line 92.
+ 1 APPPATH\Controllers\UserController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $UserProfilesModel', 'D:\\Majid\\CI4\\social\\app\\Controllers\\UserController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-10-15 04:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-15 04:27:07 --> ErrorException: Undefined variable $followers
+[Method: GET, Route: followers-list]
+in APPPATH\Controllers\UserController.php on line 98.
+ 1 APPPATH\Controllers\UserController.php(98): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $followers', 'D:\\Majid\\CI4\\social\\app\\Controllers\\UserController.php', 98)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->view_followers()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid\\CI4\\social\\public\\index.php')
+INFO - 2024-10-15 04:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 06:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 06:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 06:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 06:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 06:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 06:30:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 06:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 12:21:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 12:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 12:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 12:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 12:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

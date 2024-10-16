@@ -119,6 +119,12 @@
         <h6 class="form-label fw-bold">Password</h6>
         <input type="password" name="password" class="form-control mb-0" placeholder="Password" required>
     </div>
+
+    <div class="form-group text-start">
+        <h6 class="form-label fw-bold">Date of Birth</h6>
+        <input type="date" name="dob" class="form-control mb-0" required>
+    </div>
+
     <div class="d-flex align-items-center justify-content-between">
         <div class="form-check d-inline-block m-0">
             <input type="checkbox" name="terms" class="form-check-input" required>

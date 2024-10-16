@@ -314,6 +314,11 @@
                         </div>
                         <div class="row social-post-container">
                         <?php foreach ($posts as $post): ?>
+
+                           <?php
+                // Set the profile picture path. If 'profile_picture' is not set or is 'none', use the default image.
+                $profilePic = (!empty($post['profile_picture']) && $post['profile_picture'] != 'none') ? $post['profile_picture'] : 'default_dp.jpg'; 
+              ?>
                <div class="col-sm-12 social-post">
                   <div class="card card-block card-stretch card-height">
                         <div class="card-body">
@@ -321,7 +326,7 @@
                               <div class="d-flex align-items-center justify-content-between">
                                     <div class="me-3 flex-shrik-0">
                                        <img class="border border-2 rounded-circle user-post-profile"
-                                             src="./assets/images/user/01.jpg" alt="user-image" loading="lazy">
+                                             src="<?= base_url('uploads/' . $profilePic) ?>" alt="user-image" loading="lazy">
                                     </div>
                                     <div class="w-100">
                                        <div class="d-flex align-items-center justify-content-between">

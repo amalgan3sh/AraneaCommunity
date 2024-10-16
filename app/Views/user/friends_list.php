@@ -41,7 +41,7 @@
                                 <p class="mb-2 mb-md-0">Lorem Ipsum is simply dummy text of the</p>
                              </div>
                           </div>
-                          <button type="submit" class="btn btn-primary">Following</button>
+                          <button type="submit" class="btn btn-primary" onClick="unfollow(<?=$value["followerId"] ?>,<?= $value["followedId"] ?>)">Following</button>
                        </div>
                     </div>
                  </div>
@@ -849,19 +849,34 @@
   <script src="../assets/js/ecommerce.js"></script>
   
   <script>
-    function followUser(followerId, followedId) {
-    $.ajax({
-        url: '/follow/' + followerId + '/' + followedId,  // Adjust if there's a base URL
-        type: 'POST',
-        success: function(response) {
-            var result = JSON.parse(response);
-            alert(result.message);  // Show the success or failure message
-        },
-        error: function(xhr, status, error) {
-            alert('Error: Unable to follow the user.');
-            console.log('Error Details:', status, error);
-        }
-    });
+   function followUser(followerId, followedId) {
+      $.ajax({
+         url: '/follow/' + followerId + '/' + followedId,  // Adjust if there's a base URL
+         type: 'POST',
+         success: function(response) {
+               var result = JSON.parse(response);
+               alert(result.message);  // Show the success or failure message
+         },
+         error: function(xhr, status, error) {
+               alert('Error: Unable to follow the user.');
+               console.log('Error Details:', status, error);
+         }
+      });
+   }
+
+function unfollow(followerId, followedId){
+   $.ajax({
+         url: '/unfollow/' + followerId + '/' + followedId,  // Adjust if there's a base URL
+         type: 'DELETE',
+         success: function(response) {
+               var result = JSON.parse(response);
+               alert(result.message);  // Show the success or failure message
+         },
+         error: function(xhr, status, error) {
+               alert('Error: Unable to unfollow the user.');
+               console.log('Error Details:', status, error);
+         }
+      });
 }
 
   </script>

@@ -4,8 +4,12 @@
         <div class="position-relative">
         </div>
         <div class="content-inner " id="page_layout">
+        <?php
+                // Set the profile picture path. If 'profile_picture' is not set or is 'none', use the default image.
+                $coverPic = (!empty($user['cover_photo']) && $user['cover_photo'] != 'none') ? $user['cover_photo'] : 'default_dp.jpg'; 
+         ?>
 <div class="container position-relative p-0"  data-bs-toggle="modal" data-bs-target="#cover-picture-modal">
-   <div class="header-cover-img" style="background-image: url(<?= base_url('uploads/' . $user['cover_photo']) ?>); background-size: cover; background-repeat: no-repeat;"></div> 
+   <div class="header-cover-img" style="background-image: url(<?= base_url('uploads/' . $coverPic) ?>); background-size: cover; background-repeat: no-repeat;"></div> 
 </div>
 <div class="container">
    <div class="row">
@@ -56,10 +60,14 @@
                         <span class="change-profile-image bg-primary rounded-pill">
                            <span class="material-symbols-outlined text-white font-size-16">photo_camera</span>
                         </span>
-                        <img src="<?= base_url('uploads/' . $user['profile_picture']) ?>" alt="Media" style="width:-webkit-fill-available" class="avatar-150 border border-4 border-white rounded-3">
+                        <?php
+                // Set the profile picture path. If 'profile_picture' is not set or is 'none', use the default image.
+                $profilePic = (!empty($user['profile_picture']) && $user['profile_picture'] != 'none') ? $user['profile_picture'] : 'default_dp.jpg'; 
+              ?>
+                        <img src="<?= base_url('uploads/' . $profilePic) ?>" alt="Media" style="width:-webkit-fill-available" class="avatar-150 border border-4 border-white rounded-3">
                         <span class="badge bg-success fw-500 letter-spacing-1 chat-status">online</span>                    
                      </div>
-                     <h5 class="d-flex align-items-center justify-content-center gap-1 mb-2">Marvin McKinney <span class="badge  bg-primary rounded-pill material-symbols-outlined font-size-14 p-0">done</span></h5>
+                     <h5 class="d-flex align-items-center justify-content-center gap-1 mb-2"><?= $user['first_name'] ?> <span class="badge  bg-primary rounded-pill material-symbols-outlined font-size-14 p-0">done</span></h5>
                      <ul class="d-flex align-items-center justify-content-center gap-3 list-inline p-0 m-0">
                         <li class="d-flex align-items-center gap-1">
                            <h6 class="material-symbols-outlined font-size-14">location_on</h6>
@@ -67,7 +75,7 @@
                         </li>
                         <li class="d-flex align-items-center gap-1">
                            <h6 class="material-symbols-outlined font-size-14">globe_asia</h6>
-                           <a href="https://smartinvestmentoff.com/" class="font-size-14 fw-500 text-body">smartinvestmentoff.com/</a>
+                           <a href="https://smartinvestmentoff.com/" class="font-size-14 fw-500 text-body"><?= $user['email'] ?>/</a>
                         </li>
                      </ul>
                   </div>
