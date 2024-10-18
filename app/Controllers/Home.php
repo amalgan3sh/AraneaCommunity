@@ -14,4 +14,14 @@ class Home extends BaseController
     {
         return view('public/sign_up');
     }
+
+    public function recoverpw(){
+        return view('public/recoverpw');   
+    }
+
+    
+    public function reset_password($token){
+        $data['token'] = $token;
+        return view('public/reset_pw', $data);   
+    }
 }

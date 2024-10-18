@@ -10,13 +10,15 @@ $routes->get('/logout', 'AuthController::Logout');
 $routes->get('/profile', 'AccountController::Profile');
 $routes->get('/profile-edit', 'AccountController::Profile_edit');
 $routes->post('/Profile_update', 'AccountController::Profile_update');
-
+$routes->get('/recoverpw', 'Home::recoverpw');
+$routes->post('User/sentresetmail', 'UserController::sentresetmail');
+$routes->get('/reset_password/(:any)', 'Home::reset_password/$1');
 $routes->get('/sign_up', 'Home::SignUp');
 $routes->post('/register_user', 'AuthController::RegisterUser');
 $routes->post('/login_user', 'AuthController::login_user');
 $routes->get('/user_dashboard', 'UserController::user_dashboard');
 $routes->get('/users/active_users', 'UserController::active_users');
-
+$routes->post('/auth/reset_password', 'AuthController::reset_password');
 $routes->post('post/create_post', 'PostController::create_post');
 $routes->get('posts', 'PostController::view_posts');
 // follow users 

@@ -137,4 +137,67 @@ class UserController extends Controller
         
         return json_encode($following);
     }
+
+    public function sentresetmail()
+    {
+        $email = $this->request->getPost('email');
+        $userModel = new UserModel();  // Assuming you have a UserModel for user management
+        
+        // Check if the email exists in the users table
+        $user = $userModel->where('email', $email)->first();
+        
+        if ($user) {
+            // Logic to send the reset mail goes here
+            // e.g., calling a helper function to send the email
+            // Generate a unique reset token
+            $resetToken = bin2hex(random_bytes(32));  // Generate a 64-character token
+
+            // Set the token expiration time (optional), e.g., valid for 1 hour
+            $expiration = date('Y-m-d H:i:s', strtotime('+1 hour'));
+            log_message('error', 'expire time : '.$expiration);
+
+            // Save the reset token and expiration time in the database (assuming user has `reset_token` and `token_expiration` fields)
+            $userModel->update($user['id'], [
+                'reset_token' => $resetToken,
+                'token_expiration' => $expiration
+            ]);
+
+            // Send reset email with the token
+            $this->sendResetEmail($email, $resetToken);
+
+            return json_encode(['message' => 'Reset email has been sent to.'.$email]);
+        } else {
+            return json_encode(['message' => 'Email does not exist.']);
+        }
+    }
+
+    private function sendResetEmail($email, $token)
+    {
+        // Construct the reset URL (adjust base URL if necessary)
+        $resetLink = base_url() . '/reset_password/' . $token;  // Include userId and token in the link
+
+        // Load the email library (in CodeIgniter 4 or adjust if using another version)
+        $emailService = \Config\Services::email();
+
+        $emailService->setTo($email);
+        $emailService->setFrom('majid.n0202@gmail.com', 'Your Application Name');
+        $emailService->setSubject('Password Reset Request');
+        $emailService->setMessage("
+            <p>Dear user,</p>
+            <p>You have requested to reset your password. Please click the link below to reset it:</p>
+            <a href='$resetLink'>Reset Password</a>
+            <p>This link will expire in 1 hour.</p>
+        ");
+
+        // Send the email
+        if ($emailService->send()) {
+            return true;
+        } else {
+            // Log email error (optional)
+            log_message('error', $emailService->printDebugger(['headers']));
+            return false;
+        }
+    }
+
+
 }

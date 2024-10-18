@@ -92,14 +92,17 @@ class AuthController extends Controller
                 return redirect()->to('/user_dashboard'); // Redirect to sign up page
             } else {
                 // session()->setFlashdata('error', 'Wrong password.');
-                $sessionData = [
+               /* $sessionData = [
                     'id'       => $user['id'],
                     'username' => $user['username'],
                     'email'    => $user['email'],
                     'logged_in' => TRUE
                 ];
                 $session->set($sessionData);
-                return redirect()->to('/user_dashboard');
+                return redirect()->to('/user_dashboard'); */
+
+                session()->setFlashdata('error', 'Wrong password.');
+                return redirect()->back()->withInput();
             }
         } else {
             session()->setFlashdata('error', 'User not found.');
@@ -117,4 +120,48 @@ class AuthController extends Controller
         // Redirect to the login or home page
         return redirect()->to('/');
     }
+
+    public function reset_password()
+    {
+        log_message('error', "reached here");
+        $token = $this->request->getPost(index: 'token');
+
+        $password = $this->request->getPost('password');
+        $repeatPassword = $this->request->getPost('repeat_pw');
+
+        // Make sure the passwords match in the backend
+        if ($password !== $repeatPassword) {
+            return redirect()->back()->with('error', 'Passwords do not match');
+        }
+        $userModel = new UserModel();
+        
+        // Check if token exists in the password_reset table and hasn't expired
+        $resetRecord = $userModel->where('reset_token', $token)->first();
+
+        if (!$resetRecord) {
+            log_message('error', 'token not found');
+
+            return redirect()->back()->with('error', 'Invalid token');
+        }
+
+            
+        // Convert current time and expiry time to UTC for comparison
+        $currentTimeUtc = gmdate("Y-m-d H:i:s");  // Current UTC time
+        $expiryTimeUtc = $resetRecord['token_expiration'];  // Token expiry time in UTC
+        log_message('error', $currentTimeUtc.'---'.$expiryTimeUtc);
+        // Check if the token is expired
+        if ($currentTimeUtc > $expiryTimeUtc) {
+            return redirect()->back()->with('error', 'Token has expired');
+        }
+
+        // Proceed with password reset logic (verify token, hash new password, update user record, etc.)
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        
+        // Assuming you have the token in the session or passed in the URL:
+        $userModel->update($resetRecord['id'], ['password' => $hashedPassword]);
+
+        return redirect()->to('/')->with('message', 'Password reset successfully');
+    }
+
+
 }
