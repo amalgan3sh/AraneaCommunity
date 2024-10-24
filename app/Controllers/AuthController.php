@@ -123,11 +123,11 @@ class AuthController extends Controller
 
     public function reset_password()
     {
-        log_message('error', "reached here");
         $token = $this->request->getPost(index: 'token');
 
         $password = $this->request->getPost('password');
         $repeatPassword = $this->request->getPost('repeat_pw');
+        log_message('error', "reached here ---".$password);
 
         // Make sure the passwords match in the backend
         if ($password !== $repeatPassword) {

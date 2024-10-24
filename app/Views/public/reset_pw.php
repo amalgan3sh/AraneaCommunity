@@ -91,11 +91,11 @@
                <form class="mt-5" action="<?= base_url('auth/reset_password') ?>" method="post" onsubmit="validatePassword()">
                   <div class="form-group text-start mb-0">
                      <h6 class="form-label fw-bold">Password</h6>
-                     <input type="password" class="form-control mb-0"  id="password" placeholder="Enter new password" required>
+                     <input type="password" class="form-control mb-0" name="password"  id="password" placeholder="Enter new password" required>
                   </div>
                   <div class="form-group text-start mb-0">
                      <h6 class="form-label fw-bold">Repeat Password</h6>
-                     <input type="password" class="form-control mb-0" placeholder="Repeat Password" id="repeat_pw" required>
+                     <input type="password" class="form-control mb-0" placeholder="Repeat Password" name="repeat_pw" id="repeat_pw" required>
                   </div>
                   <input type="hidden" value="<?= $token ?>" name="token">
                   <button type="submit" class="btn btn-primary mt-4 fw-semibold text-uppercase letter-spacing-1" >reset password</button>
