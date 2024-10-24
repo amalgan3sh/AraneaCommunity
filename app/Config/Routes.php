@@ -34,3 +34,5 @@ $routes->post('/update_profile_pic', 'AccountController::update_profile_pic');
 $routes->post('/update_cover_pic', 'AccountController::update_cover_pic');
 
 
+$routes->post('/like', 'PostController::like');
+$routes->post('/comment', 'PostController::comment');

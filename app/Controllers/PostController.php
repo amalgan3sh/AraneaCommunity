@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\PostModel;
+use App\Models\LikeModel;
+
 use CodeIgniter\Controller;
 
 class PostController extends Controller
@@ -72,5 +74,40 @@ class PostController extends Controller
         }
         
     }
+
+    public function like()
+    {
+        $likeModel = new LikeModel();
+
+        $postId = $this->request->getPost('post_id');
+        $userId = session()->get('id');
+
+        // Add like to database (pseudo code)
+        $likeModel = new LikeModel();
+        $likeModel->insert(['post_id' => $postId, 'user_id' => $userId]);
+
+        // Return updated like count
+        $likeCount = $likeModel->where('post_id', $postId)->countAllResults();
+        return $this->response->setJSON(['like_count' => $likeCount]);
+    }
+
+    public function comment()
+    {
+        $postId = $this->request->getPost('post_id');
+        $userId = session()->get('id');
+        $content = $this->request->getPost('content');
+
+        // Add comment to database
+        $commentModel = new CommentModel();
+        $commentModel->insert([
+            'post_id' => $postId,
+            'user_id' => $userId,
+            'content' => $content
+        ]);
+
+        // Return new comment
+        return $this->response->setJSON(['content' => $content]);
+    }
+
 
 }

@@ -545,8 +545,8 @@
                                           <div class="like-block position-relative d-flex align-items-center flex-shrink-0">
                                              <div class="like-data">
                                                 <div class="dropdown">
-                                                   <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                      aria-expanded="false" role="button">
+                                                   <span class="dropdown-toggle like-btn" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                      aria-expanded="false" role="button" data-post-id="<?= $post['id']; ?>">
                                                       <span class="material-symbols-outlined align-text-top font-size-20">
                                                          thumb_up
                                                       </span>
@@ -2964,6 +2964,24 @@
         }
     });
 }
+
+$(document).on('click', '.like-btn', function() {
+     var postId = $(this).data('post-id');
+    $.post('/like', { post_id: postId }, function(data) {
+        $('#like-count-' + postId).text(data.like_count + " Likes");
+    });
+   alert(postId);
+});
+
+$(document).on('click', '.submit-comment-btn', function() {
+    var postId = $(this).data('post-id');
+    var commentContent = $('#comment-input-' + postId).val();
+    $.post('/comment', { post_id: postId, content: commentContent }, function(data) {
+        // Append new comment to the list
+        $('#comment-section-' + postId + ' ul').append('<li>' + data.content + '</li>');
+        $('#comment-input-' + postId).val(''); // Clear input
+    });
+});
 </script>
 </body>
 
