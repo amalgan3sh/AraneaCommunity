@@ -550,7 +550,7 @@
                                                       <span class="material-symbols-outlined align-text-top font-size-20">
                                                          thumb_up
                                                       </span>
-                                                      <span class="fw-medium">140 Likes</span>
+                                                      <span class="fw-medium"><?= $post["like_count"] ?> Like(s)</span>
                                                    </span>
                                                    <div class="dropdown-menu py-2">
                                                       <a class="ms-2 me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
@@ -580,11 +580,11 @@
                                           </div>
                                           <div class="d-flex align-items-center gap-3 flex-shrink-0">
                                              <div class="total-comment-block" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#commentcollapes1" aria-expanded="false" aria-controls="commentcollapes">
+                                                data-bs-target="#comment-section-<?= $post['id'] ?>" aria-expanded="false" aria-controls="commentcollapes">
                                                 <span class="material-symbols-outlined align-text-top font-size-20">
                                                    comment
                                                 </span>
-                                                <span class="fw-medium">20 Comment</span>
+                                                <span class="fw-medium"><?= count($post["comments"]) ?> Comment</span>
                                              </div>
                                              <div class="share-block d-flex align-items-center feather-icon">
                                                 <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#share-btn"
@@ -592,22 +592,27 @@
                                                    <span class="material-symbols-outlined align-text-top font-size-20">
                                                       share
                                                    </span>
-                                                   <span class="ms-1 fw-medium">99 Share</span></a>
+                                                   <span class="ms-1 fw-medium"> 0 Share</span></a>
                                              </div>
                                           </div>
                                        </div>
-                                       <div class="collapse mt-4 pt-4 border-top" id="commentcollapes1">
+                                       <div class="collapse mt-4 pt-4 border-top" id="comment-section-<?= $post['id'] ?>">
                                           <ul class="list-inline m-o p-0 comment-list">
+                                             <?php
+                                                foreach($post["comments"] as $comment){
+                $profilePic = (!empty($comment['comment_profile_picture']) && $comment['comment_profile_picture'] != 'none') ? $comment['comment_profile_picture'] : 'default_dp.jpg'; 
+                                                   
+                                                   ?>
                                              <li class="mb-3">
                                                 <div class="comment-list-block">
                                                    <div class="d-flex align-items-center gap-3">
                                                       <div class="comment-list-user-img flex-shrink-0">
-                                                         <img src="../assets/images/user/13.jpg" alt="userimg"
+                                                         <img src="<?= base_url('uploads/' . $profilePic) ?>" alt="userimg"
                                                             class="avatar-48 rounded-circle img-fluid" loading="lazy">
                                                       </div>
                                                       <div class="comment-list-user-data">
                                                          <div class="d-inline-flex align-items-center gap-1 flex-wrap">
-                                                            <h6 class="m-0">Bob Frapples</h6>
+                                                            <h6 class="m-0"><?= $comment["comment_username"] ?></h6>
                                                             <span class="d-inline-block text-primary">
                                                                <svg class="align-text-bottom" xmlns="http://www.w3.org/2000/svg" width="17"
                                                                   height="17" viewBox="0 0 17 17" fill="none">
@@ -618,15 +623,15 @@
                                                                      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                                </svg>
                                                             </span>
-                                                            <spna class="fw-medium small text-capitalize">3 min ago</spna>
+                                                            <spna class="fw-medium small text-capitalize"><?= date('F d, Y H:i', strtotime($comment['comment_created_at'])); ?></spna>
                                                          </div>
                                                       </div>
                                                    </div>
                                                    <div class="comment-list-user-comment">
                                                       <div class="comment-list-comment">
-                                                         "Just stumbled upon this post and it's giving me all the feels! 🙌"
+                                                      <?= $comment["comment_content"] ?>
                                                       </div>
-                                                      <div class="comment-list-action mt-2">
+                                                      <div class="comment-list-action mt-2"  id="comment-section-<?= $post['id']; ?>">
                                                          <ul class="list-inline m-0 p-0 d-flex align-items-center gap-2">
                                                             <li>
                                                                <div class="like-block position-relative d-flex align-items-center flex-shrink-0">
@@ -691,7 +696,7 @@
                                                                   <form>
                                                                      <input type="text" class="form-control" placeholder="Write a Comment...">
                                                                      <button type="submit"
-                                                                        class="btn btn-primary font-size-12 text-capitalize px-5">post</button>
+                                                                        class="btn btn-primary font-size-12 text-capitalize px-5">post1</button>
                                                                   </form>
                                                                </div>
                                                             </div>
@@ -700,6 +705,9 @@
                                                    </div>
                                                 </div>
                                              </li>
+                                             <?php    }
+                                             ?>
+                                             
                                           </ul>
                                           <div class="add-comment-form-block">
                                              <div class="d-flex align-items-center gap-3">
@@ -708,10 +716,8 @@
                                                       class="avatar-48 rounded-circle img-fluid" loading="lazy">
                                                 </div>
                                                 <div class="add-comment-form">
-                                                   <form>
-                                                      <input type="text" class="form-control" placeholder="Write a Comment...">
-                                                      <button type="submit" class="btn btn-primary font-size-12 text-capitalize px-5">post</button>
-                                                   </form>
+                                                      <input type="text" class="form-control" placeholder="Write a Comment..." id="comment-input-<?= $post['id'] ?>">
+                                                      <button type="button" class="btn btn-primary font-size-12 text-capitalize px-5 submit-comment-btn" data-post-id="<?= $post['id']; ?>">post</button>
                                                 </div>
                                              </div>
                                           </div>
@@ -2970,7 +2976,6 @@ $(document).on('click', '.like-btn', function() {
     $.post('/like', { post_id: postId }, function(data) {
         $('#like-count-' + postId).text(data.like_count + " Likes");
     });
-   alert(postId);
 });
 
 $(document).on('click', '.submit-comment-btn', function() {
@@ -2978,7 +2983,73 @@ $(document).on('click', '.submit-comment-btn', function() {
     var commentContent = $('#comment-input-' + postId).val();
     $.post('/comment', { post_id: postId, content: commentContent }, function(data) {
         // Append new comment to the list
-        $('#comment-section-' + postId + ' ul').append('<li>' + data.content + '</li>');
+       // Assuming 'data' contains details such as 'username', 'profilePicture', 'createdAt', and 'content'
+// Use 'default_dp.jpg' if profile picture is empty or set to 'none'
+const profilePic = (data.profile_picture && data.profile_picture !== 'none') ? data.profile_picture : 'default_dp.jpg';
+const base_url = "<?= base_url(); ?>";
+
+// Append the comment with the chosen profile picture
+
+const commentHTML = `
+    <li class="mb-3">
+        <div class="comment-list-block">
+            <div class="d-flex align-items-center gap-3">
+                <div class="comment-list-user-img flex-shrink-0">
+                    <img src="${base_url}/uploads/${profilePic}" alt="userimg" class="avatar-48 rounded-circle img-fluid" loading="lazy">
+                </div>
+                <div class="comment-list-user-data">
+                    <div class="d-inline-flex align-items-center gap-1 flex-wrap">
+                        <h6 class="m-0">${data.username}</h6>
+                        <span class="d-inline-block text-primary">
+                            <svg class="align-text-bottom" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2483 0.216553H4.75081C2.13805 0.216553 0.5 2.0665 0.5 4.68444V11.7487C0.5 14.3666 2.13027 16.2166 4.75081 16.2166H12.2475C14.8689 16.2166 16.5 14.3666 16.5 11.7487V4.68444C16.5 2.0665 14.8689 0.216553 12.2483 0.216553Z" fill="currentColor" />
+                                <path d="M5.5 8.21627L7.50056 10.216L11.5 6.21655" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="fw-medium small text-capitalize">${new Date(data.created_at).toLocaleString()}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-list-user-comment">
+                <div class="comment-list-comment">${data.content}</div>
+                <div class="comment-list-action mt-2" id="comment-section-${data.post_id}">
+                    <ul class="list-inline m-0 p-0 d-flex align-items-center gap-2">
+                        <li>
+                            <div class="like-block position-relative d-flex align-items-center flex-shrink-0">
+                                <div class="like-data">
+                                    <div class="dropdown">
+                                        <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                            <span class="material-symbols-outlined align-text-top font-size-18">thumb_up</span>
+                                            <span class="fw-medium small">Likes</span>
+                                        </span>
+                                        <div class="dropdown-menu py-2">
+                                            <a class="ms-2 me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Like"><img src="../assets/images/icon/01.png" class="img-fluid" alt="like" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Love"><img src="../assets/images/icon/02.png" class="img-fluid" alt="love" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Happy"><img src="../assets/images/icon/03.png" class="img-fluid" alt="happy" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="HaHa"><img src="../assets/images/icon/04.png" class="img-fluid" alt="haha" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Think"><img src="../assets/images/icon/05.png" class="img-fluid" alt="think" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Sad"><img src="../assets/images/icon/06.png" class="img-fluid" alt="sad" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Lovely"><img src="../assets/images/icon/07.png" class="img-fluid" alt="lovely" loading="lazy"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="fw-medium small" data-bs-toggle="collapse" data-bs-target="#subcomment-collapse1" role="button" aria-expanded="false" aria-controls="collapseExample">Reply</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+`;
+
+// Append the generated HTML to the comment section
+$('#comment-section-' + data.post_id + ' ul').append(commentHTML);
+
+
+
         $('#comment-input-' + postId).val(''); // Clear input
     });
 });

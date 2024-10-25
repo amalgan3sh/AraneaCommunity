@@ -45,7 +45,7 @@ class UserController extends Controller
         $postModel = new PostModel();
         
         // Fetch posts with the username
-        $db = \Config\Database::connect();
+     /*   $db = \Config\Database::connect();
         $builder = $db->table('post');
        // Query to get posts of followed users and the current user
         $builder->select('post.*, users.username, users.first_name, user_profiles.profile_picture')
@@ -60,7 +60,66 @@ class UserController extends Controller
 
         $query = $builder->get();
         
-        $data['posts'] = $query->getResultArray();
+        $data['posts'] = $query->getResultArray(); */
+
+        $db = \Config\Database::connect();
+$builder = $db->table('post');
+
+// Query to get posts of followed users and the current user, along with like count
+$builder->select('
+        post.*, 
+        users.username, 
+        users.first_name, 
+        user_profiles.profile_picture, 
+        COUNT(DISTINCT likes.id) AS like_count
+    ')
+    ->join('users', 'users.id = post.user_id')               // Join with 'users' table to get username
+    ->join('followers', 'followers.followedId = post.user_id', 'left') // Left join to include current user's posts
+    ->join('user_profiles', 'users.id = user_profiles.user_id')
+    ->join('likes', 'likes.post_id = post.id', 'left')       // Join with 'likes' table for like count
+    ->groupStart()                                           // Group conditions for followed users and current user
+        ->where('followers.followerId', $data['userid'])     // Posts from followed users
+        ->orWhere('post.user_id', $data['userid'])           // Include posts by the current user
+    ->groupEnd()
+    ->groupBy('post.id')                                     // Group by post id to aggregate likes
+    ->orderBy('post.created_at', 'DESC');                    // Order by creation date (newest first)
+
+$query = $builder->get();
+$data['posts'] = $query->getResultArray();
+
+$commentBuilder = $db->table('comments');
+$commentBuilder->select('
+        comments.post_id, 
+        comments.content AS comment_content, 
+        comments.created_at AS comment_created_at, 
+        users.username AS comment_username, 
+        user_profiles.profile_picture AS comment_profile_picture
+    ')
+    ->join('users', 'users.id = comments.user_id')           // Join with 'users' to get comment user details
+    ->join('user_profiles', 'user_profiles.user_id = users.id')
+    ->whereIn('comments.post_id', array_column($data['posts'], 'id')) // Only get comments for displayed posts
+    ->orderBy('comments.created_at', 'ASC');                 // Order comments by creation date
+
+$commentQuery = $commentBuilder->get();
+$comments = $commentQuery->getResultArray();
+
+
+// Initialize comments array for each post
+foreach ($data['posts'] as &$post) {
+    $post['comments'] = [];
+}
+
+// Group comments by post_id
+foreach ($comments as $comment) {
+    foreach ($data['posts'] as &$post) {
+        if ($post['id'] == $comment['post_id']) {
+            $post['comments'][] = $comment;
+        }
+    }
+}
+
+
+        // echo "<pre>";
         // print_r($data['posts']);
         // die();
         $data['user'] =     $user = $UserProfilesModel->where('user_id',  $data['userid'])->first();

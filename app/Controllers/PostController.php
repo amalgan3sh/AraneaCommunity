@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\PostModel;
 use App\Models\LikeModel;
+use App\Models\CommentModel;
+
 
 use CodeIgniter\Controller;
 
@@ -99,14 +101,29 @@ class PostController extends Controller
 
         // Add comment to database
         $commentModel = new CommentModel();
-        $commentModel->insert([
+        $commentId = $commentModel->insert([
             'post_id' => $postId,
             'user_id' => $userId,
             'content' => $content
         ]);
 
-        // Return new comment
-        return $this->response->setJSON(['content' => $content]);
+        // Fetch the comment details with username and profile picture
+    $db = \Config\Database::connect();
+    $builder = $db->table('comments');
+    $builder->select('
+        comments.content, 
+        comments.created_at, 
+        users.username, 
+        user_profiles.profile_picture
+    ')
+    ->join('users', 'users.id = comments.user_id')
+    ->join('user_profiles', 'user_profiles.user_id = users.id')
+    ->where('comments.id', $commentId);
+
+    $query = $builder->get();
+    $newComment = $query->getRowArray();
+
+    return $this->response->setJSON($newComment);
     }
 
 

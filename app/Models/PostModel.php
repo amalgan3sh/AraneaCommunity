@@ -14,4 +14,13 @@ class PostModel extends Model
     // Optionally, define the fields used for timestamps
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
+
+    // Fetch posts with likes and comments
+    public function getPostsWithInteractions()
+    {
+        return $this->select('posts.*, COUNT(likes.id) as like_count')
+            ->join('likes', 'likes.post_id = posts.id', 'left')
+            ->groupBy('posts.id')
+            ->findAll();
+    }
 }
