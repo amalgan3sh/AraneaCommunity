@@ -319,61 +319,6 @@
                 // Set the profile picture path. If 'profile_picture' is not set or is 'none', use the default image.
                 $profilePic = (!empty($post['profile_picture']) && $post['profile_picture'] != 'none') ? $post['profile_picture'] : 'default_dp.jpg'; 
               ?>
-               <div class="col-sm-12 social-post">
-                  <div class="card card-block card-stretch card-height">
-                        <div class="card-body">
-                           <div class="user-post-data">
-                              <div class="d-flex align-items-center justify-content-between">
-                                    <div class="me-3 flex-shrik-0">
-                                       <img class="border border-2 rounded-circle user-post-profile"
-                                             src="<?= base_url('uploads/' . $profilePic) ?>" alt="user-image" loading="lazy">
-                                    </div>
-                                    <div class="w-100">
-                                       <div class="d-flex align-items-center justify-content-between">
-                                          <div>
-                                                <h6 class="mb-0 d-inline-block"><?= esc($post['username']); ?></h6>
-                                                <span class="mb-0 d-inline-block text-capitalize fw-medium">
-                                                   posted an update
-                                                </span>
-                                                <p class="mb-0"><?= date('F d, Y H:i', strtotime($post['created_at'])); ?></p>
-                                          </div>
-                                       </div>
-                                    </div>
-                              </div>
-                           </div>
-                           <?php
-                              // Extract the file extension
-                              $fileExtension = pathinfo($post['media_path'], PATHINFO_EXTENSION);
-
-                              // List of common video file extensions
-                              $videoExtensions = ['mp4', 'avi', 'mov', 'mkv', 'webm', 'flv'];
-                              if($post['media_path']){
-                              // Check if the file extension is in the list of video extensions
-                              if (in_array(strtolower($fileExtension), $videoExtensions)) {
-                                 // It's a video
-                                 ?>
-                                 <video controls style="width:-webkit-fill-available">
-                                    <source src="<?= base_url('uploads/' . $post['media_path']) ?>" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                 </video>
-                                 <?php
-                              } else {
-                                 // It's not a video (assuming it's an image or other type of file)
-                                 ?>
-                                 <img src="<?= base_url('uploads/' . $post['media_path']) ?>" alt="Media" style="width:-webkit-fill-available">
-                                 <?php
-                              }  }
-                              ?>
-
-                           <div class="mt-4">
-                              <p class="m-0"><?= esc($post['content']); ?></p>
-                           </div>
-                           <div class="post-meta-likes mt-4">
-                              <!-- Likes, comments, and share buttons go here -->
-                           </div>
-                        </div>
-                  </div>
-               </div>
 
                <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 
@@ -550,7 +495,7 @@
                                                       <span class="material-symbols-outlined align-text-top font-size-20">
                                                          thumb_up
                                                       </span>
-                                                      <span class="fw-medium"><?= $post["like_count"] ?> Like(s)</span>
+                                                      <span class="fw-medium" id="like-count-<?= $post['id']; ?>"><?= $post["like_count"] ?> Like(s)</span>
                                                    </span>
                                                    <div class="dropdown-menu py-2">
                                                       <a class="ms-2 me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
@@ -597,7 +542,7 @@
                                           </div>
                                        </div>
                                        <div class="collapse mt-4 pt-4 border-top" id="comment-section-<?= $post['id'] ?>">
-                                          <ul class="list-inline m-o p-0 comment-list">
+                                          <ul class="list-inline m-o p-0 comment-list"  id="comment-ul-<?= $post['id'] ?>">
                                              <?php
                                                 foreach($post["comments"] as $comment){
                 $profilePic = (!empty($comment['comment_profile_picture']) && $comment['comment_profile_picture'] != 'none') ? $comment['comment_profile_picture'] : 'default_dp.jpg'; 
@@ -631,7 +576,7 @@
                                                       <div class="comment-list-comment">
                                                       <?= $comment["comment_content"] ?>
                                                       </div>
-                                                      <div class="comment-list-action mt-2"  id="comment-section-<?= $post['id']; ?>">
+                                                      <div class="comment-list-action mt-2">
                                                          <ul class="list-inline m-0 p-0 d-flex align-items-center gap-2">
                                                             <li>
                                                                <div class="like-block position-relative d-flex align-items-center flex-shrink-0">
@@ -709,10 +654,14 @@
                                              ?>
                                              
                                           </ul>
+                                          <?php
+                $profilePic = (!empty($user['profile_picture']) && $user['profile_picture'] != 'none') ? $user['profile_picture'] : 'default_dp.jpg'; 
+
+                                          ?>
                                           <div class="add-comment-form-block">
                                              <div class="d-flex align-items-center gap-3">
                                                 <div class="flex-shrink-0">
-                                                   <img src="../assets/images/user/1.jpg" alt="userimg"
+                                                   <img src="<?= base_url('uploads/' . $profilePic) ?>" alt="userimg"
                                                       class="avatar-48 rounded-circle img-fluid" loading="lazy">
                                                 </div>
                                                 <div class="add-comment-form">
@@ -2981,6 +2930,9 @@ $(document).on('click', '.like-btn', function() {
 $(document).on('click', '.submit-comment-btn', function() {
     var postId = $(this).data('post-id');
     var commentContent = $('#comment-input-' + postId).val();
+    if(commentContent == null || commentContent == ""){
+      return;
+    }
     $.post('/comment', { post_id: postId, content: commentContent }, function(data) {
         // Append new comment to the list
        // Assuming 'data' contains details such as 'username', 'profilePicture', 'createdAt', and 'content'
@@ -3044,9 +2996,8 @@ const commentHTML = `
         </div>
     </li>
 `;
-
 // Append the generated HTML to the comment section
-$('#comment-section-' + data.post_id + ' ul').append(commentHTML);
+$('#comment-ul-' + postId).append(commentHTML);
 
 
 

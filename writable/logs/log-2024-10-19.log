@@ -1,0 +1,23 @@
+ERROR - 2024-10-19 15:25:11 --> reached here
+INFO - 2024-10-19 15:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-19 15:25:11 --> <!-- DEBUG-VIEW START 2 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>The password field must be at least 6 characters in length.</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 2 SYSTEMPATH\Validation\Views\list.php -->
+
+INFO - 2024-10-19 15:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-19 15:26:11 --> reached here
+ERROR - 2024-10-19 15:26:11 --> 2024-10-19 15:26:11---2024-10-19 15:58:57
+ERROR - 2024-10-19 15:26:12 --> 111111----$2y$10$uHk0oojJH/r9Qv1mxHoRLuGBBALtiswF9OkQV/jo0svc7Fxfb6UuO
+INFO - 2024-10-19 15:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-19 15:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-19 15:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-19 15:26:27 --> 1
+ERROR - 2024-10-19 15:26:27 --> entererd pwd - 111111
+ERROR - 2024-10-19 15:26:27 --> password - $2y$10$uHk0oojJH/r9Qv1mxHoRLuGBBALtiswF9OkQV/jo0svc7Fxfb6UuO
+ERROR - 2024-10-19 15:26:27 --> hash - $2y$10$e1VO/cC6iUBOTndKGJtz2uyUUXI1nNCLisG.kXcAsaWyID3t0l/A.
+INFO - 2024-10-19 15:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

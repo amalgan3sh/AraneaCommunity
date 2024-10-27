@@ -697,62 +697,372 @@
                               </div>
                            </div>
                            <?php foreach ($posts as $post): ?>
-    <div class="col-sm-12 social-post">
-        <div class="card card-block card-stretch card-height">
-            <div class="card-body">
-                <div class="user-post-data">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="me-3 flex-shrik-0">
-                            <img class="border border-2 rounded-circle user-post-profile"
-                                 src="./assets/images/user/01.jpg" alt="user-image" loading="lazy">
-                        </div>
-                        <div class="w-100">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-inline-block"><?= esc($post['username']); ?></h6>
-                                    <span class="mb-0 d-inline-block text-capitalize fw-medium">
-                                        posted an update
-                                    </span>
-                                    <p class="mb-0"><?= date('F d, Y H:i', strtotime($post['created_at'])); ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <?php
-                  // Extract the file extension
-                  $fileExtension = pathinfo($post['media_path'], PATHINFO_EXTENSION);
 
-                  // List of common video file extensions
-                  $videoExtensions = ['mp4', 'avi', 'mov', 'mkv', 'webm', 'flv'];
-                  if($post['media_path']){
-                  // Check if the file extension is in the list of video extensions
-                  if (in_array(strtolower($fileExtension), $videoExtensions)) {
-                     // It's a video
-                     ?>
-                     <video controls style="width:-webkit-fill-available">
-                        <source src="<?= base_url('uploads/' . $post['media_path']) ?>" type="video/mp4">
-                        Your browser does not support the video tag.
-                     </video>
-                     <?php
-                  } else {
-                     // It's not a video (assuming it's an image or other type of file)
-                     ?>
-                     <img src="<?= base_url('uploads/' . $post['media_path']) ?>" alt="Media" style="width:-webkit-fill-available">
-                     <?php
-                  }  }
-                  ?>
+                              <?php
+                // Set the profile picture path. If 'profile_picture' is not set or is 'none', use the default image.
+                $profilePic = (!empty($post['profile_picture']) && $post['profile_picture'] != 'none') ? $post['profile_picture'] : 'default_dp.jpg'; 
+              ?>
 
-                <div class="mt-4">
-                    <p class="m-0"><?= esc($post['content']); ?></p>
-                </div>
-                <div class="post-meta-likes mt-4">
-                    <!-- Likes, comments, and share buttons go here -->
-                </div>
-            </div>
-        </div>
-    </div>
-<?php endforeach; ?>
+               <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+               <div class="col-sm-12 social-post">
+                              <div class="card card-block card-stretch card-height">
+                                 <div class="card-body">
+                                    <div class="user-post-data">
+                                       <div class="d-flex align-items-center justify-content-between">
+                                          <div class="me-3 flex-shrik-0">
+                                             <img class="border border-2 rounded-circle user-post-profile" src="<?= base_url('uploads/' . $profilePic) ?>"
+                                                alt="user-image" loading="lazy">
+                                          </div>
+                                          <div class="w-100">
+                                             <div class="d-flex align-items-center justify-content-between">
+                                                <div>
+                                                   <h6 class="mb-0 d-inline-block"><?= esc($post['username']); ?></h6>
+                                                   <span class="d-inline-block text-primary">
+                                                      <svg class="align-text-bottom" width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                         <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M11.8457 0H4.34822C1.73547 0 0.0974121 1.84995 0.0974121 4.46789V11.5321C0.0974121 14.1501 1.72768 16 4.34822 16H11.8449C14.4663 16 16.0974 14.1501 16.0974 11.5321V4.46789C16.0974 1.84995 14.4663 0 11.8457 0Z"
+                                                            fill="currentColor" />
+                                                         <path d="M5.09741 7.99978L7.09797 9.9995L11.0974 6.00006" stroke="white"
+                                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                      </svg>
+                                                   </span>
+                                                   <span class="mb-0 d-inline-block text-capitalize fw-medium">posted an
+                                                      update</span>
+                                                   <p class="mb-0"><?= date('F d, Y H:i', strtotime($post['created_at'])); ?></p>
+                                                </div>
+                                                <div class="card-post-toolbar">
+                                                   <div class="dropdown">
+                                                      <span class="dropdown-toggle material-symbols-outlined" data-bs-toggle="dropdown"
+                                                         aria-haspopup="true" aria-expanded="false" role="button">
+                                                         more_horiz
+                                                      </span>
+                                                      <div class="dropdown-menu m-0 p-0">
+                                                         <a class="dropdown-item p-3" href="#">
+                                                            <div class="d-flex align-items-top">
+                                                               <span class="material-symbols-outlined">
+                                                                  save
+                                                               </span>
+                                                               <div class="data ms-2">
+                                                                  <h6>Save Post</h6>
+                                                                  <p class="mb-0">Add this to your saved items</p>
+                                                               </div>
+                                                            </div>
+                                                         </a>
+                                                         <a class="dropdown-item p-3" href="#">
+                                                            <div class="d-flex align-items-top">
+                                                               <span class="material-symbols-outlined">
+                                                                  cancel
+                                                               </span>
+                                                               <div class="data ms-2">
+                                                                  <h6>Hide Post</h6>
+                                                                  <p class="mb-0">See fewer posts like this.</p>
+                                                               </div>
+                                                            </div>
+                                                         </a>
+                                                         <a class="dropdown-item p-3" href="#">
+                                                            <div class="d-flex align-items-top">
+                                                               <span class="material-symbols-outlined">
+                                                                  person_remove
+                                                               </span>
+                                                               <div class="data ms-2">
+                                                                  <h6>Unfollow User</h6>
+                                                                  <p class="mb-0">Stop seeing posts but stay friends.</p>
+                                                               </div>
+                                                            </div>
+                                                         </a>
+                                                         <a class="dropdown-item p-3" href="#">
+                                                            <div class="d-flex align-items-top">
+                                                               <span class="material-symbols-outlined">
+                                                                  notifications
+                                                               </span>
+                                                               <div class="data ms-2">
+                                                                  <h6>Notifications</h6>
+                                                                  <p class="mb-0">Turn on notifications for this post</p>
+                                                               </div>
+                                                            </div>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="mt-4">
+                                       <p class="m-0"><?= esc($post['content']); ?></p>
+                                       <!-- <ul class="list-inline m-0 p-0 d-flex flex-wrap gap-1">
+                                          <li>
+                                             <a href="javascript:void(0);">#friends</a>
+                                          </li>
+                                          <li>
+                                             <a href="javascript:void(0);">#party</a>
+                                          </li>
+                                          <li>
+                                             <a href="javascript:void(0);">#birthday</a>
+                                          </li>
+                                          <li>
+                                             <a href="javascript:void(0);">#together</a>
+                                          </li>
+                                          <li>
+                                             <a href="javascript:void(0);">#celebration</a>
+                                          </li>
+                                       </ul> -->
+                                    </div>
+                                    
+                                    <div class="user-post mt-4">
+                                    <?php
+                                    // Extract the file extension
+                                    $fileExtension = pathinfo($post['media_path'], PATHINFO_EXTENSION);
+
+                                    // List of common video file extensions
+                                    $videoExtensions = ['mp4', 'avi', 'mov', 'mkv', 'webm', 'flv'];
+                                    if($post['media_path']){
+                                    // Check if the file extension is in the list of video extensions
+                                    if (in_array(strtolower($fileExtension), $videoExtensions)) {
+                                       // It's a video
+                                       ?>
+                                       <video controls style="width:-webkit-fill-available">
+                                          <source src="<?= base_url('uploads/' . $post['media_path']) ?>" type="video/mp4">
+                                          Your browser does not support the video tag.
+                                       </video>
+                                       <?php
+                                    } else {
+                                       // It's not a video (assuming it's an image or other type of file)
+                                       ?>
+                                       <!-- <img src="<?= base_url('uploads/' . $post['media_path']) ?>" alt="Media" style="width:-webkit-fill-available"> -->
+                                       <a data-fslightbox="gallery" href="<?= base_url('uploads/' . $post['media_path']) ?>" class="rounded">
+                                          <img src="<?= base_url('uploads/' . $post['media_path']) ?>" alt="post-image" class="img-fluid rounded w-100"
+                                             loading="lazy">
+                                       </a>
+                                       <?php
+                                    }  }
+                                    ?>
+                                       
+                                    </div>
+                                    <div class="post-meta-likes mt-4">
+                                       <div class="d-flex align-items-center gap-2 flex-wrap">
+                                          <ul class="list-inline m-0 p-0 post-user-liked-list">
+                                             <li>
+                                                <img src="../assets/images/user/01.jpg" alt="userimg" class="rounded-circle img-fluid userimg"
+                                                   loading="lazy">
+                                             </li>
+                                             <li>
+                                                <img src="../assets/images/user/02.jpg" alt="userimg" class="rounded-circle img-fluid userimg"
+                                                   loading="lazy">
+                                             </li>
+                                             <li>
+                                                <img src="../assets/images/user/03.jpg" alt="userimg" class="rounded-circle img-fluid userimg"
+                                                   loading="lazy">
+                                             </li>
+                                             <li>
+                                                <img src="../assets/images/user/04.jpg" alt="userimg" class="rounded-circle img-fluid userimg"
+                                                   loading="lazy">
+                                             </li>
+                                          </ul>
+                                          <div class="d-inline-flex align-items-center gap-1">
+                                             <h6 class="m-0 font-size-14">Aliana Molex</h6>
+                                             <span class="text-capitalize font-size-14 fw-medium" type="button" data-bs-toggle="modal"
+                                                data-bs-target="#likemodal">and 208 others liked this</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="comment-area mt-4 pt-4 border-top">
+                                       <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                          <div class="like-block position-relative d-flex align-items-center flex-shrink-0">
+                                             <div class="like-data">
+                                                <div class="dropdown">
+                                                   <span class="dropdown-toggle like-btn" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                      aria-expanded="false" role="button" data-post-id="<?= $post['id']; ?>">
+                                                      <span class="material-symbols-outlined align-text-top font-size-20">
+                                                         thumb_up
+                                                      </span>
+                                                      <span class="fw-medium" id="like-count-<?= $post['id']; ?>"><?= $post["like_count"] ?> Like(s)</span>
+                                                   </span>
+                                                   <div class="dropdown-menu py-2">
+                                                      <a class="ms-2 me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                                         data-bs-placement="top" title="Like"><img src="../assets/images/icon/01.png"
+                                                            class="img-fluid" alt="like" loading="lazy"></a>
+                                                      <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                         title="Love"><img src="../assets/images/icon/02.png" class="img-fluid" alt="love"
+                                                            loading="lazy"></a>
+                                                      <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                         title="Happy"><img src="../assets/images/icon/03.png" class="img-fluid" alt="happy"
+                                                            loading="lazy"></a>
+                                                      <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                         title="HaHa"><img src="../assets/images/icon/04.png" class="img-fluid" alt="haha"
+                                                            loading="lazy"></a>
+                                                      <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                         title="Think"><img src="../assets/images/icon/05.png" class="img-fluid" alt="think"
+                                                            loading="lazy"></a>
+                                                      <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                         title="Sad"><img src="../assets/images/icon/06.png" class="img-fluid" alt="sad"
+                                                            loading="lazy"></a>
+                                                      <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                         title="Lovely"><img src="../assets/images/icon/07.png" class="img-fluid" alt="lovely"
+                                                            loading="lazy"></a>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="d-flex align-items-center gap-3 flex-shrink-0">
+                                             <div class="total-comment-block" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#comment-section-<?= $post['id'] ?>" aria-expanded="false" aria-controls="commentcollapes">
+                                                <span class="material-symbols-outlined align-text-top font-size-20">
+                                                   comment
+                                                </span>
+                                                <span class="fw-medium"><?= count($post["comments"]) ?> Comment</span>
+                                             </div>
+                                             <div class="share-block d-flex align-items-center feather-icon">
+                                                <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#share-btn"
+                                                   aria-controls="share-btn" class="d-flex align-items-center">
+                                                   <span class="material-symbols-outlined align-text-top font-size-20">
+                                                      share
+                                                   </span>
+                                                   <span class="ms-1 fw-medium"> 0 Share</span></a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="collapse mt-4 pt-4 border-top" id="comment-section-<?= $post['id'] ?>">
+                                          <ul class="list-inline m-o p-0 comment-list"  id="comment-ul-<?= $post['id'] ?>">
+                                             <?php
+                                                foreach($post["comments"] as $comment){
+                $profilePic = (!empty($comment['comment_profile_picture']) && $comment['comment_profile_picture'] != 'none') ? $comment['comment_profile_picture'] : 'default_dp.jpg'; 
+                                                   
+                                                   ?>
+                                             <li class="mb-3">
+                                                <div class="comment-list-block">
+                                                   <div class="d-flex align-items-center gap-3">
+                                                      <div class="comment-list-user-img flex-shrink-0">
+                                                         <img src="<?= base_url('uploads/' . $profilePic) ?>" alt="userimg"
+                                                            class="avatar-48 rounded-circle img-fluid" loading="lazy">
+                                                      </div>
+                                                      <div class="comment-list-user-data">
+                                                         <div class="d-inline-flex align-items-center gap-1 flex-wrap">
+                                                            <h6 class="m-0"><?= $comment["comment_username"] ?></h6>
+                                                            <span class="d-inline-block text-primary">
+                                                               <svg class="align-text-bottom" xmlns="http://www.w3.org/2000/svg" width="17"
+                                                                  height="17" viewBox="0 0 17 17" fill="none">
+                                                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                     d="M12.2483 0.216553H4.75081C2.13805 0.216553 0.5 2.0665 0.5 4.68444V11.7487C0.5 14.3666 2.13027 16.2166 4.75081 16.2166H12.2475C14.8689 16.2166 16.5 14.3666 16.5 11.7487V4.68444C16.5 2.0665 14.8689 0.216553 12.2483 0.216553Z"
+                                                                     fill="currentColor" />
+                                                                  <path d="M5.5 8.21627L7.50056 10.216L11.5 6.21655" stroke="white"
+                                                                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                               </svg>
+                                                            </span>
+                                                            <spna class="fw-medium small text-capitalize"><?= date('F d, Y H:i', strtotime($comment['comment_created_at'])); ?></spna>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="comment-list-user-comment">
+                                                      <div class="comment-list-comment">
+                                                      <?= $comment["comment_content"] ?>
+                                                      </div>
+                                                      <div class="comment-list-action mt-2">
+                                                         <ul class="list-inline m-0 p-0 d-flex align-items-center gap-2">
+                                                            <li>
+                                                               <div class="like-block position-relative d-flex align-items-center flex-shrink-0">
+                                                                  <div class="like-data">
+                                                                     <div class="dropdown">
+                                                                        <span class="dropdown-toggle" data-bs-toggle="dropdown"
+                                                                           aria-haspopup="true" aria-expanded="false" role="button">
+                                                                           <span class="material-symbols-outlined align-text-top font-size-18">
+                                                                              thumb_up
+                                                                           </span>
+                                                                           <span class="fw-medium small">Likes</span>
+                                                                        </span>
+                                                                        <div class="dropdown-menu py-2">
+                                                                           <a class="ms-2 me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                                                              data-bs-placement="top" title="Like"><img
+                                                                                 src="../assets/images/icon/01.png" class="img-fluid"
+                                                                                 alt="like" loading="lazy"></a>
+                                                                           <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                                                              data-bs-placement="top" title="Love"><img
+                                                                                 src="../assets/images/icon/02.png" class="img-fluid"
+                                                                                 alt="love" loading="lazy"></a>
+                                                                           <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                                                              data-bs-placement="top" title="Happy"><img
+                                                                                 src="../assets/images/icon/03.png" class="img-fluid"
+                                                                                 alt="happy" loading="lazy"></a>
+                                                                           <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                                                              data-bs-placement="top" title="HaHa"><img
+                                                                                 src="../assets/images/icon/04.png" class="img-fluid"
+                                                                                 alt="haha" loading="lazy"></a>
+                                                                           <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                                                              data-bs-placement="top" title="Think"><img
+                                                                                 src="../assets/images/icon/05.png" class="img-fluid"
+                                                                                 alt="think" loading="lazy"></a>
+                                                                           <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                                                              data-bs-placement="top" title="Sad"><img
+                                                                                 src="../assets/images/icon/06.png" class="img-fluid"
+                                                                                 alt="sad" loading="lazy"></a>
+                                                                           <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                                                              data-bs-placement="top" title="Lovely"><img
+                                                                                 src="../assets/images/icon/07.png" class="img-fluid"
+                                                                                 alt="lovely" loading="lazy"></a>
+                                                                        </div>
+                                                                     </div>
+                                                                  </div>
+                                                               </div>
+                                                            </li>
+                                                            <li>
+                                                               <span class="fw-medium small" data-bs-toggle="collapse"
+                                                                  data-bs-target="#subcomment-collapse1" role="button" aria-expanded="false"
+                                                                  aria-controls="collapseExample">
+                                                                  Reply
+                                                               </span>
+                                                            </li>
+                                                         </ul>
+                                                         <div class="add-comment-form-block collapse mt-3" id="subcomment-collapse1">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                               <div class="flex-shrink-0">
+                                                                  <img src="../assets/images/user/1.jpg" alt="userimg"
+                                                                     class="avatar-48 rounded-circle img-fluid" loading="lazy">
+                                                               </div>
+                                                               <div class="add-comment-form">
+                                                                  <form>
+                                                                     <input type="text" class="form-control" placeholder="Write a Comment...">
+                                                                     <button type="submit"
+                                                                        class="btn btn-primary font-size-12 text-capitalize px-5">post1</button>
+                                                                  </form>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </li>
+                                             <?php    }
+                                             ?>
+                                             
+                                          </ul>
+                                          <?php
+                $profilePic = (!empty($user['profile_picture']) && $user['profile_picture'] != 'none') ? $user['profile_picture'] : 'default_dp.jpg'; 
+
+                                          ?>
+                                          <div class="add-comment-form-block">
+                                             <div class="d-flex align-items-center gap-3">
+                                                <div class="flex-shrink-0">
+                                                   <img src="<?= base_url('uploads/' . $profilePic) ?>" alt="userimg"
+                                                      class="avatar-48 rounded-circle img-fluid" loading="lazy">
+                                                </div>
+                                                <div class="add-comment-form">
+                                                      <input type="text" class="form-control" placeholder="Write a Comment..." id="comment-input-<?= $post['id'] ?>">
+                                                      <button type="button" class="btn btn-primary font-size-12 text-capitalize px-5 submit-comment-btn" data-post-id="<?= $post['id']; ?>">post</button>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+
+               <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+   
+                           <?php endforeach; ?>
                            <div class="col-sm-12 social-post">
                               <div class="card card-block card-stretch card-height">
                                  <div class="card-body">
@@ -6232,7 +6542,6 @@
         </div>
      </div>
   </div>
-
   <!-- Backend Bundle JavaScript -->
   <script src="../assets/js/libs.min.js"></script>
   <!-- Lodash Utility -->
@@ -6269,6 +6578,96 @@
   <!--ecommerce Script -->
   <script src="../assets/js/ecommerce.js"></script>
   
+  <script>
+
+$(document).on('click', '.like-btn', function() {
+     var postId = $(this).data('post-id');
+    $.post('/like', { post_id: postId }, function(data) {
+        $('#like-count-' + postId).text(data.like_count + " Likes");
+    });
+});
+
+$(document).on('click', '.submit-comment-btn', function() {
+    var postId = $(this).data('post-id');
+    var commentContent = $('#comment-input-' + postId).val();
+    if(commentContent == null || commentContent == ""){
+      return;
+    }
+    $.post('/comment', { post_id: postId, content: commentContent }, function(data) {
+        // Append new comment to the list
+       // Assuming 'data' contains details such as 'username', 'profilePicture', 'createdAt', and 'content'
+// Use 'default_dp.jpg' if profile picture is empty or set to 'none'
+const profilePic = (data.profile_picture && data.profile_picture !== 'none') ? data.profile_picture : 'default_dp.jpg';
+const base_url = "<?= base_url(); ?>";
+
+// Append the comment with the chosen profile picture
+
+const commentHTML = `
+    <li class="mb-3">
+        <div class="comment-list-block">
+            <div class="d-flex align-items-center gap-3">
+                <div class="comment-list-user-img flex-shrink-0">
+                    <img src="${base_url}/uploads/${profilePic}" alt="userimg" class="avatar-48 rounded-circle img-fluid" loading="lazy">
+                </div>
+                <div class="comment-list-user-data">
+                    <div class="d-inline-flex align-items-center gap-1 flex-wrap">
+                        <h6 class="m-0">${data.username}</h6>
+                        <span class="d-inline-block text-primary">
+                            <svg class="align-text-bottom" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2483 0.216553H4.75081C2.13805 0.216553 0.5 2.0665 0.5 4.68444V11.7487C0.5 14.3666 2.13027 16.2166 4.75081 16.2166H12.2475C14.8689 16.2166 16.5 14.3666 16.5 11.7487V4.68444C16.5 2.0665 14.8689 0.216553 12.2483 0.216553Z" fill="currentColor" />
+                                <path d="M5.5 8.21627L7.50056 10.216L11.5 6.21655" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="fw-medium small text-capitalize">${new Date(data.created_at).toLocaleString()}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-list-user-comment">
+                <div class="comment-list-comment">${data.content}</div>
+                <div class="comment-list-action mt-2" id="comment-section-${data.post_id}">
+                    <ul class="list-inline m-0 p-0 d-flex align-items-center gap-2">
+                        <li>
+                            <div class="like-block position-relative d-flex align-items-center flex-shrink-0">
+                                <div class="like-data">
+                                    <div class="dropdown">
+                                        <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                            <span class="material-symbols-outlined align-text-top font-size-18">thumb_up</span>
+                                            <span class="fw-medium small">Likes</span>
+                                        </span>
+                                        <div class="dropdown-menu py-2">
+                                            <a class="ms-2 me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Like"><img src="../assets/images/icon/01.png" class="img-fluid" alt="like" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Love"><img src="../assets/images/icon/02.png" class="img-fluid" alt="love" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Happy"><img src="../assets/images/icon/03.png" class="img-fluid" alt="happy" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="HaHa"><img src="../assets/images/icon/04.png" class="img-fluid" alt="haha" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Think"><img src="../assets/images/icon/05.png" class="img-fluid" alt="think" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Sad"><img src="../assets/images/icon/06.png" class="img-fluid" alt="sad" loading="lazy"></a>
+                                            <a class="me-2" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Lovely"><img src="../assets/images/icon/07.png" class="img-fluid" alt="lovely" loading="lazy"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="fw-medium small" data-bs-toggle="collapse" data-bs-target="#subcomment-collapse1" role="button" aria-expanded="false" aria-controls="collapseExample">Reply</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+`;
+// Append the generated HTML to the comment section
+$('#comment-ul-' + postId).append(commentHTML);
+
+
+
+        $('#comment-input-' + postId).val(''); // Clear input
+    });
+});
+  </script>
+
+
+
 
 </body>
 

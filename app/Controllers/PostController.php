@@ -86,7 +86,7 @@ class PostController extends Controller
 
         // Add like to database (pseudo code)
         $likeModel = new LikeModel();
-        $likeModel->insert(['post_id' => $postId, 'user_id' => $userId]);
+        $likeModel->toggleLike(postId: $postId, userId: $userId);
 
         // Return updated like count
         $likeCount = $likeModel->where('post_id', $postId)->countAllResults();
