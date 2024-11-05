@@ -66,7 +66,7 @@
       <div class="sidebar-body pt-0 data-scrollbar">
           <div class="sidebar-list">
               <!-- Sidebar Menu Start -->
-              <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
+              <ul class="navbar-nav iq-main-menu" id="sidebar-menu" >
                   <li class="nav-item static-item">
                       <a class="nav-link static-item disabled" href="#" tabindex="-1">
                           <span class="default-icon">Main</span>
@@ -94,7 +94,7 @@
                       <ul class="sub-nav collapse" id="profile" data-bs-parent="#sidebar-menu">
                           <li class="nav-item">
                               <a class="nav-link "
-                                  href="./app/profile.html">
+                                  href="/profile">
                                   <i class="icon material-symbols-outlined filled">
                                       fiber_manual_record
                                   </i>
@@ -102,7 +102,7 @@
                                   <span class="item-name"> Profile </span>
                               </a>
                           </li>
-                          <li class="nav-item">
+                          <!-- <li class="nav-item">
                               <a class="nav-link "
                                   href="./dashboard/profile1.html">
                                   <i class="icon material-symbols-outlined filled">
@@ -181,7 +181,7 @@
                                   <i class="sidenav-mini-icon"> PF </i>
                                   <span class="item-name">Profile Forum</span>
                               </a>
-                          </li>
+                          </li> -->
                       </ul>
                   </li>
                   <li class="nav-item">
@@ -204,7 +204,7 @@
                                   <span class="item-name"> Friend List</span>
                               </a>
                           </li>
-                          <li class="nav-item">
+                          <!-- <li class="nav-item">
                               <a class="nav-link "
                                   href="./dashboard/friend-profile.html">
                                   <i class="icon material-symbols-outlined filled">
@@ -223,7 +223,7 @@
                                   <i class="sidenav-mini-icon"> FR </i>
                                   <span class="item-name">Friend Request</span>
                               </a>
-                          </li>
+                          </li> -->
                       </ul>
                   </li>
                   <li class="nav-item">
@@ -247,7 +247,7 @@
                   <li>
                       <hr class="hr-horizontal">
                   </li>
-                  <li class="nav-item static-item">
+                  <!-- <li class="nav-item static-item"> 
                       <a class="nav-link static-item disabled" href="#" tabindex="-1">
                           <span class="default-icon">Featured</span>
                           <span class="mini-icon" data-bs-toggle="tooltip" title="Social" data-bs-placement="right">-</span>
@@ -1093,7 +1093,7 @@
                               </a>
                           </li>
                       </ul>
-                  </li>
+                   </li> -->
               </ul>
               <!-- Sidebar Menu End -->        </div>
       </div>
@@ -1130,7 +1130,7 @@
                           <span class="nav-text">Blog</span>
                         </a>
                         <ul class="iq-header-sub-menu list-unstyled collapse shadow" id="blogData">
-                          <li class="nav-item">
+                          <!-- <li class="nav-item">
                             <a class="nav-link " href="./dashboard/blog-grid.html">Blog Grid</a>
                           </li>
                           <li class="nav-item">
@@ -1138,7 +1138,7 @@
                           </li>
                           <li class="nav-item">
                             <a class="nav-link " href="./dashboard/blog-detail.html">Blog Detail</a>
-                          </li>
+                          </li> -->
                         </ul>
                       </li>
                       <li class="nav-item">
@@ -1146,7 +1146,7 @@
                           <span class="nav-text">Store</span>
                         </a>
                         <ul class="iq-header-sub-menu list-unstyled collapse shadow" id="storeData">
-                          <li class="nav-item">
+                          <!-- <li class="nav-item">
                             <a class="nav-link " href="./dashboard/store-category-grid.html">Category Grid</a>
                           </li>
                           <li class="nav-item">
@@ -1160,7 +1160,7 @@
                           </li>
                           <li class="nav-item">
                             <a class="nav-link " href="./dashboard/store-checkout.html">Checkout</a>
-                          </li>
+                          </li> -->
                         </ul>
                       </li>
                     </ul>
@@ -1310,7 +1310,7 @@
             </div>
             <ul class="navbar-nav navbar-list">
               <li class="nav-item dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="material-symbols-outlined position-relative">shopping_bag
                     <span class="bg-primary text-white shopping-badge">3</span>
                   </span>
@@ -1371,7 +1371,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </li>
               <li class="nav-item d-lg-none">
                 <div class="iq-search-bar device-search">
@@ -1514,7 +1514,7 @@
               </div>
               </li>
               <li class="nav-item dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="group-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="group-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="material-symbols-outlined">group</span>
                 </a>
                 <div class="sub-drop sub-drop-large dropdown-menu " aria-labelledby="group-drop">
@@ -1624,10 +1624,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </li>
               <li class="nav-item dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-symbols-outlined">mail</i>
                   <span class="mobile-text d-none ms-3">Message</span>
                 </a>
@@ -1694,10 +1694,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </li>
               <li class="nav-item dropdown">
-                <a href="javascript:void(0);" class="search-toggle dropdown-toggle d-flex align-items-center" id="notification-drop" data-bs-toggle="dropdown">
+                <!-- <a href="javascript:void(0);" class="search-toggle dropdown-toggle d-flex align-items-center" id="notification-drop" data-bs-toggle="dropdown">
                   <span class="material-symbols-outlined position-relative">notifications
                     <span class="bg-primary text-white notification-badge"></span>
                   </span>
@@ -1747,13 +1747,13 @@
                       <button type="button" class="btn btn-primary fw-500 w-100">View All Notifications</button>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </li>
               <li class="nav-item d-none d-lg-none">
-                <a href="./app/chat.html" class="dropdown-toggle d-flex align-items-center" id="mail-drop-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <a href="./app/chat.html" class="dropdown-toggle d-flex align-items-center" id="mail-drop-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-symbols-outlined">mail</i>
                   <span class="mobile-text  ms-3">Message</span>
-                </a>
+                </a> -->
               </li>
               <?php
                 // Set the profile picture path. If 'profile_picture' is not set or is 'none', use the default image.
@@ -1786,13 +1786,13 @@
                       <div class="d-flex align-items-center iq-sub-card border-0">
                         <span class="material-symbols-outlined"> manage_accounts </span>
                         <div class="ms-3">
-                          <a href="./app/account-setting.html" class="mb-0 h6"> Account settings </a>
+                          <a href="" class="mb-0 h6"> Account settings </a>
                         </div>
                       </div>
                       <div class="d-flex align-items-center iq-sub-card border-0">
                         <span class="material-symbols-outlined"> lock </span>
                         <div class="ms-3">
-                          <a href="./app/privacy-setting.html" class="mb-0 h6"> Privacy Settings </a>
+                          <a href="" class="mb-0 h6"> Privacy Settings </a>
                         </div>
                       </div>
                       <div class="d-flex align-items-center iq-sub-card">
