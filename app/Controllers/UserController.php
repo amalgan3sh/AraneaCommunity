@@ -150,10 +150,14 @@ foreach ($comments as $comment) {
         $data['followers'] = $FollowersModel
         ->select('*')
         ->join('users', 'followers.followedId = users.id')
+        ->join('user_profiles', 'users.id = user_profiles.user_id')
+
         ->where('followers.followerId', $userid)
         ->findAll();
         $data['user'] =     $user = $UserProfilesModel->where('user_id',  $userid)->first();
-
+        // echo "<pre>";
+        // print_r($data);
+        // die();
         // Pass the active users to the view
         return view('user/friends_list',    $data);
     }

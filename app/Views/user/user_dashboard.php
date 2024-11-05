@@ -2540,10 +2540,6 @@
      </div>
   </div>
   
-  
-  
-  
-  
   <div class="offcanvas offcanvas-bottom share-offcanvas" tabindex="-1" id="share-btn2" aria-labelledby="share-BottomLabel">
      <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="share-BottomLabel">Share</h5>
