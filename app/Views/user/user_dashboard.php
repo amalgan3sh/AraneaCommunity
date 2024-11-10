@@ -1684,10 +1684,10 @@
                                     <small class="text-capitalize">Followed by <?= esc($user['follower_count'] ?? '0') ?> more</small>
                                 </div>
                                 <div class="d-flex align-items-center flex-shrink-0 gap-2">
-                                    <button class="btn btn-primary-subtle p-1 lh-1" onclick="followUser(<?= $userid ?>, <?= $user['id'] ?>)">
+                                    <button class="btn btn-primary-subtle p-1 lh-1" onclick="sendFollowRequest(<?= $userid ?>, <?= $user['id'] ?>)">
                                         <i class="material-symbols-outlined font-size-14">add</i>
                                     </button>
-                                    <button class="btn btn-danger-subtle p-1 lh-1">
+                                    <button class="btn btn-danger-subtle p-1 lh-1"  onclick="cancelFollowRequest(<?= $userid ?>, <?= $user['id'] ?>)">
                                         <i class="material-symbols-outlined font-size-14">close</i>
                                     </button>
                                 </div>
@@ -2627,6 +2627,60 @@
         error: function(xhr, status, error) {
             alert('Error: Unable to follow the user.');
             console.log('Error Details:', status, error);
+        }
+    });
+}
+
+function sendFollowRequest(followerId, followedId) {
+    $.ajax({
+        url: `/follow/request/${followerId}/${followedId}`,
+        type: 'POST',
+        success: function(response) {
+            if (response.status === 'success') {
+                alert(response.message);
+                // Optionally, update the UI to show that the request is pending
+            } else {
+                alert(response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            alert('Error: Unable to send follow request.');
+            console.error('Error details:', status, error);
+        }
+    });
+}
+
+function cancelRequest(followedId) {
+    $.ajax({
+        url: '/follow/cancel',
+        type: 'POST',
+        data: { followedId: followedId },
+        success: function(response) {
+            alert('Request canceled!');
+            location.reload();
+        },
+        error: function() {
+            alert('Error canceling the request.');
+        }
+    });
+}
+
+function cancelFollowRequest(followerId, followedId) {
+    $.ajax({
+        url: '/cancel-follow-request/' + followerId + '/' + followedId,
+        type: 'POST',
+        success: function(response) {
+            if (response.status === 'success') {
+                alert(response.message);
+                // Update UI to reflect the cancellation
+                $('#follow-request-status').text('Canceled');
+                $('#follow-button').text('Follow').prop('disabled', false);  // Enable the follow button if needed
+            } else {
+                alert(response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            alert('An error occurred while canceling the follow request. Please try again.');
         }
     });
 }

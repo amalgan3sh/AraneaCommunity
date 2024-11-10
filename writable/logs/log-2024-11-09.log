@@ -1,0 +1,536 @@
+INFO - 2024-11-09 16:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 16:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-09 16:40:54 --> mysqli_sql_exception: Unknown column 'created_at' in 'field list' in D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `fo...', 0)
+#1 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `fo...')
+#2 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `fo...')
+#3 D:\Majid01\CI4\amal-social\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `fo...', Array, false)
+#4 D:\Majid01\CI4\amal-social\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Majid01\CI4\amal-social\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Majid01\CI4\amal-social\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\Majid01\CI4\amal-social\app\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert(Array)
+#8 D:\Majid01\CI4\amal-social\app\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+#9 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+#10 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Majid01\CI4\amal-social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Majid01\CI4\amal-social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Majid01\CI4\amal-social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Majid01\CI4\amal-social\system\rewrite.php(44): require_once('D:\\Majid01\\CI4\\...')
+#16 {main}
+CRITICAL - 2024-11-09 16:40:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'created_at' in 'field list'
+[Method: POST, Route: follow/request/4/6]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 16:40:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'created_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:40:54\', \'2024-11-09 16:40:54\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:40:54\', \'2024-11-09 16:40:54\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 16:40:54 --> [Caused by] mysqli_sql_exception: Unknown column 'created_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:40:54\', \'2024-11-09 16:40:54\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:40:54\', \'2024-11-09 16:40:54\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:40:54\', \'2024-11-09 16:40:54\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-11-09 16:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-09 16:55:12 --> mysqli_sql_exception: Unknown column 'created_at' in 'field list' in D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `fo...', 0)
+#1 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `fo...')
+#2 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `fo...')
+#3 D:\Majid01\CI4\amal-social\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `fo...', Array, false)
+#4 D:\Majid01\CI4\amal-social\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Majid01\CI4\amal-social\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Majid01\CI4\amal-social\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\Majid01\CI4\amal-social\app\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert(Array)
+#8 D:\Majid01\CI4\amal-social\app\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+#9 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+#10 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Majid01\CI4\amal-social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Majid01\CI4\amal-social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Majid01\CI4\amal-social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Majid01\CI4\amal-social\system\rewrite.php(44): require_once('D:\\Majid01\\CI4\\...')
+#16 {main}
+CRITICAL - 2024-11-09 16:55:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'created_at' in 'field list'
+[Method: POST, Route: follow/request/4/6]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 16:55:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'created_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:55:12\', \'2024-11-09 16:55:12\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:55:12\', \'2024-11-09 16:55:12\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 16:55:12 --> [Caused by] mysqli_sql_exception: Unknown column 'created_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:55:12\', \'2024-11-09 16:55:12\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:55:12\', \'2024-11-09 16:55:12\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:55:12\', \'2024-11-09 16:55:12\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-11-09 16:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-09 16:56:43 --> mysqli_sql_exception: Unknown column 'created_at' in 'field list' in D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `fo...', 0)
+#1 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `fo...')
+#2 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `fo...')
+#3 D:\Majid01\CI4\amal-social\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `fo...', Array, false)
+#4 D:\Majid01\CI4\amal-social\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Majid01\CI4\amal-social\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\Majid01\CI4\amal-social\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\Majid01\CI4\amal-social\app\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert(Array)
+#8 D:\Majid01\CI4\amal-social\app\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+#9 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+#10 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Majid01\CI4\amal-social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\Majid01\CI4\amal-social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\Majid01\CI4\amal-social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 D:\Majid01\CI4\amal-social\system\rewrite.php(44): require_once('D:\\Majid01\\CI4\\...')
+#16 {main}
+CRITICAL - 2024-11-09 16:56:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'created_at' in 'field list'
+[Method: POST, Route: follow/request/4/6]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 16:56:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'created_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:56:43\', \'2024-11-09 16:56:43\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:56:43\', \'2024-11-09 16:56:43\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 16:56:43 --> [Caused by] mysqli_sql_exception: Unknown column 'created_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:56:43\', \'2024-11-09 16:56:43\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:56:43\', \'2024-11-09 16:56:43\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (\'4\', \'6\', \'pending\', \'2024-11-09 16:56:43\', \'2024-11-09 16:56:43\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `follow_requests` (`followerId`, `followedId`, `status`, `created_at`, `updated_at`) VALUES (:followerId:, :followedId:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\FollowRequestsModel.php(28): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\UserController.php(264): App\Models\FollowRequestsModel->sendFollowRequest('4', '6')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->requestToFollow('4', '6')
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-11-09 16:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-09 17:23:23 --> mysqli_sql_exception: Unknown column 'users.profile_picture' in 'field list' in D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `follow_...', 0)
+#1 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `follow_...')
+#2 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `follow_...')
+#3 D:\Majid01\CI4\amal-social\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `follow_...', Array, false)
+#4 D:\Majid01\CI4\amal-social\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Majid01\CI4\amal-social\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Majid01\CI4\amal-social\app\Models\FollowRequestsModel.php(91): CodeIgniter\BaseModel->findAll()
+#7 D:\Majid01\CI4\amal-social\app\Controllers\UserController.php(48): App\Models\FollowRequestsModel->getIncomingRequestsWithDetails('6')
+#8 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+#9 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Majid01\CI4\amal-social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 D:\Majid01\CI4\amal-social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 D:\Majid01\CI4\amal-social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 D:\Majid01\CI4\amal-social\system\rewrite.php(44): require_once('D:\\Majid01\\CI4\\...')
+#15 {main}
+CRITICAL - 2024-11-09 17:23:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.profile_picture' in 'field list'
+[Method: GET, Route: user_dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `follow_requests`.*, `users`.`username`, `users`.`profile_picture`
+FROM `follow_requests`
+JOIN `users` ON `users`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = :follow_requests.followedId:
+AND `follow_requests`.`status` = :follow_requests.status:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\FollowRequestsModel.php(91): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\UserController.php(48): App\Models\FollowRequestsModel->getIncomingRequestsWithDetails('6')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 17:23:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.profile_picture' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `follow_requests`.*, `users`.`username`, `users`.`profile_picture`
+FROM `follow_requests`
+JOIN `users` ON `users`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `follow_requests`.*, `users`.`username`, `users`.`profile_picture`
+FROM `follow_requests`
+JOIN `users` ON `users`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `follow_requests`.*, `users`.`username`, `users`.`profile_picture`
+FROM `follow_requests`
+JOIN `users` ON `users`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = :follow_requests.followedId:
+AND `follow_requests`.`status` = :follow_requests.status:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\FollowRequestsModel.php(91): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\UserController.php(48): App\Models\FollowRequestsModel->getIncomingRequestsWithDetails('6')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 17:23:23 --> [Caused by] mysqli_sql_exception: Unknown column 'users.profile_picture' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `follow_requests`.*, `users`.`username`, `users`.`profile_picture`
+FROM `follow_requests`
+JOIN `users` ON `users`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `follow_requests`.*, `users`.`username`, `users`.`profile_picture`
+FROM `follow_requests`
+JOIN `users` ON `users`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `follow_requests`.*, `users`.`username`, `users`.`profile_picture`
+FROM `follow_requests`
+JOIN `users` ON `users`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `follow_requests`.*, `users`.`username`, `users`.`profile_picture`
+FROM `follow_requests`
+JOIN `users` ON `users`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = :follow_requests.followedId:
+AND `follow_requests`.`status` = :follow_requests.status:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\FollowRequestsModel.php(91): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\UserController.php(48): App\Models\FollowRequestsModel->getIncomingRequestsWithDetails('6')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-11-09 17:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-09 17:25:41 --> mysqli_sql_exception: Unknown column 'user_profiles.username' in 'field list' in D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `follow_...', 0)
+#1 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `follow_...')
+#2 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `follow_...')
+#3 D:\Majid01\CI4\amal-social\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `follow_...', Array, false)
+#4 D:\Majid01\CI4\amal-social\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Majid01\CI4\amal-social\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Majid01\CI4\amal-social\app\Models\FollowRequestsModel.php(91): CodeIgniter\BaseModel->findAll()
+#7 D:\Majid01\CI4\amal-social\app\Controllers\UserController.php(48): App\Models\FollowRequestsModel->getIncomingRequestsWithDetails('6')
+#8 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+#9 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Majid01\CI4\amal-social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 D:\Majid01\CI4\amal-social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 D:\Majid01\CI4\amal-social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 D:\Majid01\CI4\amal-social\system\rewrite.php(44): require_once('D:\\Majid01\\CI4\\...')
+#15 {main}
+CRITICAL - 2024-11-09 17:25:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_profiles.username' in 'field list'
+[Method: GET, Route: user_dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `follow_requests`.*, `user_profiles`.`username`, `user_profiles`.`profile_picture`
+FROM `follow_requests`
+JOIN `user_profiles` ON `user_profiles`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = :follow_requests.followedId:
+AND `follow_requests`.`status` = :follow_requests.status:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\FollowRequestsModel.php(91): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\UserController.php(48): App\Models\FollowRequestsModel->getIncomingRequestsWithDetails('6')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 17:25:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_profiles.username' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `follow_requests`.*, `user_profiles`.`username`, `user_profiles`.`profile_picture`
+FROM `follow_requests`
+JOIN `user_profiles` ON `user_profiles`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `follow_requests`.*, `user_profiles`.`username`, `user_profiles`.`profile_picture`
+FROM `follow_requests`
+JOIN `user_profiles` ON `user_profiles`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `follow_requests`.*, `user_profiles`.`username`, `user_profiles`.`profile_picture`
+FROM `follow_requests`
+JOIN `user_profiles` ON `user_profiles`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = :follow_requests.followedId:
+AND `follow_requests`.`status` = :follow_requests.status:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\FollowRequestsModel.php(91): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\UserController.php(48): App\Models\FollowRequestsModel->getIncomingRequestsWithDetails('6')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 17:25:41 --> [Caused by] mysqli_sql_exception: Unknown column 'user_profiles.username' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `follow_requests`.*, `user_profiles`.`username`, `user_profiles`.`profile_picture`
+FROM `follow_requests`
+JOIN `user_profiles` ON `user_profiles`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `follow_requests`.*, `user_profiles`.`username`, `user_profiles`.`profile_picture`
+FROM `follow_requests`
+JOIN `user_profiles` ON `user_profiles`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `follow_requests`.*, `user_profiles`.`username`, `user_profiles`.`profile_picture`
+FROM `follow_requests`
+JOIN `user_profiles` ON `user_profiles`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = \'6\'
+AND `follow_requests`.`status` = \'pending\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `follow_requests`.*, `user_profiles`.`username`, `user_profiles`.`profile_picture`
+FROM `follow_requests`
+JOIN `user_profiles` ON `user_profiles`.`user_id` = `follow_requests`.`followerId`
+WHERE `follow_requests`.`followedId` = :follow_requests.followedId:
+AND `follow_requests`.`status` = :follow_requests.status:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\FollowRequestsModel.php(91): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\UserController.php(48): App\Models\FollowRequestsModel->getIncomingRequestsWithDetails('6')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-11-09 17:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-09 17:26:41 --> mysqli_sql_exception: Table 'aranea_community.friends' doesn't exist in D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Majid01\CI4\amal-social\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 D:\Majid01\CI4\amal-social\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 D:\Majid01\CI4\amal-social\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 D:\Majid01\CI4\amal-social\app\Models\FollowRequestsModel.php(119): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Majid01\CI4\amal-social\app\Controllers\UserController.php(52): App\Models\FollowRequestsModel->getMutualFriendsCount('6', '4')
+#6 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+#7 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 D:\Majid01\CI4\amal-social\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Majid01\CI4\amal-social\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\Majid01\CI4\amal-social\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\Majid01\CI4\amal-social\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\Majid01\CI4\amal-social\system\rewrite.php(44): require_once('D:\\Majid01\\CI4\\...')
+#13 {main}
+CRITICAL - 2024-11-09 17:26:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'aranea_community.friends' doesn't exist
+[Method: GET, Route: user_dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) as mutual_count
+FROM `friends`
+WHERE `user_id` = :user_id:
+AND `friend_id` IN :friend_id:', [...], false)
+ 2 APPPATH\Models\FollowRequestsModel.php(119): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\UserController.php(52): App\Models\FollowRequestsModel->getMutualFriendsCount('6', '4')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 17:26:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'aranea_community.friends' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) as mutual_count
+FROM `friends`
+WHERE `user_id` = \'6\'
+AND `friend_id` IN (SELECT `friend_id` FROM `friends` WHERE `user_id` = \'4\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) as mutual_count
+FROM `friends`
+WHERE `user_id` = \'6\'
+AND `friend_id` IN (SELECT `friend_id` FROM `friends` WHERE `user_id` = \'4\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) as mutual_count
+FROM `friends`
+WHERE `user_id` = :user_id:
+AND `friend_id` IN :friend_id:', [...], false)
+ 4 APPPATH\Models\FollowRequestsModel.php(119): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\UserController.php(52): App\Models\FollowRequestsModel->getMutualFriendsCount('6', '4')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+CRITICAL - 2024-11-09 17:26:41 --> [Caused by] mysqli_sql_exception: Table 'aranea_community.friends' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) as mutual_count
+FROM `friends`
+WHERE `user_id` = \'6\'
+AND `friend_id` IN (SELECT `friend_id` FROM `friends` WHERE `user_id` = \'4\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) as mutual_count
+FROM `friends`
+WHERE `user_id` = \'6\'
+AND `friend_id` IN (SELECT `friend_id` FROM `friends` WHERE `user_id` = \'4\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) as mutual_count
+FROM `friends`
+WHERE `user_id` = \'6\'
+AND `friend_id` IN (SELECT `friend_id` FROM `friends` WHERE `user_id` = \'4\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) as mutual_count
+FROM `friends`
+WHERE `user_id` = :user_id:
+AND `friend_id` IN :friend_id:', [...], false)
+ 5 APPPATH\Models\FollowRequestsModel.php(119): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\UserController.php(52): App\Models\FollowRequestsModel->getMutualFriendsCount('6', '4')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-11-09 17:32:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-09 17:32:50 --> BadMethodCallException: Call to undefined method App\Models\FollowRequestsModel::getMutualFriendsCount
+[Method: GET, Route: user_dashboard]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\UserController.php(52): CodeIgniter\Model->__call('getMutualFriendsCount', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->user_dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Majid01\\CI4\\amal-social\\public\\index.php')
+INFO - 2024-11-09 17:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 17:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

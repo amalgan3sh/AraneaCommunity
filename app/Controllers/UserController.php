@@ -7,7 +7,7 @@ use App\Models\UserModel;
 use App\Models\PostModel;
 use App\Models\FollowersModel;
 use App\Models\UserProfilesModel;
-
+use App\Models\FollowRequestsModel;
 
 class UserController extends Controller
 {
@@ -43,7 +43,18 @@ class UserController extends Controller
         });
 
         $postModel = new PostModel();
-        
+        $followRequestsModel = new FollowRequestsModel();
+
+        $requests = $followRequestsModel->getIncomingRequestsWithDetails( $data['userid']);
+
+        // Calculate mutual friends for each request
+        foreach ($requests as &$request) {
+            $request['mutual_friends'] = $followRequestsModel->getMutualFollowersCount( $data['userid'], $request['followerId']);
+        }
+        $data['requests']   =   $requests; 
+        // echo "<pre>";
+        // print_r($data['requests']);
+        // die();
         // Fetch posts with the username
      /*   $db = \Config\Database::connect();
         $builder = $db->table('post');
@@ -155,9 +166,16 @@ foreach ($comments as $comment) {
         ->where('followers.followerId', $userid)
         ->findAll();
         $data['user'] =     $user = $UserProfilesModel->where('user_id',  $userid)->first();
-        // echo "<pre>";
-        // print_r($data);
-        // die();
+
+        $followRequestsModel = new FollowRequestsModel();
+        $data['userid'] = $userid;
+        $requests = $followRequestsModel->getIncomingRequestsWithDetails( $data['userid']);
+
+        // Calculate mutual friends for each request
+        foreach ($requests as &$request) {
+            $request['mutual_friends'] = $followRequestsModel->getMutualFollowersCount( $data['userid'], $request['followerId']);
+        }
+        $data['requests']   =   $requests; 
         // Pass the active users to the view
         return view('user/friends_list',    $data);
     }
@@ -179,6 +197,10 @@ foreach ($comments as $comment) {
         $followersModel = new FollowersModel();
         
         if ($followersModel->unfollowUser($followerId, $followedId)) {
+            $followRequestsModel = new FollowRequestsModel();
+            $followRequestsModel->where('followerId', $followerId)
+                                ->where('followedId', $followedId)
+                                ->delete();
             return json_encode(['message' => 'Successfully unfollowed the user.']);
         }
         
@@ -261,6 +283,48 @@ foreach ($comments as $comment) {
             return false;
         }
     }
+
+    public function requestToFollow($followerId, $followedId)
+    {
+        
+        $followRequestsModel = new FollowRequestsModel();
+        if ($followRequestsModel->sendFollowRequest($followerId, $followedId)) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Follow request sent.']);
+        }
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Unable to send follow request.']);
+    }
+
+    public function approveFollowRequest($requestId)
+    {
+        $followRequestsModel = new FollowRequestsModel();
+        if ($followRequestsModel->approveFollowRequest($requestId)) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Follow request approved.']);
+        }
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Unable to approve follow request.']);
+    }
+
+    public function rejectFollowRequest($requestId)
+    {
+        $followRequestsModel = new FollowRequestsModel();
+        if ($followRequestsModel->rejectFollowRequest($requestId)) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Follow request rejected.']);
+        }
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Unable to reject follow request.']);
+    }
+
+      // Method to cancel a follow request
+      public function cancelFollowRequest($followerId, $followedId)
+      {
+        $followRequestsModel = new FollowRequestsModel();
+
+          $success = $followRequestsModel->cancelFollowRequest($followerId, $followedId);
+  
+          if ($success) {
+              return $this->response->setJSON(['status' => 'success', 'message' => 'Follow request canceled']);
+          } else {
+              return $this->response->setJSON(['status' => 'error', 'message' => 'Unable to cancel follow request']);
+          }
+      }
 
 
 }

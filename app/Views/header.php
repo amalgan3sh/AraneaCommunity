@@ -45,7 +45,53 @@
   </div>
   <!-- loader END -->
   <!-- Wrapper Start -->
+<script>
+  function acceptRequest(followerId , requestId) {
+    $.ajax({
+        url: '/follow/approve/'+requestId,
+        type: 'POST',
+        data: { followerId: followerId },
+        success: function(response) {
+            alert('Request accepted!');
+            location.reload();
+        },
+        error: function() {
+            alert('Error accepting the request.');
+        }
+    });
+}
 
+function rejectRequest(followerId,requestId) {
+    $.ajax({
+        url: '/follow/reject/'+requestId,
+        type: 'POST',
+        data: { followerId: followerId },
+        success: function(response) {
+            alert('Request rejected!');
+            location.reload();
+        },
+        error: function() {
+            alert('Error rejecting the request.');
+        }
+    });
+}
+
+function cancelRequest(followedId) {
+    $.ajax({
+        url: '/follow/cancel',
+        type: 'POST',
+        data: { followedId: followedId },
+        success: function(response) {
+            alert('Request canceled!');
+            location.reload();
+        },
+        error: function() {
+            alert('Error canceling the request.');
+        }
+    });
+}
+
+</script>
   <aside class="sidebar sidebar-default sidebar-base navs-rounded-all " id="first-tour" data-toggle="main-sidebar" data-sidebar="responsive">
       <div class="sidebar-header d-flex align-items-center justify-content-start position-relative">
           <a href="/user_dashboard"
@@ -1514,7 +1560,7 @@
               </div>
               </li>
               <li class="nav-item dropdown">
-                <!-- <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="group-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="group-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="material-symbols-outlined">group</span>
                 </a>
                 <div class="sub-drop sub-drop-large dropdown-menu " aria-labelledby="group-drop">
@@ -1526,22 +1572,25 @@
                     </div>
                     <div class="card-body">
                         <div class="item-header-scroll">
-                        <div class="iq-friend-request">
+                          <?php
+        foreach ($requests as &$request) {
+?>
+   <div class="iq-friend-request">
                           <div class="iq-sub-card-big d-flex align-items-center justify-content-between mb-4">
                             <div class="d-flex align-items-center">
                               <img class="avatar-40 rounded-pill" src="./assets/images/user/01.jpg" alt="" loading="lazy">
                               <div class="ms-3">
-                                <h6 class="mb-0 ">Jaques Amole</h6>
-                                <p class="mb-0">40 friends</p>
+                                <h6 class="mb-0 "><?= $request['username'] ?></h6>
+                                <p class="mb-0"><?= $request['mutual_friends'] .' friends' ?> </p>
                               </div>
                             </div>
                             <div class="d-flex align-items-center">
-                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1">
+                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1" onclick="acceptRequest(<?= esc($request['followerId']) .','.esc($request['requestId']) ?>)">
                                 <span class="material-symbols-outlined font-size-18 align-text-bottom">
                                   add
                                 </span>
                               </a>
-                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1">
+                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1" onclick="rejectRequest(<?= esc($request['followerId']) .','.esc($request['requestId']) ?>)">
                                 <span class="material-symbols-outlined font-size-18 align-text-bottom">
                                   close
                                 </span>
@@ -1549,82 +1598,16 @@
                             </div>
                           </div>
                         </div>
-                        <div class="iq-friend-request">
-                          <div class="iq-sub-card-big d-flex align-items-center justify-content-between mb-4">
-                            <div class="d-flex align-items-center">
-                              <img class="avatar-40 rounded-pill" src="./assets/images/user/02.jpg" alt="" loading="lazy">
-                              <div class="ms-3">
-                                <h6 class="mb-0 ">Lucy Tania</h6>
-                                <p class="mb-0">12 friends</p>
-                              </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1">
-                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
-                                  add
-                                </span>
-                              </a>
-                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1">
-                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
-                                  close
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="iq-friend-request">
-                          <div class="iq-sub-card-big d-flex align-items-center justify-content-between mb-4">
-                            <div class="d-flex align-items-center">
-                              <img class="avatar-40 rounded-pill" src="./assets/images/user/03.jpg" alt="" loading="lazy">
-                              <div class=" ms-3">
-                                <h6 class="mb-0 ">Manny Petty</h6>
-                                <p class="mb-0">3 friends</p>
-                              </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1">
-                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
-                                  add
-                                </span>
-                              </a>
-                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1">
-                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
-                                  close
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="iq-friend-request">
-                          <div class="iq-sub-card-big d-flex align-items-center justify-content-between">
-                            <div class="d-flex align-items-center">
-                              <img class="avatar-40 rounded-pill" src="./assets/images/user/04.jpg" alt="" loading="lazy">
-                              <div class="ms-3">
-                                <h6 class="mb-0 ">Marsha Mello</h6>
-                                <p class="mb-0">15 friends</p>
-                              </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                              <a href="javascript:void(0);" class="me-2 rounded bg-primary-subtle border-0 d-inline-block px-1">
-                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
-                                  add
-                                </span>
-                              </a>
-                              <a href="javascript:void(0);" class="me-3 rounded bg-danger-subtle border-0 d-inline-block px-1">
-                                <span class="material-symbols-outlined font-size-18 align-text-bottom">
-                                  close
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
+                        <?php }
+                          ?>
+                     
                       </div>  
                       <div class="text-center">
                         <button type="button" class="btn btn-primary fw-500 mt-4">View More Request</button>
                       </div>
                     </div>
                   </div>
-                </div> -->
+                </div>
               </li>
               <li class="nav-item dropdown">
                 <!-- <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -591,6 +591,7 @@ function unfollow(followerId, followedId){
          success: function(response) {
                var result = JSON.parse(response);
                alert(result.message);  // Show the success or failure message
+               location.reload();
          },
          error: function(xhr, status, error) {
                alert('Error: Unable to unfollow the user.');
