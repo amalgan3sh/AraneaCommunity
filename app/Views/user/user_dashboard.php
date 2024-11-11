@@ -568,9 +568,12 @@
                                                                      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                                </svg>
                                                             </span>
-                                                            <spna class="fw-medium small text-capitalize"><?= date('F d, Y H:i', strtotime($comment['comment_created_at'])); ?></spna>
+                                                            <span class="fw-medium small text-capitalize"><?= date('F d, Y H:i', strtotime($comment['comment_created_at'])); ?></span>
+
                                                          </div>
                                                       </div>
+                                                      <span class="fw-medium small text-capitalize" style="margin-left:auto;">delete</span>
+
                                                    </div>
                                                    <div class="comment-list-user-comment">
                                                       <div class="comment-list-comment">
@@ -1646,9 +1649,14 @@
     </div>
     <div class="card-body pt-0">
         <ul class="list-inline m-0 p-0">
-            <?php foreach ($activeUsers as $user): ?>
+            <?php
+            
+            foreach ($activeUsers as $user):
+               $profilePic = (!empty($user['profile_picture']) && $user['profile_picture'] != 'none') ? $user['profile_picture'] : 'default_dp.jpg'; 
+            
+            ?>
                 <li class="d-flex align-items-center gap-3 mb-3">
-                    <img src="<?= base_url(isset($user['profile_image']) && $user['profile_image'] != '' ? 'assets/images/user/' . $user['profile_image'] : 'assets/images/user/03.jpg'); ?>" 
+                    <img src="<?= base_url('uploads/' . $profilePic) ?>" 
                          alt="story-img"
                          class="avatar-60 avatar-borderd object-cover avatar-rounded img-fluid d-inline-block">
                     <div>
@@ -1672,10 +1680,13 @@
     </div>
     <div class="card-body pt-0">
         <ul class="list-inline m-0 p-0">
-            <?php foreach ($suggestedUsers as $user): ?>
+            <?php foreach ($suggestedUsers as $user):
+               $profilePic = (!empty($user['profile_picture']) && $user['profile_picture'] != 'none') ? $user['profile_picture'] : 'default_dp.jpg'; 
+               
+               ?>
                 <li class="mb-3">
                     <div class="d-flex align-items-center gap-3">
-                        <img src="<?= base_url(isset($user['profile_image']) && $user['profile_image'] != '' ? 'assets/images/user/' . $user['profile_image'] : 'assets/images/user/03.jpg'); ?>" alt="story-img"
+                        <img src="<?= base_url('uploads/' . $profilePic) ?>" alt="story-img"
                             class="avatar-60 avatar-borderd object-cover avatar-rounded img-fluid d-inline-block">
                         <div>
                             <div class="d-flex align-items-center justify-content-between gap-2">

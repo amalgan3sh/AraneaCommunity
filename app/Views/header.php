@@ -1573,12 +1573,15 @@ function cancelRequest(followedId) {
                     <div class="card-body">
                         <div class="item-header-scroll">
                           <?php
+
         foreach ($requests as &$request) {
+          $profilePicReq = (!empty($request['profile_picture']) && $request['profile_picture'] != 'none') ? $request['profile_picture'] : 'default_dp.jpg'; 
+
 ?>
    <div class="iq-friend-request">
                           <div class="iq-sub-card-big d-flex align-items-center justify-content-between mb-4">
                             <div class="d-flex align-items-center">
-                              <img class="avatar-40 rounded-pill" src="./assets/images/user/01.jpg" alt="" loading="lazy">
+                              <img class="avatar-40 rounded-pill" src="<?= base_url('uploads/' . $profilePicReq) ?>" alt="" loading="lazy">
                               <div class="ms-3">
                                 <h6 class="mb-0 "><?= $request['username'] ?></h6>
                                 <p class="mb-0"><?= $request['mutual_friends'] .' friends' ?> </p>
