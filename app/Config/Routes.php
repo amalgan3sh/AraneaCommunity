@@ -49,3 +49,4 @@ $routes->group('follow', ['namespace' => 'App\Controllers'], function ($routes) 
     $routes->post('reject/(:num)', 'UserController::rejectFollowRequest/$1');
 });
 $routes->post('cancel-follow-request/(:num)/(:num)', 'UserController::cancelFollowRequest/$1/$2');
+$routes->delete('comments/delete/(:num)', 'PostController::deleteComment/$1');

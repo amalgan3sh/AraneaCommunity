@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\PostModel;
 use App\Models\LikeModel;
 use App\Models\CommentModel;
+use CodeIgniter\HTTP\ResponseInterface;
 
 
 use CodeIgniter\Controller;
@@ -126,5 +127,21 @@ class PostController extends Controller
     return $this->response->setJSON($newComment);
     }
 
+    public function deleteComment($commentId)
+    {
+        $commentModel = new CommentModel();
 
+        // Attempt to delete the comment
+        if ($commentModel->deleteCommentById($commentId)) {
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => 'Comment deleted successfully.'
+            ])->setStatusCode(ResponseInterface::HTTP_OK);
+        } else {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Failed to delete the comment. Please try again.'
+            ])->setStatusCode(ResponseInterface::HTTP_INTERNAL_SERVER_ERROR);
+        }
+    }
 }

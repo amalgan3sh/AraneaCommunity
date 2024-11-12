@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use CodeIgniter\HTTP\ResponseInterface;
 
 use CodeIgniter\Controller;
 use App\Models\UserModel;
@@ -100,6 +101,9 @@ $data['posts'] = $query->getResultArray();
 
 $commentBuilder = $db->table('comments');
 $commentBuilder->select('
+        comments.id AS comment_id,
+        comments.user_id AS comment_user_id,
+
         comments.post_id, 
         comments.content AS comment_content, 
         comments.created_at AS comment_created_at, 

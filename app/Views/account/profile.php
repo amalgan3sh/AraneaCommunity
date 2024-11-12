@@ -931,7 +931,7 @@
                 $profilePic = (!empty($comment['comment_profile_picture']) && $comment['comment_profile_picture'] != 'none') ? $comment['comment_profile_picture'] : 'default_dp.jpg'; 
                                                    
                                                    ?>
-                                             <li class="mb-3">
+                                             <li class="mb-3" id=comment-<?= $comment['comment_id'] ?>>
                                                 <div class="comment-list-block">
                                                    <div class="d-flex align-items-center gap-3">
                                                       <div class="comment-list-user-img flex-shrink-0">
@@ -954,7 +954,13 @@
                                                             <spna class="fw-medium small text-capitalize"><?= date('F d, Y H:i', strtotime($comment['comment_created_at'])); ?></spna>
                                                          </div>
                                                       </div>
+                                                      <?php 
+                                                         if($comment['comment_user_id'] == $userid || $userid == $post['user_id']){ ?>
+                                                            <span class="fw-medium small text-capitalize" style="margin-left:auto;cursor:pointer;" onclick="deleteComment(<?= $post['id'] .','.$comment['comment_id'] ?>)">delete</span>
+
+                                                       <?php  } ?>
                                                    </div>
+                                                   
                                                    <div class="comment-list-user-comment">
                                                       <div class="comment-list-comment">
                                                       <?= $comment["comment_content"] ?>
@@ -6297,6 +6303,29 @@
   <script src="../assets/js/ecommerce.js"></script>
   
   <script>
+function deleteComment(postId,commentId) {
+    if (!confirm('Are you sure you want to delete this comment?')) {
+        return;
+    }
+
+    $.ajax({
+        url: '/comments/delete/' + commentId,
+        type: 'DELETE',
+        dataType: 'json',  // Ensures jQuery treats the response as JSON
+        success: function(response) {
+            if (response.status === 'success') {
+                alert(response.message);
+                $('#comment-' + commentId).remove(); 
+            } else {
+                alert(response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            alert('Error: Unable to delete the comment.');
+            console.log('Error Details:', status, error);
+        }
+    });
+}
 
 $(document).on('click', '.like-btn', function() {
      var postId = $(this).data('post-id');

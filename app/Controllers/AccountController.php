@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\UserProfilesModel;
+use App\Models\FollowRequestsModel;
 
 use CodeIgniter\Controller;
 
@@ -46,6 +47,8 @@ class AccountController extends Controller
         
         $commentBuilder = $db->table('comments');
         $commentBuilder->select('
+                comments.id AS comment_id,
+                comments.user_id AS comment_user_id,
                 comments.post_id, 
                 comments.content AS comment_content, 
                 comments.created_at AS comment_created_at, 
@@ -74,7 +77,15 @@ class AccountController extends Controller
                 }
             }
         }
+        $followRequestsModel = new FollowRequestsModel();
 
+        $requests = $followRequestsModel->getIncomingRequestsWithDetails( $data['userid']);
+
+        // Calculate mutual friends for each request
+        foreach ($requests as &$request) {
+            $request['mutual_friends'] = $followRequestsModel->getMutualFollowersCount( $data['userid'], $request['followerId']);
+        }
+        $data['requests']   =   $requests; 
 
         // Get the current user ID
 
@@ -108,7 +119,15 @@ class AccountController extends Controller
         
         $data['users'] = $query->getResultArray();
         $data['user'] =                $user = $UserProfilesModel->where('user_id',  $data['userid'])->first();
+        $followRequestsModel = new FollowRequestsModel();
 
+        $requests = $followRequestsModel->getIncomingRequestsWithDetails( $data['userid']);
+
+        // Calculate mutual friends for each request
+        foreach ($requests as &$request) {
+            $request['mutual_friends'] = $followRequestsModel->getMutualFollowersCount( $data['userid'], $request['followerId']);
+        }
+        $data['requests']   =   $requests; 
         return view('account/profile_edit',$data);
 
     }
